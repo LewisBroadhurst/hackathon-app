@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
 
   return (
     <>
+      <section className="flex flex-col items-stretch lg:w-1/3 lg:mx-auto lg:justify-center">
       <div className='flex flex-col items-center'>
         <h1 className='text-5xl my-2'>Five Star</h1>
 
@@ -26,7 +28,7 @@ const LoginForm = () => {
           <button className='py-2 mt-6 bg-green-500 rounded-lg text-xl' type='submit' value={"Sign In"}>Sign In</button>
         </form>
 
-        <p className='mt-1'>Don't have an account? <span className='text-blue-900'>Register</span></p>
+        <p className='mt-1'>Don't have an account? <span className='text-blue-900'><Link to={"/register"}>Register</Link></span></p>
       </div>
 
 
@@ -45,6 +47,7 @@ const LoginForm = () => {
         </div>
 
       </div>
+      </section>
     </>
   )
 }

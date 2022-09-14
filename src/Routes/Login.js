@@ -1,12 +1,15 @@
 import LoginForm from "../Components/LoginForm/LoginForm";
-import LoginFriendsPhoto from "../Assets/login-friends-photo.jpg"
+import LoginFriendsPhoto from "../Assets/login-friends-photo.jpg";
+import LoginFriendsDesktop from "../Assets/login-friends-desktop.jpg";
 
 const Login = () => {
+
   return (
-    <section className='flex flex-col justify-start h-screen'>
+    <section className='flex flex-col justify-start h-screen lg:flex-row'>
 
       <div className='pb-6'>
-        <img src={LoginFriendsPhoto} alt='Friends at party' />
+        <img className="lg:hidden" src={LoginFriendsPhoto} alt='Friends at party' />
+        <img className="hidden h-screen lg:flex" src={LoginFriendsDesktop} alt='Friends at party'/>
       </div>
 
       <LoginForm />
