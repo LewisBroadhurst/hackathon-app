@@ -1,10 +1,12 @@
 import './input.css';
+import Login from './Routes/Login';
+
 
 function App() {
   return (
-    <div className="text-6xl">
-      Hello world
-    </div>
+    <>
+      <Login />
+    </>
   );
 }
 
