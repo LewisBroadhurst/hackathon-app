@@ -4,12 +4,12 @@ import SearchMag from "../../Assets/SearchMag.png"
 
 const DashboardNav = () => {
   return (
-    <section className="bg-green-400">
-        <div className="flex flex-row justify-between items-center mx-5 py-2">
+    <section className="bg-cBlue300">
+        <div className="flex flex-row justify-between items-center mx-5 py-2 text-cBlack500">
 
             <div className="flex flex-row items-baseline">
                 <h2 className="text-3xl mr-5">Five Star</h2>
-                <span>Looking for event inspiration?</span>
+                <span className="text-cGrey400 cursor-pointer border-cWhite100 hover:text-cWhite100 hover:border-b">Need event inspiration?</span>
             </div>
             
 
