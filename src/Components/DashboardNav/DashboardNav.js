@@ -9,13 +9,13 @@ const DashboardNav = () => {
 
             <div className="flex flex-row items-baseline">
                 <h2 className="text-3xl mr-5">Five Star</h2>
-                <span className="text-cGrey400 cursor-pointer border-cWhite100 hover:text-cWhite100 hover:border-b">Need event inspiration?</span>
+                <span className="hidden text-cGrey400 cursor-pointer border-cWhite100 md:flex hover:text-cWhite100 hover:border-b">Need event inspiration?</span>
             </div>
             
 
             <div className="flex flex-row items-center">
 
-                <div className="mr-12 flex flex-row items-center">
+                <div className="flex flex-row items-center">
                     <input type={"text"} placeholder={"Search"} className="rounded-md p-2" />
                     <button type="button" className="rounded-full bg-slate-500 w-7 h-7 -translate-x-3 flex justify-center items-center">
                         <img src={SearchMag} alt="" className="h-4 w-4"/>
