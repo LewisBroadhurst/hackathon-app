@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './input.css';
-import Dashboard from './Routes/Dashboard';
+import GroupOverview from './Routes/GroupOverview';
 import Login from './Routes/Login';
 import Register from './Routes/Register';
 
@@ -13,7 +13,7 @@ function App() {
 
             <Route path='/' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/groupOverview' element={<GroupOverview />} />
 
           </Routes>
         </BrowserRouter>

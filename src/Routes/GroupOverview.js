@@ -1,9 +1,9 @@
-import DashboardMain from "../Components/DashboardMain/DashboardMain";
+import GroupMain from "../Components/GroupMain/GroupMain";
 import DashboardNav from "../Components/DashboardNav/DashboardNav";
 import GroupNavSidebar from "../Components/GroupNavSidebar/GroupNavSidebar";
 
 
-const Dashboard = () => {
+const GroupOverview = () => {
   return (
     <section className="h-screen flex flex-col">
         <DashboardNav />
@@ -12,11 +12,11 @@ const Dashboard = () => {
             <GroupNavSidebar />
 
             <div className="flex flex-col items-stretch h-full w-full">
-              <DashboardMain />
+              <GroupMain />
             </div>
         </div>
     </section>
   )
 }
 
-export default Dashboard;
+export default GroupOverview;
