@@ -2,7 +2,7 @@ import Portrait from "../../Assets/PortraitSquared.jpg";
 
 const CommunityPost = () => {
   return (
-    <section className="my-4 p-5 bg-cBlue200 rounded-sm">
+    <section className="my-4 p-5 bg-cMono200 rounded-sm">
         <div>
             <div className="flex flex-row items-center">
                 <img src={Portrait} alt="" className="w-12 rounded-full mr-4"/>
@@ -16,8 +16,8 @@ const CommunityPost = () => {
 
             <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-row items-center gap-2">
-                    <button className="w-28 py-1 bg-cBlue400 border-2 border-cBlue400 text-cWhite100">Like</button>
-                    <button className="w-28 py-1 bg-cWhite100 border-2 border-cBlue400 text-cGrey400">Comment</button>
+                    <button className="w-28 py-1 bg-cMono500 text-white">Like</button>
+                    <button className="w-28 py-1 bg-cMono500 text-white">Comment</button>
                 </div>
                 <div className="flex flex-row items-center gap-2">
                     <span>11 likes</span>

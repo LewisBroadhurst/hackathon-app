@@ -4,7 +4,7 @@ import SearchMag from "../../Assets/SearchMag.png"
 
 const DashboardNav = () => {
   return (
-    <section className="bg-cBlue300 fixed w-screen">
+    <section className="bg-cMono500 text-white fixed w-screen">
         <div className="flex flex-row justify-between items-center mx-5 py-2 text-cBlack500">
 
             <div className="flex flex-row items-baseline">
