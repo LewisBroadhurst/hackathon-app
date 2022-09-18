@@ -3,7 +3,7 @@ import Settings from "../../Assets/settings.png";
 
 const GroupNavSidebar = () => {
   return (
-    <section className="hidden bg-cMono200 mt-16 md:flex">
+    <section className="hidden bg-cMono200 rounded-lg mt-16 md:flex">
 
         <div className="h-full flex flex-col justify-between items-center p-3">
           <div className="">

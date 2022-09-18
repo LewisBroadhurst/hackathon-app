@@ -7,7 +7,7 @@ const GroupAside = () => {
             <div className="rounded-md p-3">
                 <h3 className="text-xl pb-2 text-center">Promoted Venues</h3>
 
-                <div className="flex flex-col w-full">
+                <div className="flex flex-row md:flex-col w-full">
                     <GroupOverviewEventCard />
 
                     <GroupOverviewEventCard />
