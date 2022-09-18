@@ -26,7 +26,7 @@ module.exports = {
         cOrange200: "#FFDA61",
         cOrange300: "#FFD261",
         cOrange400: "#FFCC61",
-        cOrange500: "#6c757d",
+        cOrange500: "#FFC361",
       }
     },
   },

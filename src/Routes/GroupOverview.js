@@ -8,12 +8,14 @@ const GroupOverview = () => {
     <section className="h-screen flex flex-col">
         <DashboardNav />
 
-        <div className="flex flex-row h-full">
+        <div className="flex flex-row">
+          <div className="flex fixed h-screen">
             <GroupNavSidebar />
-
-            <div className="flex flex-col items-stretch h-full w-full">
-              <GroupMain />
-            </div>
+          </div>
+            
+          <div className="flex flex-col items-stretch w-full">
+            <GroupMain />
+          </div>
         </div>
     </section>
   )
