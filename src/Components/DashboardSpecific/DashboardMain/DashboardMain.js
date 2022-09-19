@@ -1,8 +1,8 @@
-import CommunityPost from '../CommunityPost/CommunityPost';
+import CommunityPost from '../../CommunityPost/CommunityPost';
 import DashboardBanner from '../DashboardBanner/DashboardBanner';
-import GroupAside from '../GroupAside/GroupAside';
-import GroupEvents from '../GroupEvents/GroupEvents';
-import PollPost from '../PollPost/PollPost';
+import GroupAside from '../../GroupOverviewSpecific/GroupAside/GroupAside';
+import EventTablet from '../../EventTablet/EventTablet';
+import PollPost from '../../PollPost/PollPost';
 
 const DashboardMain = () => {
   return (
@@ -26,7 +26,7 @@ const DashboardMain = () => {
             </div>
 
             <div className="md:col-start-3 md:col-end-8 lg:col-start-8 lg:col-end-10 xl:col-start-7 xl:col-end-9">
-                <GroupEvents />
+                <EventTablet />
             </div>  
         </div>
 

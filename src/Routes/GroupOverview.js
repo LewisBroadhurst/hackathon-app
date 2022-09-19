@@ -1,16 +1,16 @@
-import GroupMain from "../Components/GroupMain/GroupMain";
-import DashboardNav from "../Components/DashboardNav/DashboardNav";
-import GroupNavSidebar from "../Components/GroupNavSidebar/GroupNavSidebar";
+import GroupMain from "../Components/GroupOverviewSpecific/GroupMain/GroupMain";
+import Header from "../Components/Header/Header";
+import NavSidebar from "../Components/NavSidebar/NavSidebar";
 
 
 const GroupOverview = () => {
   return (
     <section className="h-screen flex flex-col">
-        <DashboardNav />
+        <Header />
 
         <div className="flex flex-row">
           <div className="flex fixed h-screen p-1">
-            <GroupNavSidebar />
+            <NavSidebar />
           </div>
             
           <div className="flex flex-col items-stretch w-full">

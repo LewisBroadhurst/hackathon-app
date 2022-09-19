@@ -1,4 +1,4 @@
-import GroupOverviewEventCard from "../GroupOverviewEventCard/GroupOverviewEventCard";
+import GroupOverviewEventCard from "../../EventCard/EventCard";
 
 const GroupAside = () => {
   return (

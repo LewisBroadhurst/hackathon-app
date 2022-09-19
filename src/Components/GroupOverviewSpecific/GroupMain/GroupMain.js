@@ -1,8 +1,7 @@
 import GroupAside from "../GroupAside/GroupAside";
 import GroupBanner from "../GroupBanner/GroupBanner";
 import GroupCommunity from "../GroupCommunity/GroupCommunity";
-import GroupEvents from "../GroupEvents/GroupEvents";
-
+import EventTablet from "../../EventTablet/EventTablet";
 
 const GroupMain = () => {
   return (
@@ -20,7 +19,7 @@ const GroupMain = () => {
             </div>
 
             <div className="col-start-6 col-end-8 xl:col-end-7">
-                <GroupEvents />
+                <EventTablet />
             </div>  
         </div>
 

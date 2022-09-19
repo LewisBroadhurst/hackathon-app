@@ -1,7 +1,7 @@
 import React from 'react'
-import GroupOverviewEventCard from '../GroupOverviewEventCard/GroupOverviewEventCard'
+import GroupOverviewEventCard from '../EventCard/EventCard'
 
-const GroupEvents = () => {
+const EventTablet = () => {
   return (
     <section className="flex flex-row justify-around md:flex-col gap-4 w-full border-2 border-cMono200 bg-cMono100 rounded-md h-min p-2">
         <div className="rounded-md p-3">
@@ -27,4 +27,4 @@ const GroupEvents = () => {
   )
 }
 
-export default GroupEvents
+export default EventTablet;
