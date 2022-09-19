@@ -1,18 +1,38 @@
 import Portrait from "../../Assets/PortraitSquared.jpg";
 
-const CommunityPost = () => {
+const PollPost = () => {
   return (
     <section className="p-5 bg-cMono200 rounded-sm">
         <div>
             <div className="flex flex-row items-center">
                 <img src={Portrait} alt="" className="w-12 rounded-full mr-4"/>
                 <div className="flex flex-col items-start">
-                    <h3>Hasmeet Kaur</h3>
+                    <h3>Steve Jenkins</h3>
                     <h5>Today at 10:54am</h5>
                 </div>
             </div>
             
-            <p className="mt-4 border-b border-cMono700 pb-4">Remember to cast your vote for the upcoming September social! It's a close race between bowling and mini golf 🎳⛳</p>
+            <div className="mt-4 border-b border-cMono700 pb-4">
+                <h2>We have decided on the final options for the social next month! Please vote below 🗳️</h2>
+            </div>
+
+            <div className="flex flex-col gap-4 mt-4 border-b border-cMono700 pb-4">
+                <div className="flex flex-row justify-between items-center p-3 bg-cMono400">
+                    <h3>All Star Bowling Alley</h3>
+
+                    <input type="checkbox" />
+                </div>
+                <div className="flex flex-row justify-between items-center p-3 bg-cMono400">
+                    <h3>Cheeky Nandos</h3>
+
+                    <input type="checkbox" />
+                </div>
+                <div className="flex flex-row justify-between items-center p-3 bg-cMono400">
+                    <h3>Go Karting</h3>
+
+                    <input type="checkbox" />
+                </div>
+            </div>
 
             <div className="flex flex-col items-center justify-between xl:flex-row xl:mt-4">
                 <div className="flex flex-row items-center gap-2 my-2 xl:my-0">
@@ -26,10 +46,10 @@ const CommunityPost = () => {
                     <button className="w-28 py-1 bg-cMono500 text-white">Comment</button>
                 </div>
             </div>
-            
         </div>
+
     </section>
   )
 }
 
-export default CommunityPost;
+export default PollPost;

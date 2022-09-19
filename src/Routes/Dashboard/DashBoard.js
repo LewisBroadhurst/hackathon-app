@@ -1,6 +1,6 @@
-import DashboardMain from "../Components/DashboardMain/DashboardMain";
-import DashboardNav from "../Components/DashboardNav/DashboardNav";
-import GroupNavSidebar from "../Components/GroupNavSidebar/GroupNavSidebar";
+import DashboardMain from "../../Components/DashboardMain/DashboardMain";
+import DashboardNav from "../../Components/DashboardNav/DashboardNav";
+import GroupNavSidebar from "../../Components/GroupNavSidebar/GroupNavSidebar";
 
 const DashBoard = () => {
   return (
