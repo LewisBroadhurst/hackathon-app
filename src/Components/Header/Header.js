@@ -4,7 +4,7 @@ import SearchMag from "../../Assets/SearchMag.png"
 
 const DashboardNav = () => {
   return (
-    <section className="bg-cMono500 text-white fixed w-screen">
+    <section className="bg-cBlue500 text-white fixed w-screen">
         <div className="flex flex-row justify-between items-center mx-5 py-2 text-cBlack500">
 
             <div className="flex flex-row items-baseline">
@@ -23,7 +23,7 @@ const DashboardNav = () => {
 
                 <div className="w-10 bg-slate-400 rounded-full p-2">
                     <img src={NotificationBell} alt="Notification Bell" />
-                    <div className="bg-cMono600 rounded-full w-6 h-6 translate-x-5 -translate-y-9 absolute flex justify-center">
+                    <div className="bg-red-600 rounded-full w-6 h-6 translate-x-5 -translate-y-9 absolute flex justify-center">
                         <span className="text-white">1</span>
                     </div>
                 </div>

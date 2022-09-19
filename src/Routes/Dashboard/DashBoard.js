@@ -4,7 +4,7 @@ import NavSidebar from "../../Components/NavSidebar/NavSidebar";
 
 const DashBoard = () => {
   return (
-    <section className="h-screen flex flex-col">
+    <section className="flex flex-col bg-cMono300">
         <Header />
 
         <div className="flex flex-row">

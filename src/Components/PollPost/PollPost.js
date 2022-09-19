@@ -2,13 +2,13 @@ import Portrait from "../../Assets/PortraitSquared.jpg";
 
 const PollPost = () => {
   return (
-    <section className="p-5 bg-cMono200 rounded-sm">
+    <section className="p-5 rounded-md bg-cMono200 border-2 border-cMono400">
         <div>
             <div className="flex flex-row items-center">
                 <img src={Portrait} alt="" className="w-12 rounded-full mr-4"/>
                 <div className="flex flex-col items-start">
-                    <h3>Steve Jenkins</h3>
-                    <h5>Today at 10:54am</h5>
+                    <h3 className="text-xl">Steve Jenkins</h3>
+                    <h5 className="text-sm">Today at 10:54am</h5>
                 </div>
             </div>
             
@@ -42,8 +42,8 @@ const PollPost = () => {
                 </div>
 
                 <div className="flex flex-row items-center gap-2 xl:-order-2">
-                    <button className="w-28 py-1 bg-cMono500 text-white">Like</button>
-                    <button className="w-28 py-1 bg-cMono500 text-white">Comment</button>
+                    <button className="w-28 py-1 bg-cBlue500 border-2 border-cBlue500 text-white">Like</button>
+                    <button className="w-28 py-1 bg-white border-2 border-cBlue500">Comment</button>
                 </div>
             </div>
         </div>

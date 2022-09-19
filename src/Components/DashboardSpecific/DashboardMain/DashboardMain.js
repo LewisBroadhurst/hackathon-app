@@ -1,21 +1,21 @@
 import CommunityPost from '../../CommunityPost/CommunityPost';
 import DashboardBanner from '../DashboardBanner/DashboardBanner';
-import GroupAside from '../../GroupOverviewSpecific/GroupAside/GroupAside';
+import PromoVenueTablet from '../../PromotedVenuesTablet/PromoVenueTablet';
 import EventTablet from '../../EventTablet/EventTablet';
 import PollPost from '../../PollPost/PollPost';
 
 const DashboardMain = () => {
   return (
-    <section className="m-5 my-20 flex flex-col text-cBlack500 md:ml-24 md:mt-28">
+    <section className="m-5 my-20 flex flex-col text-cBlack500 md:ml-24 md:mt-24">
 
         <DashboardBanner />
 
-        <div className="grid grid-cols-1 gap-5 mt-6 md:grid-cols-9">
+        <div className="grid grid-cols-1 gap-3 mt-6 md:grid-cols-9">
             <div className="md:col-start-3 md:col-end-8 lg:col-start-1 lg:col-end-3 xl:col-start-2 xl:col-end-4">
-                <GroupAside />
+                <PromoVenueTablet />
             </div>
 
-            <div className="flex flex-col gap-3 md:col-start-3 md:col-end-8 xl:col-start-4 xl:col-end-7">
+            <div className="flex flex-col gap-3 bg-white p-4 rounded-md border-2 border-cMono400 md:col-start-3 md:col-end-8 xl:col-start-4 xl:col-end-7">
                 <PollPost />
 
                 <CommunityPost />

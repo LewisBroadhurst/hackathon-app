@@ -2,13 +2,13 @@ import Portrait from "../../Assets/PortraitSquared.jpg";
 
 const CommunityPost = () => {
   return (
-    <section className="p-5 bg-cMono200 rounded-sm">
+    <section className="p-5 bg-cMono200 rounded-md border-2 border-cMono400">
         <div>
             <div className="flex flex-row items-center">
                 <img src={Portrait} alt="" className="w-12 rounded-full mr-4"/>
                 <div className="flex flex-col items-start">
-                    <h3>Hasmeet Kaur</h3>
-                    <h5>Today at 10:54am</h5>
+                    <h3 className="text-xl">Hasmeet Kaur</h3>
+                    <h5 className="text-sm">Today at 10:54am</h5>
                 </div>
             </div>
             

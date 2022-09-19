@@ -19,6 +19,12 @@ module.exports = {
         cMono600: "#495057",
         cMono700: "#343A40",
         cMono800: "#212529",
+
+        cBlue100: "#BAF2E1",
+        cBlue200:"#AAA4E0",
+        cBlue300: "#76ACD0",
+        cBlue400: "#2464A8",
+        cBlue500: "#205A97",
       }
     },
   },

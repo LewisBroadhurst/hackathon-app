@@ -1,4 +1,4 @@
-import GroupAside from "../GroupAside/GroupAside";
+import PromoVenueTablet from "../../PromotedVenuesTablet/PromoVenueTablet";
 import GroupBanner from "../GroupBanner/GroupBanner";
 import GroupCommunity from "../GroupCommunity/GroupCommunity";
 import EventTablet from "../../EventTablet/EventTablet";
@@ -11,7 +11,7 @@ const GroupMain = () => {
 
         <div className="flex flex-col grid-cols-7 gap-5 justify-around mt-6 md:grid lg:flex-row">
             <div className="col-start-1 col-end-3 xl:col-start-2">
-                <GroupAside />
+                <PromoVenueTablet />
             </div>
 
             <div className="col-start-3 col-end-6">
