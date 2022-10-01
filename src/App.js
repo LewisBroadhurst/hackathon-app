@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './input.css';
 import DashBoard from './Routes/DashBoard';
@@ -9,6 +10,9 @@ import VenuePage from './Routes/VenuePage';
 
 
 function App() {
+
+  const [tab, setTab] = useState(0);
+
   return (
     <>
         <BrowserRouter>
@@ -17,11 +21,10 @@ function App() {
             <Route path='/' element={<Login />} />
             <Route path='/register' element={<Register />} />
 
-            <Route path='/dashboard' element={<DashBoard />} />
-            <Route path='/dashboard/home' element={<DashBoard />} />
-            <Route path='/dashboard/events' element={<DashBoard />} />
-            <Route path='/dashboard/polls' element={<DashBoard />} />
-            <Route path='/dashboard/venues' element={<DashBoard />} />
+            <Route path='/dashboard/home' element={<DashBoard tab={tab} setTab={setTab} />} />
+            <Route path='/dashboard/events' element={<DashBoard tab={tab} setTab={setTab} />} />
+            <Route path='/dashboard/polls' element={<DashBoard tab={tab} setTab={setTab} />} />
+            <Route path='/dashboard/venues' element={<DashBoard tab={tab} setTab={setTab} />} />
             
 
             <Route path='/groupOverview' element={<GroupOverview />} />

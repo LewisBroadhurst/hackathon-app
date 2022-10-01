@@ -2,7 +2,7 @@ import DashboardMain from "../Components/DashboardSpecific/DashboardMain/Dashboa
 import Header from "../Components/Header/Header";
 import NavSidebar from "../Components/NavSidebar/NavSidebar";
 
-const DashBoard = () => {
+const DashBoard = ({tab, setTab}) => {
   return (
     <section className="flex flex-col bg-cMono300">
         <Header />
@@ -13,7 +13,7 @@ const DashBoard = () => {
           </div>
             
           <div className="flex flex-col items-stretch w-full">
-            <DashboardMain />
+            <DashboardMain tab={tab} setTab={setTab} />
           </div>
         </div>
     </section>

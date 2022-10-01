@@ -35,39 +35,12 @@ const DashboardBanner = ({mainDisplay, setTab}) => {
 
             <nav className="mt-4">
                 <ul className="flex flex-row items-center flex-wrap gap-2 content-around text-md text-cMono100 md:text-lg">
-                  <li>
-                    <NavLink
-                      to={"/dashboard/home"} 
-                      onClick={handleHomeClick}
-                      style={({isActive}) => ({
-                      color: isActive ? '#fff' : '#545e6f',
-                      background: isActive ? '#7600dc' : '#f0f0f0'
-                    })}>Home</NavLink>
+                  
+                  <li onClick={handleHomeClick} className="text-cMono100 bg-cBlue200 py-1 px-3 rounded-md">Home
                   </li>
-                    <NavLink
-                      to={"/dashboard/events"}
-                      onClick={handleEventClick}
-                      style={({isActive}) => ({
-                      color: isActive ? '#fff' : '#545e6f',
-                      background: isActive ? '#7600dc' : '#f0f0f0'
-                    })}>Events</NavLink>
-                    
-                    <NavLink
-                      to={"/dashboard/polls"}
-                      onClick={handlePollsClick}
-                      style={({isActive}) => ({
-                      color: isActive ? '#fff' : '#545e6f',
-                      background: isActive ? '#7600dc' : '#f0f0f0'
-                    })}>Polls</NavLink>
-                    
-                    <NavLink 
-                      to={"/dashboard/venues"}
-                      onClick={handleVenuesClick}
-                      style={({isActive}) => ({
-                      color: isActive ? '#fff' : '#545e6f',
-                      background: isActive ? '#7600dc' : '#f0f0f0'
-                    })}>Venues</NavLink>
-                    
+                  <li onClick={handleEventClick} className="text-cMono100 bg-cBlue200 py-1 px-3 rounded-md">Events</li>
+                  <li onClick={handlePollsClick} className="text-cMono100 bg-cBlue200 py-1 px-3 rounded-md">Polls</li>
+                  <li onClick={handleVenuesClick} className="text-cMono100 bg-cBlue200 py-1 px-3 rounded-md">Venues</li>
                 </ul>
             </nav>
         </div>

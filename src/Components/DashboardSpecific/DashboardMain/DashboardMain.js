@@ -7,9 +7,7 @@ import { useState } from 'react';
 import DashboardPolls from '../DashboardNav/DashboardPolls';
 import DashboardVenues from '../DashboardNav/DashboardVenues';
 
-const DashboardMain = () => {
-
-    const [tab, setTab] = useState(0);
+const DashboardMain = ({tab, setTab}) => {
 
     const mainDisplay = (tab) => {
         switch (tab) {
