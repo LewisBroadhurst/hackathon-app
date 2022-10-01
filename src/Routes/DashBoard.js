@@ -1,6 +1,6 @@
-import DashboardMain from "../../Components/DashboardSpecific/DashboardMain/DashboardMain";
-import Header from "../../Components/Header/Header";
-import NavSidebar from "../../Components/NavSidebar/NavSidebar";
+import DashboardMain from "../Components/DashboardSpecific/DashboardMain/DashboardMain";
+import Header from "../Components/Header/Header";
+import NavSidebar from "../Components/NavSidebar/NavSidebar";
 
 const DashBoard = () => {
   return (
