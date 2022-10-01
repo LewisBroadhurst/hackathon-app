@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getAllEvents } from '../../API/EventAPI';
+import { getAllOrganisations } from '../../API/OrganisationAPI';
 
 const LoginForm = () => {
+
+  const [organisations, setOrganisations] = useState([]);
+  const [events, setEvents] = useState([]);
+
+  useEffect( () => {
+    getAllOrganisations(setOrganisations);
+    console.log(organisations);
+
+    getAllEvents(setEvents);
+    console.log(events);
+  }, [])
 
   return (
     <>
