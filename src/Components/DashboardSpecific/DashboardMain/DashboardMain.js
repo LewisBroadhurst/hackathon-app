@@ -36,7 +36,9 @@ const DashboardMain = ({tab, setTab}) => {
                 <PromoVenueTablet />
             </div>
 
-            {mainDisplay(tab)}
+            <div className='flex flex-col bg-white rounded-md border-2 border-cMono400 md:col-start-3 md:col-end-8 xl:col-start-4 xl:col-end-7'>
+                {mainDisplay(tab)}
+            </div>
 
             <div className="md:col-start-3 md:col-end-8 lg:col-start-8 lg:col-end-10 xl:col-start-7 xl:col-end-9">
                 <EventTablet />
