@@ -1,6 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import AddVenue from "../AddVenue/AddVenue";
 
 const RegisterForm = () => {
+
+  const [toggleAddVenue, setToggleAddVenue] = useState("hidden")
+
+  const handleCreateVenueToggle = (event) => {
+    event.preventDefault()
+
+    if (toggleAddVenue === "hidden") {
+      return setToggleAddVenue("flex");
+    }
+
+    return setToggleAddVenue("hidden");
+  }
+
+
   return (
     <>
       <section className="flex flex-col items-stretch lg:w-1/3 lg:mx-auto lg:justify-center">
@@ -48,6 +64,14 @@ const RegisterForm = () => {
             <button className='bg-red-500 p-2 mx-1 rounded-lg w-1/2'>Google</button>
           </div>
 
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-center text-cBlue500 underline" onClick={handleCreateVenueToggle}>Want to register your venue to our app?</h3>
+        </div>
+
+        <div className={`${toggleAddVenue} w-full h-full fixed bg-cBlue300 z-10`}>
+          <AddVenue setToggleAddVenue={setToggleAddVenue} />
         </div>
         
       </section>

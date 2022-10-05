@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllEvents } from '../../API/EventAPI';
 import { getAllOrganisations } from '../../API/OrganisationAPI';
+import AddVenue from '../AddVenue/AddVenue';
 
 const LoginForm = () => {
 
@@ -15,7 +16,19 @@ const LoginForm = () => {
 
     getAllEvents(setEvents);
     console.log(events);
-  }, [])
+  }, []);
+
+  const [toggleAddVenue, setToggleAddVenue] = useState("hidden")
+
+  const handleCreateVenueToggle = (event) => {
+    event.preventDefault()
+
+    if (toggleAddVenue === "hidden") {
+      return setToggleAddVenue("flex");
+    }
+
+    return setToggleAddVenue("hidden");
+  }
 
   return (
     <>
@@ -61,6 +74,14 @@ const LoginForm = () => {
         </div>
 
       </div>
+
+      <div className="mt-10">
+        <h3 className="text-center text-cBlue500 underline" onClick={handleCreateVenueToggle}>Want to register your venue to our app?</h3>
+      </div>
+
+      <div className={`${toggleAddVenue} w-full h-full fixed bg-cBlue300 z-10`}>
+          <AddVenue setToggleAddVenue={setToggleAddVenue} />
+        </div>
       </section>
     </>
   )
