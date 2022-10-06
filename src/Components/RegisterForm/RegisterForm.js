@@ -1,10 +1,31 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { createUser } from "../../API/UserAPI";
 import AddVenue from "../AddVenue/AddVenue";
+
+const defaultFormFields = {
+  "userName": '',
+};
 
 const RegisterForm = () => {
 
-  const [toggleAddVenue, setToggleAddVenue] = useState("hidden")
+  const [toggleAddVenue, setToggleAddVenue] = useState("hidden");
+
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const {userName} = formFields;
+
+  const handleChange = (event) => {
+    const {name, value} = event.target;
+
+    setFormFields({...formFields, [name]: `${value}`});
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log(formFields);
+    createUser(formFields);
+  }
 
   const handleCreateVenueToggle = (event) => {
     event.preventDefault()
@@ -14,7 +35,7 @@ const RegisterForm = () => {
     }
 
     return setToggleAddVenue("hidden");
-  }
+  };
 
 
   return (
@@ -26,7 +47,7 @@ const RegisterForm = () => {
 
           <p className='text-2xl'>Create an account</p>
 
-          <form className='flex flex-col mt-6 self-stretch mx-auto w-2/3'>
+          <form onSubmit={handleSubmit} className='flex flex-col mt-6 self-stretch mx-auto w-2/3'>
 
             <div className='flex flex-col pt-2 py-1'>
             <label className='text-xl'>Full Name*</label>
@@ -35,7 +56,7 @@ const RegisterForm = () => {
 
             <div className='flex flex-col py-1'>
             <label className='text-xl'>Username*</label>
-            <input className='border border-black rounded-md p-1'></input>
+            <input onChange={handleChange} name="userName" value={userName} className='border border-black rounded-md p-1'></input>
             </div>
 
             <div className='flex flex-col pt-1 pb-2'>

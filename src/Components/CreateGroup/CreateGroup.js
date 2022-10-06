@@ -3,20 +3,20 @@ import { useState } from 'react'
 import { createOrganisation } from '../../API/OrganisationAPI';
 
 const defaultFormFields = {
-    name: '',
-    email: '',
-    phoneNumber: ''
-}
+    "name": '',
+    "email": '',
+    "phoneNo": '',
+};
 
 const CreateGroup = ({toggleDisplay}) => {
 
     const [formFields, setFormFields] = useState(defaultFormFields);
-    const {name, email, phoneNumber} = formFields;
+    const {name, email, phoneNo} = formFields;
 
     const handleChange = (event) => {
         const {name, value} = event.target;
 
-        setFormFields({...formFields, [name]: value});
+        setFormFields({...formFields, [name]: `${value}`});
     }
 
     const handleSubmit = (event) => {
@@ -57,12 +57,12 @@ const CreateGroup = ({toggleDisplay}) => {
 
             <div className='flex flex-col'>
                 <label>Phone No.</label>
-                <input type={"text"} required onChange={handleChange} name="phoneNumber" value={phoneNumber} />
+                <input type={"text"} required onChange={handleChange} name="phoneNo" value={phoneNo} />
             </div>
 
             <div className='flex flex-col'>
                 <label>Password</label>
-                <input type={"text"} onChange={handleChange} />
+                <input type={"text"} name="password" onChange={handleChange} />
             </div>
 
             <button type='submit' className='bg-cBlue200 mt-2 py-2'>Create Group!</button>

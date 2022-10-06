@@ -1,11 +1,34 @@
 import React from 'react'
+import { useState } from 'react';
+import { createVenue } from '../../API/VenueAPI';
+
+const defaultVenueFields = {
+    "name": '',
+    "location": '',
+    "type": ''
+}
 
 const AddVenue = ({setToggleAddVenue}) => {
+
+    const [venuePayload, setAddVenuePayload] = useState(defaultVenueFields);
+    const {name, location, type} = venuePayload;
+
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+
+        setAddVenuePayload( {...venuePayload, [name]: `${value}`} );
+    }
 
     const handleCloseVenue = (event) => {
         event.preventDefault();
 
         setToggleAddVenue("hidden");
+    }
+
+    const handleAddVenue = (event) => {
+        event.preventDefault();
+
+        createVenue(venuePayload);
     }
 
   return (
@@ -16,23 +39,18 @@ const AddVenue = ({setToggleAddVenue}) => {
             <button className='bg-red-600 px-2 text-white' onClick={handleCloseVenue}>X</button>
         </div>
 
-        <form className='flex flex-col gap-3'>
-            <div className='flex flex-col gap-1'>
-                <label className=''>Name</label>
-                <input className='rounded-md' />
-            </div>
+        <form className='flex flex-col gap-3' onSubmit={handleAddVenue}>
 
-            <div className='flex flex-col gap-1'>
-                <label>Event type</label>
-                <input />
-            </div>
+            <label className=''>Name</label>
+            <input required type={"text"} onChange={handleChange} value={name} name="name" />
 
-            <div className='flex flex-col gap-1'>
-                <label>Location</label>
-                <input />
-            </div>
+            <label>Event type</label>
+            <input className='' type={"text"} onChange={handleChange} required name="type" value={type}/>
+            
+            <label>Location</label>
+            <input className='' required type={"text"} value={location} onChange={handleChange} name="location" />
 
-            <button className='bg-cBlue200 rounded-md p-2'>Register Venue</button>
+            <button type='submit' className='bg-cBlue200 rounded-md p-2'>Register Venue</button>
 
         </form>
     </section>
