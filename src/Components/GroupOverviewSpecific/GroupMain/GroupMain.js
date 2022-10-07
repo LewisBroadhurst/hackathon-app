@@ -5,7 +5,7 @@ import EventTablet from "../../EventTablet/EventTablet";
 
 const GroupMain = () => {
   return (
-    <section className="m-5 my-20 flex flex-col text-cBlack500 md:ml-24 md:mt-28">
+    <section className="m-5 my-20 flex flex-col text-cBlack500 md:mt-28">
 
         <GroupBanner />
 

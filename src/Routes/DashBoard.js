@@ -1,6 +1,5 @@
 import DashboardMain from "../Components/DashboardSpecific/DashboardMain/DashboardMain";
 import Header from "../Components/Header/Header";
-import NavSidebar from "../Components/NavSidebar/NavSidebar";
 
 const DashBoard = ({tab, setTab}) => {
   return (
@@ -8,13 +7,11 @@ const DashBoard = ({tab, setTab}) => {
         <Header />
 
         <div className="flex flex-row">
-          <div className="flex fixed h-screen p-1">
-            <NavSidebar />
-          </div>
-            
+
           <div className="flex flex-col items-stretch w-full">
             <DashboardMain tab={tab} setTab={setTab} />
           </div>
+
         </div>
     </section>
   )
