@@ -32,8 +32,19 @@ const Header = () => {
                     <FontAwesomeIcon icon={faBell} />
                 </div>
 
-                <div className="w-10 rounded-full">
-                    <img src={Portrait} alt="" className="rounded-full"/>
+                
+
+                <div className="dropdown dropdown-end">
+                    <label tabIndex={0}>
+                    <div className="w-10 rounded-full cursor-pointer">
+                        <img src={Portrait} alt="" className="rounded-full"/>
+                    </div>
+                    </label>
+                    <ul tabIndex={0} className="dropdown-content mt-2 menu p-2 shadow bg-base-100 rounded-box w-40 text-black flex flex-col items-start">
+                        <li>Account</li>
+                        <li>Messages</li>
+                        <li>Notifications</li>
+                    </ul>
                 </div>
             </div>
         </div>
