@@ -1,3 +1,4 @@
+import React from 'react';
 import Portrait from "../../Assets/PortraitSquared.jpg";
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

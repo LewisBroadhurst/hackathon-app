@@ -1,3 +1,4 @@
+import * as React from 'react';
 import LoginForm from "../Components/LoginForm/LoginForm";
 import LoginFriendsPhoto from "../Assets/login-friends-photo.jpg";
 import LoginFriendsDesktop from "../Assets/login-friends-desktop.jpg";
