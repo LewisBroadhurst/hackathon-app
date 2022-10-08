@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllEvents } from '../../API/EventAPI';
 import { getAllOrganisations } from '../../API/OrganisationAPI';
