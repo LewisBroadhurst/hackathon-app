@@ -2,7 +2,7 @@ import Portrait from "../../Assets/PortraitSquared.jpg";
 
 const PollPost = () => {
   return (
-    <section className="p-5 rounded-md bg-cMono200 border-2 border-cMono400">
+    <section className="p-5 rounded-md bg-white border-2 border-cMono400">
         <div>
             <div className="flex flex-row items-center">
                 <img src={Portrait} alt="" className="w-12 rounded-full mr-4"/>
@@ -42,7 +42,7 @@ const PollPost = () => {
                 </div>
 
                 <div className="flex flex-row items-center gap-2 xl:-order-2">
-                    <button className="w-28 py-1 bg-cBlue500 border-2 border-cBlue500 text-white">Like</button>
+                    <button className="w-28 py-1 bg-cBlue500 border-2 border-cMono300">Like</button>
                     <button className="w-28 py-1 bg-white border-2 border-cBlue500">Comment</button>
                 </div>
             </div>

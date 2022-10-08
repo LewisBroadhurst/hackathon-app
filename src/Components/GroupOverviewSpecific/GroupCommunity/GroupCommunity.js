@@ -1,5 +1,6 @@
 import React from 'react'
 import CommunityPost from '../../CommunityPost/CommunityPost';
+import PollPost from '../../PollPost/PollPost';
 
 const GroupCommunity = () => {
   return (
@@ -7,9 +8,13 @@ const GroupCommunity = () => {
         <div className='flex flex-col gap-2'>
             <CommunityPost />
 
+            <PollPost />
+
             <CommunityPost />
 
             <CommunityPost />
+
+            <PollPost />
         </div>
     </section>
   )
