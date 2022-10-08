@@ -1,34 +1,34 @@
 import NotificationBell from "../../Assets/notification-bell.png";
 import Portrait from "../../Assets/PortraitSquared.jpg";
-import SearchMag from "../../Assets/SearchMag.png"
 
-const DashboardNav = () => {
+const Header = () => {
   return (
-    <section className="bg-cBlue500 text-white fixed w-screen">
-        <div className="flex flex-row justify-between items-center mx-5 py-2 text-cBlack500">
+    <section className="fixed w-screen border-b-2 bg-cMono500 z-10 text-white">
+        <div className="flex flex-row justify-between items-center py-1 text-cBlack500 w-[1200px] mx-auto">
 
-            <div className="flex flex-row items-baseline">
-                <h2 className="text-3xl mr-5">Five Star</h2>
+            <div className="flex flex-row items-center gap-4">
+                <h2 className="text-2xl">Five</h2>
+
+                <div className="form-control text-black">
+                    <div className="input-group input-group-sm">
+                        <input type="text" placeholder="Search…" className="input input-bordered input-sm" />
+                        <button className="btn btn-square btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                        </button>
+                    </div>
+                </div>
             </div>
             
 
-            <div className="flex flex-row items-center gap-6">
-
-                <form className="hidden md:flex flex-row items-center">
-                        <input type={"text"} placeholder={"Search"} className="rounded-md p-2" />
-                        <button type="button" className="rounded-full bg-slate-500 w-7 h-7 -translate-x-3 flex justify-center items-center">
-                            <img src={SearchMag} alt="" className="h-4 w-4"/>
-                        </button>
-                </form>
-
-                <div className="w-10 bg-slate-400 rounded-full p-2">
+            <div className="flex flex-row items-center gap-3">
+                <div className="w-10 rounded-md p-2">
                     <img src={NotificationBell} alt="Notification Bell" />
-                    <div className="bg-red-600 rounded-full w-6 h-6 translate-x-5 -translate-y-9 absolute flex justify-center">
-                        <span className="text-white">1</span>
-                    </div>
+                </div>
+                <div className="w-10 rounded-md p-2">
+                    <img src={NotificationBell} alt="Notification Bell" />
                 </div>
 
-                <div className="w-12 bg-slate-400 rounded-full">
+                <div className="w-10 rounded-full">
                     <img src={Portrait} alt="" className="rounded-full"/>
                 </div>
             </div>
@@ -37,4 +37,4 @@ const DashboardNav = () => {
   )
 }
 
-export default DashboardNav;
+export default Header;
