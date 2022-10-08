@@ -32,7 +32,7 @@ jobs:
         npm ci
     - name: Build the app
       run: |
-        cd hackathon-app
+        cd ../hackathon-app
         npm run test
     - name: Run component tests
       run: |
