@@ -2,6 +2,7 @@ import PromoVenueTablet from "../../PromotedVenuesTablet/PromoVenueTablet";
 import GroupBanner from "../GroupBanner/GroupBanner";
 import GroupCommunity from "../GroupCommunity/GroupCommunity";
 import EventTablet from "../../EventTablet/EventTablet";
+import GroupDetailsTablet from "../../GroupDetailsTablet/GroupDetailsTablet";
 
 const GroupMain = () => {
   return (
@@ -12,6 +13,7 @@ const GroupMain = () => {
 
         <div className="flex flex-row gap-5 py-6">
             <div className="w-[350px]">
+                <GroupDetailsTablet />
                 <PromoVenueTablet />
             </div>
 
