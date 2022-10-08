@@ -3,6 +3,7 @@ import GroupBanner from "../GroupBanner/GroupBanner";
 import GroupCommunity from "../GroupCommunity/GroupCommunity";
 import EventTablet from "../../EventTablet/EventTablet";
 import GroupDetailsTablet from "../../GroupDetailsTablet/GroupDetailsTablet";
+import GroupMembersCard from "../GroupMembersCard/GroupMembersCard";
 
 const GroupMain = () => {
   return (
@@ -11,7 +12,7 @@ const GroupMain = () => {
 
         <GroupBanner />
 
-        <div className="flex flex-row gap-5 py-6">
+        <div className="flex flex-row gap-4 py-6">
             <div className="w-[350px] flex flex-col gap-3">
                 <GroupDetailsTablet />
                 <PromoVenueTablet />
@@ -21,7 +22,8 @@ const GroupMain = () => {
                 <GroupCommunity />
             </div>
 
-            <div className="w-[350px]">
+            <div className="w-[350px] flex flex-col gap-2">
+                <GroupMembersCard />
                 <EventTablet />
             </div>  
         </div>

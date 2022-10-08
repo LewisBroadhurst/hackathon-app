@@ -2,7 +2,7 @@ import Portrait from "../../Assets/PortraitSquared.jpg";
 
 const CommunityPost = () => {
   return (
-    <section className="p-5 bg-cMono200 rounded-md border-2 border-cMono400">
+    <section className="p-5 bg-white rounded-md border-2 border-cMono400">
         <div>
             <div className="flex flex-row items-center">
                 <img src={Portrait} alt="" className="w-12 rounded-full mr-4"/>
