@@ -42,7 +42,4 @@ jobs:
       run: |
         cd hackathon-app
         npm start &
-        npz wait-on --timeout 60000
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+        npx wait-on --timeout 60000
