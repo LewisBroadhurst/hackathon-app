@@ -1,32 +1,44 @@
 import React from 'react';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const GroupDetailsTablet = () => {
-
-    const handleMoreInfoClick = (event) => {
-        event.preventDefault();
-
-        console.log('click');
-    }
 
   return (
     <>
     <section className=''>
-    <div className="flex flex-col gap-2 w-full border-2 border-cMono400 bg-white rounded-md p-3">
+    <div className="flex flex-col gap-2 w-full border-2 border-cMono400 bg-white rounded-md">
 
-        <div className=''>
-            <h3 className='text-lg font-bold'>About Bright Network Socials</h3>
+        <div className='flex flex-col gap-1 py-1 px-5 pt-3'>
+        <h3 className='font-bold'>About Bright Network Socials</h3>
 
-            <p className="text-sm">Welcome to the BNTA socials group! This quarter will be run by Oliver, Aaron, Michelle, and Hasmeet. We usually try to organise our socials to occur on the last friday of each month, so please remember to vote early so your voice can be heard!
-            </p>
+        <p className="text-sm">Welcome to the BNTA socials group! This quarter will be run by Oliver, Aaron, Michelle, and Hasmeet. We usually try to organise our socials to occur on the last friday of each month, so please remember to vote early so your voice can be heard!
+        </p>
         </div>
 
-        <div className='border-t py-1 flex justify-center hover:bg-cMono500 hover:cursor-pointer' onClick={handleMoreInfoClick}>
-            <span className='text-center text-md'>More info.</span>
-        </div>
+        <label htmlFor="my-modal" className="modal-button flex gap-3 justify-center items-center border-t rounded-b-md py-2 hover:text-white hover:bg-cMono500 hover:cursor-pointer">
+          <span className='text-center text-md'>More info.</span>
+          <span><FontAwesomeIcon icon={faArrowRight} /> </span>
+        </label>
 
     </div>
     </section>
+    
+    {/* CODE FOR MODAL */}
 
+    <input type="checkbox" id="my-modal" className="modal-toggle" />
+    <div className="modal">
+      <div className="modal-box">
+        <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
+        <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+        <div className="modal-action">
+          <label htmlFor="my-modal" className="btn">Yay!</label>
+        </div>
+      </div>
+    </div>
+
+    {/* CODE FOR MODAL */}
 
     </>
   )
