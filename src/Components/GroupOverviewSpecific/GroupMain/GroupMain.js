@@ -12,7 +12,7 @@ const GroupMain = () => {
         <GroupBanner />
 
         <div className="flex flex-row gap-5 py-6">
-            <div className="w-[350px]">
+            <div className="w-[350px] flex flex-col gap-3">
                 <GroupDetailsTablet />
                 <PromoVenueTablet />
             </div>
