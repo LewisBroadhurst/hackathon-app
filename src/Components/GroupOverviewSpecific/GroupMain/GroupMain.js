@@ -5,24 +5,26 @@ import EventTablet from "../../EventTablet/EventTablet";
 
 const GroupMain = () => {
   return (
-    <section className="m-5 my-20 flex flex-col text-cBlack500 md:mt-28">
+    <section className="bg-cMono300 flex flex-col text-cBlack500 mt-12">
+        <div className="w-[1200px] mx-auto">
 
         <GroupBanner />
 
-        <div className="flex flex-col grid-cols-7 gap-5 justify-around mt-6 md:grid lg:flex-row">
-            <div className="col-start-1 col-end-3 xl:col-start-2">
+        <div className="flex flex-row gap-5 py-6">
+            <div className="w-[350px]">
                 <PromoVenueTablet />
             </div>
 
-            <div className="col-start-3 col-end-6">
+            <div className="w-[700px]">
                 <GroupCommunity />
             </div>
 
-            <div className="col-start-6 col-end-8 xl:col-end-7">
+            <div className="w-[350px]">
                 <EventTablet />
             </div>  
         </div>
 
+        </div>
     </section>
   )
 }

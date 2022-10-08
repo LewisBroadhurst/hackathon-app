@@ -3,7 +3,7 @@ import Portrait from "../../Assets/PortraitSquared.jpg";
 
 const Header = () => {
   return (
-    <section className="fixed w-screen border-b-2 bg-cMono500 z-10 text-white">
+    <section className="fixed w-screen bg-cMono500 z-10 text-white">
         <div className="flex flex-row justify-between items-center py-1 text-cBlack500 w-[1200px] mx-auto">
 
             <div className="flex flex-row items-center gap-4">

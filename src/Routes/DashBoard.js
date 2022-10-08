@@ -1,4 +1,4 @@
-import DashboardMain from "../Components/DashboardSpecific/DashboardMain/DashboardMain";
+import DashboardMain from "../DeprecatedComponents/DashboardMain/DashboardMain";
 import Header from "../Components/Header/Header";
 
 const DashBoard = ({tab, setTab}) => {
