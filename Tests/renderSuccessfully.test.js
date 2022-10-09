@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Header from '../src/Components/Header/Header';
 import EventTablet from '../src/Components/EventTablet/EventTablet';
-import AddVenue from '../src/Components/AddVenue/AddVenue'
 import AdminMembers from '../src/Components/AdminMembers/AdminMembers';
 import AdminVenues from '../src/Components/AdminVenues/AdminVenues';
 
@@ -25,12 +24,6 @@ it("EventTablet renders", () => {
     expect(linkElement).toBeInTheDocument();
 });
 
-// it("AddVenue renders", () => {
-//     render(<AddVenue />);
-//     const linkElement = screen.getByText(/Register Venue/i)
-    
-//     expect(linkElement).toBeInTheDocument();
-// });
 
 it("AdminMembers renders", () => {
     render(<AdminMembers />);
