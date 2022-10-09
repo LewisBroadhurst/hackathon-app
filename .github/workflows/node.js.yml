@@ -28,15 +28,19 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: |
+        cd ../hackathon-app 
         npm ci
     - name: Build the app
       run: |
+        cd ../hackathon-app
         npm install axios --save
         npm run test
     - name: Run component tests
       run: |
+        cd ../hackathon-app
         npm run test
     - name: Start the app
       run: |
+        cd ../hackathon-app
         npm start &
         npx wait-on --timeout 60000
