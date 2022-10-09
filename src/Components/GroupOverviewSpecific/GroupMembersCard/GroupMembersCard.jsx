@@ -1,6 +1,7 @@
 import React from 'react';
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import MemberCardSmall from '../../MemberCards/MemberCardSmall';
 
 const GroupMembersCard = () => {
   return (
@@ -13,31 +14,32 @@ const GroupMembersCard = () => {
         <h3 className='font-bold text-center'>Group Members</h3>
 
         <ul className='flex flex-row justify-center'>
-            <li className="avatar online">
-                <div className="w-12 rounded-full">
-                    <img src="https://placeimg.com/192/192/people" alt="" />
-                </div>
-            </li>
-            <li className="avatar online -ml-2">
-                <div className="w-12 rounded-full">
-                    <img src="https://placeimg.com/192/192/people" alt="" />
-                </div>
-            </li>
-            <li className="avatar offline -ml-2">
-                <div className="w-12 rounded-full">
-                    <img src="https://placeimg.com/192/192/people" alt="" />
-                </div>
-            </li>
-            <li className="avatar online -ml-2">
-                <div className="w-12 rounded-full">
-                    <img src="https://placeimg.com/192/192/people" alt="" />
-                </div>
-            </li>
-            <li className="avatar placeholder flex justify-center items-center bg-cMono800 rounded-full -ml-2">
-                <div className="w-12 rounded-full flex justify-center items-center text-white">
-                    +10
-                </div>
-            </li>
+
+          <li className="avatar online">
+              <div className="w-12 rounded-full">
+                  <img src="https://placeimg.com/192/192/people" alt="" />
+              </div>
+          </li>
+          <li className="avatar online -ml-2">
+              <div className="w-12 rounded-full">
+                  <img src="https://placeimg.com/192/192/people" alt="" />
+              </div>
+          </li>
+          <li className="avatar offline -ml-2">
+              <div className="w-12 rounded-full">
+                  <img src="https://placeimg.com/192/192/people" alt="" />
+              </div>
+          </li>
+          <li className="avatar online -ml-2">
+              <div className="w-12 rounded-full">
+                  <img src="https://placeimg.com/192/192/people" alt="" />
+              </div>
+          </li>
+          <li className="avatar placeholder flex justify-center items-center bg-cMono800 rounded-full -ml-2">
+              <div className="w-12 rounded-full flex justify-center items-center text-white">
+                  +10
+              </div>
+          </li>
         </ul>
 
         </div>
@@ -54,25 +56,27 @@ const GroupMembersCard = () => {
 
     <input type="checkbox" id="members-modal" className="modal-toggle" />
     <div className="modal">
-      <div className="modal-box">
-        <h3 className="font-bold text-lg">All members of Bright Network Socials</h3>
-       
-       <ul className='flex flex-col'>
-        <li>LMB</li>
-        <li>LMB</li>
-        <li>LMB</li>
-        <li>LMB</li>
-        <li>LMB</li>
-        <li>LMB</li>
-        <li>LMB</li>
-        <li>LMB</li>
-        <li>LMB</li>
-        <li>LMB</li>
-        <li>LMB</li>
-       </ul>
-        <div className="modal-action">
-          <label htmlFor="members-modal" className="btn">Yay!</label>
+      <div className="modal-box h-[700px]">
+
+        <div className='flex flex-row justify-between items-center pb-1 border-b-2 border-cMono700 mb-4'>
+          <h3 className="font-bold text-lg">All members of Bright Network Socials</h3>
+          <label htmlFor="members-modal" className="btn btn-xs btn-circle">✕</label>
         </div>
+
+        <ul className='flex flex-col gap-2'>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+          <li><MemberCardSmall /></li>
+        </ul>
       </div>
     </div>
 

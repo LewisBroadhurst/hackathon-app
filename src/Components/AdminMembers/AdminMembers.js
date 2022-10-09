@@ -1,4 +1,6 @@
 import React from 'react'
+import MemberCardAdmin from '../MemberCards/MemberCardAdmin';
+import MemberCardSmall from '../MemberCards/MemberCardSmall';
 
 const AdminMembers = () => {
   return (
@@ -16,21 +18,20 @@ const AdminMembers = () => {
             </div>
 
             <div className='overflow-scroll overflow-x-hidden p-2 border-2 border-black rounded-lg self-stretch'>
-                <ul>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
+                <ul className='flex flex-col gap-1'>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
+                    <li><MemberCardAdmin /></li>
                 </ul>
             </div>
         </div>
