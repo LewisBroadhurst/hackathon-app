@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Scrollbar style for Chrome */
+
+/* Track */
+::-webkit-scrollbar
+{
+  width: 0.25rem;
+  border-radius: 1rem;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb
+{
+  background: #404040;
+  border-radius: 1rem;
+  scrollbar-color: blue;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active,
+::-webkit-scrollbar-thumb:focus {
+  background: red;
+}
+
+/* Buttons */
+::-webkit-scrollbar-button
+{
+  display: none;
+}
