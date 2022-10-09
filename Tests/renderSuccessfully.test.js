@@ -38,3 +38,23 @@ it("AdminVenues renders", () => {
     
     expect(linkElement).toBeInTheDocument();
 });
+
+// To test a prop
+
+// it('Testing a prop', () => {
+//     render<(React.Component prop={prop} />);
+//     const propElement = screen.getByText(/Hello World/i);
+//     const propHeader = screen.getByRole("heading"/"paragraph"/"img")
+//     const propHeader = screen.getByRole("heading", { name: "My Header"})
+
+//     Remember that getBy vs. findAll
+//     If async... findBy NOT getBy
+
+//     expect(propElement).toBeInTheDocument();
+// })
+
+// it('Testing a prop', () => {
+    //     render<(React.Component prop={prop} />);
+    //     const propElement = screen.getAllByRole("heading");
+    //     expect(propElements.length).toBe(2);
+// })
