@@ -31,6 +31,7 @@ jobs:
         npm ci
     - name: Build the app
       run: |
+        npm install axios --save
         npm run test
     - name: Run component tests
       run: |
