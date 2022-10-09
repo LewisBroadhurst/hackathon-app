@@ -15,7 +15,7 @@ const GroupOverviewEventCard = () => {
 
           <span className="text-xs">18th September @ 3pm</span>
 
-          <span className="text-xs">17 attendees, including Oliver</span>
+          <span className="text-xs">17 attendees</span>
         </div>
     </section>
   )

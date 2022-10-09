@@ -1,6 +1,6 @@
 import React from 'react';
 import Portrait from "../../Assets/PortraitSquared.jpg";
-import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faBell, faEnvelope, faImagePortrait } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
@@ -41,10 +41,11 @@ const Header = () => {
                         <img src={Portrait} alt="" className="rounded-full"/>
                     </div>
                     </label>
-                    <ul tabIndex={0} className="dropdown-content mt-2 menu p-2 shadow bg-base-100 rounded-box w-40 text-black flex flex-col items-start">
-                        <li>Account</li>
-                        <li>Messages</li>
-                        <li>Notifications</li>
+                    <ul tabIndex={0} className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box text-black flex flex-col">
+                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faImagePortrait} /> <span>Account</span></li>
+                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faEnvelope} /> <span>Messages</span></li>
+                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faBell} /> <span>Notifications</span></li>
+                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faArrowRightFromBracket} /> <span>Sign Out</span></li>
                     </ul>
                 </div>
             </div>
