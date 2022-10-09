@@ -1,5 +1,17 @@
+import { useState } from "react"
+
+const defaultActiveTab = {
+  'Overview': '',
+  'Events': '',
+  'Polls': '',
+  'Venues': '',
+}
+
 
 const GroupBanner = () => {
+
+  const [activeTab, setActiveTab] = useState(defaultActiveTab);
+
   return (
     <section className="py-6 border-b border-cMono800 flex flex-row gap-5">
 
@@ -19,10 +31,17 @@ const GroupBanner = () => {
         </nav> */}
 
         <div className="tabs tabs-boxed flex gap-2 mt-4">
-          <a className="tab tab-active">Overview</a> 
-          <a className="tab">Events</a> 
-          <a className="tab">Polls</a>
-          <a className="tab">Venues</a> 
+          <span className={`tab `}>Overview</span>
+          <span className={`tab `}>Events</span>
+          <span className={`tab `}>Polls</span>
+          <span className={`tab `}>Venues</span>
+          {
+            ['Overview', 'Events', 'Polls', 'Venues'].map( (tab) => {
+              return (
+                <span key={tab} className={`tab `}>{tab}</span>
+              )
+            })
+          }
         </div>
       </div>
 
