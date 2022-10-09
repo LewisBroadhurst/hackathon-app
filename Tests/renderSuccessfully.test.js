@@ -25,12 +25,12 @@ it("EventTablet renders", () => {
     expect(linkElement).toBeInTheDocument();
 });
 
-it("AddVenue renders", () => {
-    render(<AddVenue />);
-    const linkElement = screen.getByText(/Register Venue/i)
+// it("AddVenue renders", () => {
+//     render(<AddVenue />);
+//     const linkElement = screen.getByText(/Register Venue/i)
     
-    expect(linkElement).toBeInTheDocument();
-});
+//     expect(linkElement).toBeInTheDocument();
+// });
 
 it("AdminMembers renders", () => {
     render(<AdminMembers />);
