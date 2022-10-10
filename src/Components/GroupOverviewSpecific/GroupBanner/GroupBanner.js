@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const defaultActiveTab = {
-  'Overview': '',
+  'Overview': 'tab-active',
   'Events': '',
   'Polls': '',
   'Venues': '',
@@ -11,6 +11,19 @@ const defaultActiveTab = {
 const GroupBanner = () => {
 
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
+
+  const handleTabChange = (event) => {
+    event.preventDefault();
+    console.log(event.target.getAttribute('name'));
+    const clickedTab = event.target.getAttribute('name');
+
+    Object.keys(activeTab).forEach((key) => {
+      setActiveTab(activeTab[key] = '');
+    });
+
+    setActiveTab( {...activeTab, [clickedTab]: 'tab-active'} );
+  }
+        
 
   return (
     <section className="py-6 border-b border-cMono800 flex flex-row gap-5">
@@ -31,17 +44,10 @@ const GroupBanner = () => {
         </nav> */}
 
         <div className="tabs tabs-boxed flex gap-2 mt-4">
-          <span className={`tab `}>Overview</span>
-          <span className={`tab `}>Events</span>
-          <span className={`tab `}>Polls</span>
-          <span className={`tab `}>Venues</span>
-          {
-            ['Overview', 'Events', 'Polls', 'Venues'].map( (tab) => {
-              return (
-                <span key={tab} className={`tab `}>{tab}</span>
-              )
-            })
-          }
+          <span className={`tab ${activeTab.Overview}`} onClick={handleTabChange} name='Overview'>Overview</span>
+          <span className={`tab ${activeTab.Events}` } onClick={handleTabChange} name='Events'>Events</span>
+          <span className={`tab ${activeTab.Polls}`} onClick={handleTabChange} name='Polls'>Polls</span>
+          <span className={`tab ${activeTab.Venues}`} onClick={handleTabChange} name='Venues'>Venues</span>
         </div>
       </div>
 
