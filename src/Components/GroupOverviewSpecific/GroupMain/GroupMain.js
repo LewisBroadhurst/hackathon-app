@@ -6,13 +6,36 @@ import GroupDetailsTablet from "../../GroupDetailsTablet/GroupDetailsTablet";
 import GroupMembersCard from "../GroupMembersCard/GroupMembersCard";
 import { faPlus, faPen, faImage, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from "react";
+import DashboardBanner from "../../../DeprecatedComponents/DashboardBanner";
+import MainEvents from "./TabGroups/MainEvents";
+import MainVenues from "./TabGroups/MainVenues";
+import MainPolls from "./TabGroups/MainPolls";
 
 const GroupMain = () => {
+
+    const [tabContents, setTabContents] = useState('Overview');
+
+    const mainDisplay = (tabContents) => {
+        switch (tabContents) {
+            case 'Overview':
+                return <GroupCommunity />
+            case 'Events':
+                return <MainEvents />
+            case 'Polls':
+                return <MainPolls />
+            case 'Venues':
+                return <MainVenues />
+            default:
+                return <GroupCommunity />
+        }
+    }
+
   return (
     <section className="bg-cMono300 flex flex-col text-cBlack500 mt-12">
         <div className="w-[1200px] mx-auto">
 
-        <GroupBanner />
+        <GroupBanner setTabContents={setTabContents} />
 
         <div className="flex flex-row gap-4 py-6">
             <div className="w-[350px] flex flex-col gap-3">
@@ -21,7 +44,7 @@ const GroupMain = () => {
             </div>
 
             <div className="w-[700px]">
-                <GroupCommunity />
+                {mainDisplay(tabContents)}
             </div>
 
             <div className="w-[350px] flex flex-col gap-2">
