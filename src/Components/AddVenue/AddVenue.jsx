@@ -10,45 +10,45 @@ const defaultVenueFields = {
 
 const AddVenue = ({setToggleAddVenue}) => {
 
-    const [venuePayload, setAddVenuePayload] = useState(defaultVenueFields);
-    const {name, location, type} = venuePayload;
+    // const [venuePayload, setAddVenuePayload] = useState(defaultVenueFields);
+    // const {name, location, type} = venuePayload;
 
-    const handleChange = (event) => {
-        const {name, value} = event.target;
+    // const handleChange = (event) => {
+    //     const {name, value} = event.target;
 
-        setAddVenuePayload( {...venuePayload, [name]: `${value}`} );
-    }
+    //     setAddVenuePayload( {...venuePayload, [name]: `${value}`} );
+    // }
 
-    const handleCloseVenue = (event) => {
-        event.preventDefault();
+    // const handleCloseVenue = (event) => {
+    //     event.preventDefault();
 
-        setToggleAddVenue("hidden");
-    }
+    //     setToggleAddVenue("hidden");
+    // }
 
-    const handleAddVenue = (event) => {
-        event.preventDefault();
+    // const handleAddVenue = (event) => {
+    //     event.preventDefault();
 
-        createVenue(venuePayload);
-    }
+    //     createVenue(venuePayload);
+    // }
 
   return (
     <section>
 
         <div className='flex flex-row justify-between'>
             <h2>Add your venue!</h2>
-            <button className='bg-red-600 px-2 text-white' onClick={handleCloseVenue}>X</button>
+            <button className='bg-red-600 px-2 text-white'>X</button>
         </div>
 
-        <form className='flex flex-col gap-3' onSubmit={handleAddVenue}>
+        <form className='flex flex-col gap-3'>
 
             <label className=''>Name</label>
-            <input required type={"text"} onChange={handleChange} value={name} name="name" />
+            <input required type={"text"} name="name" />
 
             <label>Event type</label>
-            <input className='' type={"text"} onChange={handleChange} required name="type" value={type}/>
+            <input className='' type={"text"} required name="type" />
             
             <label>Location</label>
-            <input className='' required type={"text"} value={location} onChange={handleChange} name="location" />
+            <input className='' required type={"text"} name="location" />
 
             <button type='submit' className='bg-cBlue200 rounded-md p-2'>Register Venue</button>
 

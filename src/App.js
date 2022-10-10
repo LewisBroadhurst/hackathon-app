@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import RegisterSteps from './Components/RegisterSteps/RegisterSteps';
 import './input.css';
 import Admin from './Routes/Admin';
 import EventPage from './Routes/EventPage';
@@ -23,6 +24,8 @@ function App() {
             <Route path='/groupOverview' element={<GroupOverview />} />
             <Route path='/eventOverview' element={<EventPage />} />
             <Route path='/venues/allStarBowlingAlley' element={<VenuePage />} />
+
+            <Route path='registerOrganisation' element={<RegisterSteps />} />
 
           </Routes>
         </BrowserRouter>

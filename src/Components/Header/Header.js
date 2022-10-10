@@ -9,7 +9,7 @@ const Header = () => {
         <div className="flex flex-row justify-between items-center py-1 text-cBlack500 w-[1200px] mx-auto">
 
             <div className="flex flex-row items-center gap-4">
-                <h2 className="text-2xl">Five</h2>
+                <h2 className="text-2xl">FUN@5</h2>
 
                 <div className="form-control text-black">
                     <div className="input-group input-group-sm">
