@@ -1,4 +1,5 @@
 import React from 'react'
+import AdminVenueCard from '../VenueCards/AdminVenueCard';
 
 const AdminVenues = () => {
   return (
@@ -16,21 +17,17 @@ const AdminVenues = () => {
             </div>
 
             <div className='overflow-scroll overflow-x-hidden p-2 border-2 border-black rounded-lg self-stretch'>
-                <ul>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
+                <ul className='flex flex-col gap-1'>
+                    <li className=''><AdminVenueCard /></li>
+                    <li className=''><AdminVenueCard /></li>
+                    <li className=''><AdminVenueCard /></li>
+                    <li className=''><AdminVenueCard /></li>
+                    <li className=''><AdminVenueCard /></li>
+                    <li className=''><AdminVenueCard /></li>
+                    <li className=''><AdminVenueCard /></li>
+                    <li className=''><AdminVenueCard /></li>
+                    <li className=''><AdminVenueCard /></li>
+                    <li className=''><AdminVenueCard /></li>
                 </ul>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import OrgAdminCard from '../OrganisationCards/OrgAdminCard';
 
 const AdminOrganisations = () => {
   return (
@@ -16,21 +17,18 @@ const AdminOrganisations = () => {
             </div>
 
             <div className='overflow-scroll overflow-x-hidden p-2 border-2 border-black rounded-lg self-stretch'>
-                <ul>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
-                    <li className='py-5'>LMB</li>
+                <ul className='flex flex-col gap-1'>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
+                    <li><OrgAdminCard /></li>
                 </ul>
             </div>
         </div>
