@@ -57,23 +57,12 @@ const RegisterSteps = () => {
 
 
   return (
-    <section>
-    
-    <ul className="steps">
-        <li className="step step-primary">Entity</li>
-        <li className={`step ${stepsActive.stepTwo}`}>Details</li>
-        <li className={`step ${stepsActive.stepThree}`}>Payment</li>
-        <li className={`step ${stepsActive.stepFour}`}>Welcome!</li>
-    </ul>
-
-    <div className="btn-group">
-        <button className="btn" onClick={handleBackArrow}>Button</button>
-        <button className="btn" onClick={handleForwardArrow}>Button</button>
-    </div>
-
-    {stepTracker}
-        
-    </section>
+        <ul className="steps w-full">
+            <li className="step step-primary">Entity</li>
+            <li className={`step ${stepsActive.stepTwo}`}>Details</li>
+            <li className={`step ${stepsActive.stepThree}`}>Payment</li>
+            <li className={`step ${stepsActive.stepFour}`}>Welcome!</li>
+        </ul>
   )
 }
 

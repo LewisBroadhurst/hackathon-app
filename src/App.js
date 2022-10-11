@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RegisterSteps from './Components/RegisterSteps/RegisterSteps';
 import './input.css';
 import Admin from './Routes/Admin';
+import CommercialRegistration from './Routes/CommercialRegistration';
 import EventPage from './Routes/EventPage';
 import GroupOverview from './Routes/GroupOverview';
 import Login from './Routes/Login';
@@ -24,7 +25,7 @@ function App() {
             <Route path='/groupOverview' element={<GroupOverview />} />
             <Route path='/eventOverview' element={<EventPage />} />
 
-            <Route path='registerOrganisation' element={<RegisterSteps />} />
+            <Route path='commericalRegistration' element={<CommercialRegistration />} />
 
             <Route path='venues/FiveStarBowlingAlley' element={<Venue />} />
     
