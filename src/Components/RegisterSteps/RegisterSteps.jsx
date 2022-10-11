@@ -18,19 +18,19 @@ const RegisterSteps = () => {
             return;
         }
 
-        await setStepTracker(stepTracker - 1);
-
-        if (stepTracker === 3) {
+        if (stepTracker === 4) {
             setStepsActive( {...stepsActive, stepFour: ''})
         }
 
-        if (stepTracker === 2) {
+        if (stepTracker === 3) {
             setStepsActive( {...stepsActive, stepThree: ''})
         }
 
-        if (stepTracker === 1) {
+        if (stepTracker === 2) {
             setStepsActive( {...stepsActive, stepTwo: ''})
         }
+
+        setStepTracker(stepTracker - 1);
     }
 
     const handleForwardArrow = async (event) => {
@@ -40,21 +40,19 @@ const RegisterSteps = () => {
             return;
         }
 
-        await setStepTracker(stepTracker + 1);
-
-        if (stepTracker === 2) {
+        if (stepTracker === 1) {
             setStepsActive( {...stepsActive, stepTwo: 'step-primary'})
         }
 
-        if (stepTracker === 3) {
+        if (stepTracker === 2) {
             setStepsActive( {...stepsActive, stepThree: 'step-primary'})
         }
 
-        if (stepTracker === 4) {
+        if (stepTracker === 3) {
             setStepsActive( {...stepsActive, stepFour: 'step-primary'})
         }
         
-        console.log(stepTracker);
+        setStepTracker(stepTracker + 1);
     }
 
 

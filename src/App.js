@@ -7,7 +7,7 @@ import EventPage from './Routes/EventPage';
 import GroupOverview from './Routes/GroupOverview';
 import Login from './Routes/Login';
 import Register from './Routes/Register';
-import VenuePage from './Routes/VenuePage';
+import Venue from './Routes/Venue';
 
 function App() {
 
@@ -23,9 +23,11 @@ function App() {
 
             <Route path='/groupOverview' element={<GroupOverview />} />
             <Route path='/eventOverview' element={<EventPage />} />
-            <Route path='/venues/allStarBowlingAlley' element={<VenuePage />} />
 
             <Route path='registerOrganisation' element={<RegisterSteps />} />
+
+            <Route path='venues/FiveStarBowlingAlley' element={<Venue />} />
+    
 
           </Routes>
         </BrowserRouter>
