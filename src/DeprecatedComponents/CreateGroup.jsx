@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { createOrganisation } from '../../API/OrganisationAPI';
+import { createOrganisation } from '../API/OrganisationAPI';
 
 const defaultFormFields = {
     "name": '',

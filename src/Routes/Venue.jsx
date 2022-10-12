@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Components/Header/Header';
-import VenueMain from '../Components/VenueMain/VenueMain';
+import VenueMain from '../Components/VenueSpecific/VenueMain';
 
 const Venue = () => {
   return (

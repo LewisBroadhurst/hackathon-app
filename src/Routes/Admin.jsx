@@ -1,8 +1,8 @@
 import React from 'react'
-import AdminMembers from '../Components/AdminMembers/AdminMembers';
-import AdminOrganisations from '../Components/AdminOrganisations/AdminOrganisations';
-import AdminStats from '../Components/AdminStats/AdminStats';
-import AdminVenues from '../Components/AdminVenues/AdminVenues';
+import AdminMembers from '../Components/AdminSpecific/AdminMembers';
+import AdminOrganisations from '../Components/AdminSpecific/AdminOrganisations';
+import AdminStats from '../Components/AdminSpecific/AdminStats';
+import AdminVenues from '../Components/AdminSpecific/AdminVenues';
 import Header from '../Components/Header/Header';
 
 const Admin = () => {

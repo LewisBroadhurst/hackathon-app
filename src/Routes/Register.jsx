@@ -1,6 +1,6 @@
 import LoginFriendsPhoto from "../Assets/login-friends-photo.jpg";
 import LoginFriendsDesktop from "../Assets/login-friends-desktop2.jpg";
-import RegisterForm from "../Components/RegisterForm/RegisterForm";
+import RegisterForm from "../Components/Forms/RegisterForm";
 
 const Register = () => {
 

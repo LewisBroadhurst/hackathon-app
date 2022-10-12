@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.1.2",
     "daisyui": "^2.31.0",
     "jest": "^27.5.1",
     "react": "^18.2.0",
@@ -46,8 +47,8 @@
   "jest": {
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
-         "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
-         "\\.(css|less)$": "<rootDir>/mocks/fileMock.js"
-       }
-   }
+      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/mocks/fileMock.js"
+    }
+  }
 }

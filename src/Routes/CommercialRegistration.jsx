@@ -1,5 +1,5 @@
 import React from 'react';
-import RegisterSteps from '../Components/RegisterSteps/RegisterSteps';
+import RegisterSteps from '../Components/CommericalRegistration/RegisterSteps';
 import CommReg1 from '../Assets/commerical_reg_1.jpg';
 
 const CommercialRegistration = () => {

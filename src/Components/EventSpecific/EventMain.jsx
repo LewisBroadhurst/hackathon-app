@@ -1,4 +1,4 @@
-import GroupBanner from "../GroupOverviewSpecific/GroupBanner/GroupBanner";
+import GroupBanner from "../GroupOverviewSpecific/GroupBanner";
 import EventBanner from "./EventBanner";
 
 

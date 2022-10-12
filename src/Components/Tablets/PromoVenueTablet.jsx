@@ -1,4 +1,4 @@
-import GroupOverviewEventCard from "../EventCard/EventCard";
+import GroupOverviewEventCard from "../EventCards/EventCard";
 
 const PromoVenueTablet = () => {
   return (

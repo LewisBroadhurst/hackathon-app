@@ -1,16 +1,16 @@
-import PromoVenueTablet from "../../PromotedVenuesTablet/PromoVenueTablet";
-import GroupBanner from "../GroupBanner/GroupBanner";
-import GroupCommunity from "../GroupCommunity/GroupCommunity";
-import EventTablet from "../../EventTablet/EventTablet";
-import GroupDetailsTablet from "../../GroupDetailsTablet/GroupDetailsTablet";
-import GroupMembersCard from "../GroupMembersCard/GroupMembersCard";
+import PromoVenueTablet from "../Tablets/PromoVenueTablet";
+import GroupBanner from "./GroupBanner";
+import GroupCommunity from "./GroupCommunity";
+import EventTablet from "../Tablets/EventTablet";
+import GroupDetailsTablet from "../Tablets/GroupDetailsTablet";
+import GroupMembersCard from "./GroupMembersCard/GroupMembersCard";
 import { faPlus, faPen, faImage, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from "react";
-import DashboardBanner from "../../../DeprecatedComponents/DashboardBanner";
-import MainEvents from "./TabGroups/MainEvents";
-import MainVenues from "./TabGroups/MainVenues";
-import MainPolls from "./TabGroups/MainPolls";
+import DashboardBanner from "../../DeprecatedComponents/DashboardBanner";
+import MainEvents from "./Tabs/MainEvents";
+import MainVenues from "./Tabs/MainVenues";
+import MainPolls from "./Tabs/MainPolls";
 
 const GroupMain = () => {
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import RegisterSteps from './Components/RegisterSteps/RegisterSteps';
+import RegisterSteps from './Components/CommericalRegistration/RegisterSteps';
 import './input.css';
 import Admin from './Routes/Admin';
 import CommercialRegistration from './Routes/CommercialRegistration';

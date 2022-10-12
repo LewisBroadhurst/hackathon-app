@@ -1,5 +1,5 @@
 import * as React from 'react';
-import LoginForm from "../Components/LoginForm/LoginForm";
+import LoginForm from "../Components/Forms/LoginForm";
 import LoginFriendsPhoto from "../Assets/login-friends-photo.jpg";
 import LoginFriendsDesktop from "../Assets/login-friends-desktop.jpg";
 

@@ -1,4 +1,4 @@
-import GroupMain from "../Components/GroupOverviewSpecific/GroupMain/GroupMain";
+import GroupMain from "../Components/GroupOverviewSpecific/GroupMain";
 import Header from "../Components/Header/Header";
 
 

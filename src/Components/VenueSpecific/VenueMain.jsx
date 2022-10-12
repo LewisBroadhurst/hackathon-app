@@ -1,5 +1,5 @@
 import React from 'react'
-import VenueCarousel from '../VenueCarousel/VenueCarousel'
+import VenueCarousel from './VenueCarousel'
 
 const VenueMain = () => {
   return (

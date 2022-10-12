@@ -1,5 +1,5 @@
 import React from 'react';
-import GroupOverviewEventCard from '../EventCard/EventCard'
+import GroupOverviewEventCard from '../EventCards/EventCard'
 
 const EventTablet = () => {
   return (
