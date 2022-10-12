@@ -1,5 +1,5 @@
-import CommunityPost from "../../../CommunityPost/CommunityPost";
-import PollPost from "../../../PollPost/PollPost";
+import CommunityPost from '../../Posts/CommunityPost';
+import PollPost from '../../Posts/PollPost';
 
 const DashboardEvents = () => {
   return (

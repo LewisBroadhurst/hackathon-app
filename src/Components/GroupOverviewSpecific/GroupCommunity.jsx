@@ -1,6 +1,6 @@
 import React from 'react'
 import CommunityPost from '../Posts/CommunityPost';
-import PollPost from '../../PollPost/PollPost';
+import PollPost from '../Posts/PollPost';
 
 const GroupCommunity = () => {
   return (
