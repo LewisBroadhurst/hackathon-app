@@ -1,4 +1,4 @@
-import GroupBanner from "../GroupOverviewSpecific/GroupBanner";
+import React from 'react';
 import EventBanner from "./EventBanner";
 
 
@@ -10,7 +10,7 @@ const EventMain = () => {
         </div>
 
         <div className="mt-24">
-            
+          <p>hello world</p>
         </div>
     </section>
   )

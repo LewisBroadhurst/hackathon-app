@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { createVenue } from '../../API/VenueAPI';
 
 const defaultVenueFields = {
@@ -42,13 +41,13 @@ const AddVenue = ({setToggleAddVenue}) => {
         <form className='flex flex-col gap-3'>
 
             <label className=''>Name</label>
-            <input required type={"text"} name="name" />
+            <input required type={'text'} name="name" />
 
             <label>Event type</label>
-            <input className='' type={"text"} required name="type" />
+            <input className='' type={'text'} required name="type" />
             
             <label>Location</label>
-            <input className='' required type={"text"} name="location" />
+            <input className='' required type={'text'} name="location" />
 
             <button type='submit' className='bg-cBlue200 rounded-md p-2'>Register Venue</button>
 
