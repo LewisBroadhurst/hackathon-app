@@ -4,7 +4,7 @@ const EventBanner = () => {
   return (
     <section>
         <section className="pb-6 border-b border-cGrey400 flex flex-col items-center">
-      <span className="text-md md:pl-1">Dashboard / Bright Network Socials / 26th Sep Bowling</span>
+      <span className="text-md md:pl-1">Bright Network Socials / 26th Sep Bowling</span>
 
       <h1 className="text-4xl mt-2 mb-1 text-center sm:text-left md:text-5xl">Bright Network Socials</h1>
 

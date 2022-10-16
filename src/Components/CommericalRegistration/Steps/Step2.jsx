@@ -8,35 +8,27 @@ const Step2 = () => {
 
   return (
     <section>
-        <form>
-            <div>
-                <label htmlFor="">Name</label>
-                <input type="text"  />
-            </div>
+        <form className='flex flex-col gap-4 w-[400px]'>
+            <input type="text" placeholder="Name" className="input input-bordered w-full" />
 
-            <div>
-                <label htmlFor="">Email</label>
-                <input type="text" />
-            </div>
+            <input type="email" placeholder="Email" className="input input-bordered w-full" />
 
-            <div>
-                <label htmlFor="">Password</label>
-                <input type="text" />
-            </div>
+            <input type="password" placeholder="Password" className="input input-bordered w-full" />
 
-            <div>
+
+            <div className='flex flex-row justify-between'>
                 <label htmlFor="">Please confirm you are an Organisation.</label>
-                <input type="checkbox" />
+                <input type="checkbox" className="checkbox" />
             </div>
 
-            <div>
+            <div className='flex flex-row justify-between'>
                 <label htmlFor="">Do you accept T's and C's?</label>
-                <input type="checkbox" />
+                <input type="checkbox" className="checkbox" />
             </div>
 
-            <div>
-            <button className='btn' onClick={handleStepBackward}>Back</button>
-            <button className='btn' onClick={handleStepForward}>Confirm Details</button>
+            <div className='flex flex-row justify-evenly'>
+            <button className='btn w-5/12' onClick={handleStepBackward}>Back</button>
+            <button className='btn w-5/12' onClick={handleStepForward}>Confirm Details</button>
             </div>
            
         </form>

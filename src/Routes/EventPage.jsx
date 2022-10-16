@@ -1,4 +1,5 @@
 import EventMain from "../Components/EventSpecific/EventMain";
+import Footer from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
 
 const EventPage = () => {
@@ -15,6 +16,8 @@ const EventPage = () => {
             <EventMain />
           </div>
         </div>
+
+        <Footer />
     </section>
   )
 }

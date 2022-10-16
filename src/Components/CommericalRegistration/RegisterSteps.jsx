@@ -11,8 +11,8 @@ const RegisterSteps = () => {
         <ul className="steps w-full">
             <li className="step step-primary">Entity</li>
             <li className={`step ${stepsActive.stepTwo}`}>Details</li>
-            <li className={`step ${stepsActive.stepThree}`}>Payment</li>
-            <li className={`step ${stepsActive.stepFour}`}>Welcome!</li>
+            <li className={`step ${stepsActive.stepThree}`}>Plan</li>
+            <li className={`step ${stepsActive.stepFour}`}>Payment</li>
         </ul>
     </>
   )
