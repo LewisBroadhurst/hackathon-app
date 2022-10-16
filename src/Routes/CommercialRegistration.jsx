@@ -4,7 +4,9 @@ import CommReg1 from '../Assets/commerical_reg_1.jpg';
 import Step1 from '../Components/CommericalRegistration/Steps/Step1';
 import { useContext } from 'react';
 import { CommercialRegistrationContext } from '../Contexts/CommericalRegistration.context';
-import { useEffect } from 'react';
+import Step2 from '../Components/CommericalRegistration/Steps/Step2';
+import Step3 from '../Components/CommericalRegistration/Steps/Step3';
+import Step4 from '../Components/CommericalRegistration/Steps/Step4';
 
 const CommercialRegistration = () => {
 
@@ -14,13 +16,13 @@ const CommercialRegistration = () => {
 
         switch(stepTracker) {
             case 1:
-                return <Step1 />
+                return <Step1 />;
             case 2:
-                return;
+                return <Step2 />;
             case 3:
-                return
+                return <Step3 />;
             case 4:
-                return
+                return <Step4 />;
             default:
                 <Step1 />
         }
