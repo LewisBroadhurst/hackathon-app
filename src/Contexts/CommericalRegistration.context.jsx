@@ -39,6 +39,9 @@ const getPaymentValue = (packageValue, setPaymentRequired) => {
     return setPaymentRequired(packageValue);
 }
 
+const getRegDetails = (registrationDetails, setRegistrationDetails) => {
+    return setRegistrationDetails(registrationDetails);
+}
 
 const defaultStepsActive = {
     stepTwo: '',
@@ -84,6 +87,10 @@ export const CommercialRegistrationProvider = ({children}) => {
         getPaymentValue(paymentRequired, setPaymentRequired);
     }, [paymentRequired]);
 
+    useEffect(() => {
+        getRegDetails(registrationDetails, setRegistrationDetails);
+    }, [registrationDetails]);
+
     const handleStepForward = () => {
         return handleForwardArrowFunc(stepTracker, setStepTracker, stepsActive, setStepsActive);
     }
@@ -97,6 +104,7 @@ export const CommercialRegistrationProvider = ({children}) => {
         registrationDetails,
         stepTracker,
         stepsActive,
+        setRegistrationDetails,
         handleStepForward,
         handleStepBackward
     }

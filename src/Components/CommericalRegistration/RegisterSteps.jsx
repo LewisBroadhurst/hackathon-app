@@ -4,7 +4,7 @@ import {CommercialRegistrationContext} from '../../Contexts/CommericalRegistrati
 
 const RegisterSteps = () => {
 
-    const {handleStepBackward, handleStepForward, stepsActive} = useContext(CommercialRegistrationContext);
+    const {stepsActive} = useContext(CommercialRegistrationContext);
 
   return (
     <>
@@ -14,11 +14,6 @@ const RegisterSteps = () => {
             <li className={`step ${stepsActive.stepThree}`}>Payment</li>
             <li className={`step ${stepsActive.stepFour}`}>Welcome!</li>
         </ul>
-
-        <div className="btn-group">
-        <button className="btn" onClick={handleStepForward}>Button</button>
-        <button className="btn" onClick={handleStepBackward}>Button</button>
-        </div>
     </>
   )
 }
