@@ -2,18 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-family: "Red Hat Text", sans-serif;
+}
+
 /* Scrollbar style for Chrome */
 
 /* Track */
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 0.25rem;
   border-radius: 1rem;
 }
 
 /* Thumb */
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #404040;
   border-radius: 1rem;
   scrollbar-color: blue;
@@ -26,7 +28,6 @@
 }
 
 /* Buttons */
-::-webkit-scrollbar-button
-{
+::-webkit-scrollbar-button {
   display: none;
 }

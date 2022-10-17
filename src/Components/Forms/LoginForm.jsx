@@ -5,54 +5,29 @@ import { Link } from 'react-router-dom';
 const LoginForm = () => {
 
   return (
-    <section className="flex flex-col justify-center w-[500px] mx-auto bg-">
+    <section className='flex flex-col gap-2 justify-center'>
 
-      <div className='flex flex-col items-center'>
+      <form className='flex flex-col gap-2'>
 
-        <h1 className='text-5xl my-2'>Five Star</h1>
-
-        <p className='text-2xl'>Sign in to your account</p>
-
-        <form className='flex flex-col mt-6 self-stretch mx-auto w-2/3'>
-
-          <div className='flex flex-col py-2'>
-          <label className='text-xl'>Username*</label>
+        <div className='flex flex-col'>
+          <label className='text-xl self-start'>Username*</label>
           <input className='border border-black rounded-md p-1'></input>
-          </div>
-
-          <div className='flex flex-col pt-2'>
-          <label className='text-xl'>Password*</label>
-          <input className='border border-black rounded-md p-1'></input>
-          </div>
-
-          <span className='self-center mt-0.5'>Forgot password?</span>
-
-          <button className='py-2 mt-6 bg-green-500 rounded-lg text-xl' type='submit' value={"Sign In"}>Sign In</button>
-        </form>
-
-        <p className='mt-2'>Don't have an account? <span className='text-blue-900'><Link to={"/register"} className='text-secondary'>Register</Link></span></p>
-      </div>
-
-
-      <div className='flex flex-col mt-10 self-stretch mx-auto w-2/3'>
-
-        <div className='flex items-center'>
-          <span className='flex-grow border-t border-white'></span>
-          <span className='flex-grow-0 mx-3'>Or sign in with</span>
-          <span className='flex-grow border-t border-white'></span>
-        </div>
-        
-
-        <div className='flex flex-row justify-between py-4 pb-6 border-b border-white'>
-          <button className='bg-blue-500 p-2 rounded-lg w-5/12'>Facebook</button>
-          <button className='bg-red-500 p-2 rounded-lg w-5/12'>Google</button>
         </div>
 
-      </div>
+        <div className='flex flex-col'>
+          <label className='text-xl self-start'>Password*</label>
+          <input className='border border-black rounded-md p-1'></input>
+        </div>
 
-      <div className="mt-10">
-        <h3 className="text-center text-cBlue500 underline">Want to register your venue to our app?</h3>
-      </div>
+        <span className='self-center'>Forgot password?</span>
+
+        <button className='py-2 rounded-lg text-lg bg-primary text-white' type='submit' value={"Sign In"}>Sign In</button>
+
+      </form>
+
+      <p className='flex gap-1 self-center'>Don't have an account?
+        <span className='text-blue-900'><Link to={'/register'} className='text-secondary'>Register</Link></span>
+      </p>
 
     </section>
   )
