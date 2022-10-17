@@ -19,7 +19,7 @@ const LoginForm = () => {
           <input className='border border-black rounded-md p-1'></input>
         </div>
 
-        <span className='self-center'>Forgot password?</span>
+        <span className='self-center cursor-pointer xl:my-2'>Forgot password?</span>
 
         <button className='py-2 rounded-lg text-lg bg-primary text-white' type='submit' value={"Sign In"}>Sign In</button>
 

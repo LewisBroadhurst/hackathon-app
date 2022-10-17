@@ -1,6 +1,5 @@
-import * as React from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import RegisterSteps from './Components/CommericalRegistration/RegisterSteps';
 import './input.css';
 import Admin from './Routes/Admin';
 import CommercialRegistration from './Routes/CommercialRegistration';
@@ -25,7 +24,7 @@ function App() {
             <Route path='/groupOverview' element={<GroupOverview />} />
             <Route path='/eventOverview' element={<EventPage />} />
 
-            <Route path='commericalRegistration' element={<CommercialRegistration />} />
+            <Route path='/commericalRegistration' element={<CommercialRegistration />} />
 
             <Route path='venues/FiveStarBowlingAlley' element={<Venue />} />
     

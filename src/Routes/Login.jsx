@@ -29,7 +29,7 @@ const Login = () => {
 
         {/* FB/GOOGLE/VENUE&ORG SIGNUP */}
 
-        <div className='flex flex-col mt-10'>
+        <div className='flex flex-col mt-6'>
           <div className='flex items-center'>
             <span className='flex-grow border-t border-cMono800'></span>
             <span className='mx-3'>Or sign in with</span>
@@ -43,8 +43,8 @@ const Login = () => {
           </div>
         </div>
 
-        <h3 className='text-center text-primary underline my-6 mb-10'>
-          <Link to={'/register'} >Want to register your venue to our app?</Link>
+        <h3 className='text-lg text-center text-primary underline my-6 mb-10'>
+          <Link to={'/commericalRegistration'} >Want to register your venue or organisation to our app?</Link>
         </h3>
 
       </div>
