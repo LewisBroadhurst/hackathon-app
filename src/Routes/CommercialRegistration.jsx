@@ -39,7 +39,7 @@ const CommercialRegistration = () => {
                 <img className='hidden rounded-r-2xl xl:flex' src={CommReg1} alt="" />
             </div>
 
-            <div className='flex flex-col items-center gap-10 mt-10 xl:w-1/2 xl:self-start xl:mt-40'>
+            <div className='flex flex-col items-center gap-10 mt-10 xl:w-1/2 xl:self-start xl:mt-28'>
                 <h2 className='text-2xl text-center font-bold'>Become a part of FUN @ FIVE</h2>
 
                 <RegisterSteps />

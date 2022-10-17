@@ -1,6 +1,5 @@
-import React from 'react'
-import { useContext } from 'react'
-import { CommercialRegistrationContext } from '../../../Contexts/CommericalRegistration.context'
+import React, { useContext } from 'react';
+import { CommercialRegistrationContext } from '../../../Contexts/CommericalRegistration.context';
 
 const Step2 = () => {
 
@@ -9,7 +8,7 @@ const Step2 = () => {
   return (
     <section>
         <form className='flex flex-col gap-4 w-[400px]'>
-            <input type="text" placeholder="Name" className="input input-bordered w-full" />
+            <input type='text' placeholder='Name' className='input input-bordered w-full' />
 
             <input type="email" placeholder="Email" className="input input-bordered w-full" />
 
@@ -27,8 +26,8 @@ const Step2 = () => {
             </div>
 
             <div className='flex flex-row justify-evenly'>
-            <button className='btn w-5/12' onClick={handleStepBackward}>Back</button>
-            <button className='btn w-5/12' onClick={handleStepForward}>Confirm Details</button>
+                <button className='btn w-5/12' onClick={handleStepBackward}>Back</button>
+                <button className='btn w-5/12' onClick={handleStepForward}>Confirm Details</button>
             </div>
            
         </form>
