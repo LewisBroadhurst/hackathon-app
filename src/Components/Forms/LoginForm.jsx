@@ -1,39 +1,14 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { getAllEvents } from '../../API/EventAPI';
-import { getAllOrganisations } from '../../API/OrganisationAPI';
-import AddVenue from '../AddVenue/AddVenue';
+
 
 const LoginForm = () => {
 
-  const [organisations, setOrganisations] = useState([]);
-  const [events, setEvents] = useState([]);
-
-  useEffect( () => {
-    getAllOrganisations(setOrganisations);
-    console.log(organisations);
-
-    getAllEvents(setEvents);
-    console.log(events);
-  }, []);
-
-  const [toggleAddVenue, setToggleAddVenue] = useState("hidden")
-
-  const handleCreateVenueToggle = (event) => {
-    event.preventDefault()
-
-    if (toggleAddVenue === "hidden") {
-      return setToggleAddVenue("flex");
-    }
-
-    return setToggleAddVenue("hidden");
-  }
-
   return (
-    <>
-      <section className="flex flex-col items-stretch lg:w-1/3 lg:mx-auto lg:justify-center">
+    <section className="flex flex-col justify-center w-[500px] mx-auto bg-">
+
       <div className='flex flex-col items-center'>
+
         <h1 className='text-5xl my-2'>Five Star</h1>
 
         <p className='text-2xl'>Sign in to your account</p>
@@ -55,20 +30,20 @@ const LoginForm = () => {
           <button className='py-2 mt-6 bg-green-500 rounded-lg text-xl' type='submit' value={"Sign In"}>Sign In</button>
         </form>
 
-        <p className='mt-1'>Don't have an account? <span className='text-blue-900'><Link to={"/register"}>Register</Link></span></p>
+        <p className='mt-2'>Don't have an account? <span className='text-blue-900'><Link to={"/register"} className='text-secondary'>Register</Link></span></p>
       </div>
 
 
       <div className='flex flex-col mt-10 self-stretch mx-auto w-2/3'>
 
         <div className='flex items-center'>
-          <span className='flex-grow border-t border-black'></span>
+          <span className='flex-grow border-t border-white'></span>
           <span className='flex-grow-0 mx-3'>Or sign in with</span>
-          <span className='flex-grow border-t border-black'></span>
+          <span className='flex-grow border-t border-white'></span>
         </div>
         
 
-        <div className='flex flex-row justify-between py-4 pb-6 border-b border-black'>
+        <div className='flex flex-row justify-between py-4 pb-6 border-b border-white'>
           <button className='bg-blue-500 p-2 rounded-lg w-5/12'>Facebook</button>
           <button className='bg-red-500 p-2 rounded-lg w-5/12'>Google</button>
         </div>
@@ -76,14 +51,10 @@ const LoginForm = () => {
       </div>
 
       <div className="mt-10">
-        <h3 className="text-center text-cBlue500 underline" onClick={handleCreateVenueToggle}>Want to register your venue to our app?</h3>
+        <h3 className="text-center text-cBlue500 underline">Want to register your venue to our app?</h3>
       </div>
 
-      <div className={`${toggleAddVenue} w-full h-full fixed bg-cBlue300 z-10`}>
-          <AddVenue setToggleAddVenue={setToggleAddVenue} />
-        </div>
-      </section>
-    </>
+    </section>
   )
 }
 
