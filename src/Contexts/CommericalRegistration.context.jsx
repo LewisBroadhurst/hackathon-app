@@ -57,21 +57,21 @@ const defaultPaymentPackage = {
 
 export const CommercialRegistrationContext = createContext({
     paymentRequired: 0,
-    paymentPackage: '',
+    paymentPackage: {},
     registrationDetails: {},
     stepTracker: 1,
     stepsActive: {},
     handleStepForward: () => {},
     handleStepBackward: () => {},
     setRegistrationDetails: () => {},
-    setPaymentRequired: () => {},
+    setPaymentPackage: () => {},
     setStepTracker: () => {},
     setStepsActive: () => {}
 });
 
 export const CommercialRegistrationProvider = ({children}) => {
-    const [paymentPackage, setPaymentPackage] = useState({defaultPaymentPackage});
-    const [registrationDetails, setRegistrationDetails] = useState({defaultRegDetails});
+    const [paymentPackage, setPaymentPackage] = useState(defaultPaymentPackage);
+    const [registrationDetails, setRegistrationDetails] = useState(defaultRegDetails);
     const [stepTracker, setStepTracker] = useState(1);
     const [stepsActive, setStepsActive] = useState(defaultStepsActive);
 
