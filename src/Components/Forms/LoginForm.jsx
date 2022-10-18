@@ -17,6 +17,11 @@ const LoginForm = () => {
         <div className='flex flex-col'>
           <label className='text-xl self-start'>Password*</label>
           <input className='border border-black rounded-md p-1'></input>
+
+          <div className='flex gap-4 items-center self-center'>
+            <span className='self-center xl:my-2'>Show password</span>
+            <input type={'checkbox'} className='cursor-pointer' />
+          </div>
         </div>
 
         <span className='self-center cursor-pointer xl:my-2'>Forgot password?</span>
