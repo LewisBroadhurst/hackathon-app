@@ -3,31 +3,71 @@ import { CommercialRegistrationContext } from '../../../Contexts/CommericalRegis
 
 const Step2 = () => {
 
-    const {handleStepBackward, handleStepForward} = useContext(CommercialRegistrationContext);
+    const {handleStepBackward, handleStepForward, registrationDetails, setRegistrationDetails} = useContext(CommercialRegistrationContext);
+    const {venue} = registrationDetails;
+
+    const handleReturnToStep1 = (event) => {
+        event.preventDefault();
+
+        setRegistrationDetails({...registrationDetails, organisation: false});
+        setRegistrationDetails({...registrationDetails, venue: false});
+        handleStepBackward();
+    }
+
+    const handleDetailsUpdates = (event) => {
+        event.preventDefault();
+
+        const changingAttribute = event.target.getAttribute('name');
+        const valueOfAttribute = event.target.value;
+
+        setRegistrationDetails({...registrationDetails, [changingAttribute]: valueOfAttribute});
+        console.log(registrationDetails);
+    }
+
+    const handleConfirmDetails = (event) => {
+        event.preventDefault();
+
+        const isConfirmationBoxChecked = document.getElementById('confirmation-checkbox').checked;
+        const isTCsBoxChecked = document.getElementById('t-c-checkbox').checked;
+
+        if (!isConfirmationBoxChecked || !isTCsBoxChecked) {
+            return alert('Please confirm the type of your account and that you accept the T&Cs.')
+        }
+
+        return handleStepForward();
+    }
+
+    const venueOrOrgan = () => {
+        if (venue) {
+            return 'Venue';
+        } 
+        
+        return 'Organisation';
+    }
 
   return (
     <section>
         <form className='flex flex-col gap-4 w-[400px]'>
-            <input type='text' placeholder='Name' className='input input-bordered w-full' />
+            <input type='text' placeholder='Name' name='name' className='input input-bordered w-full' onChange={handleDetailsUpdates} />
 
-            <input type="email" placeholder="Email" className="input input-bordered w-full" />
+            <input type="email" placeholder="Email" name='email' className="input input-bordered w-full" onChange={handleDetailsUpdates} />
 
-            <input type="password" placeholder="Password" className="input input-bordered w-full" />
+            <input type="password" placeholder="Password" name='password' className="input input-bordered w-full" onChange={handleDetailsUpdates} />
 
 
             <div className='flex flex-row justify-between'>
-                <label htmlFor="">Please confirm you are an Organisation.</label>
-                <input type="checkbox" className="checkbox" />
+                <label htmlFor="">Please confirm you are an {venueOrOrgan()}.</label>
+                <input id='confirmation-checkbox' type="checkbox" className="checkbox" />
             </div>
 
             <div className='flex flex-row justify-between'>
-                <label htmlFor="">Do you accept T's and C's?</label>
-                <input type="checkbox" className="checkbox" />
+                <label htmlFor="">Do you accept the T's and C's?</label>
+                <input id='t-c-checkbox' type="checkbox" className="checkbox" />
             </div>
 
             <div className='flex flex-row justify-evenly'>
-                <button className='btn w-5/12' onClick={handleStepBackward}>Back</button>
-                <button className='btn w-5/12' onClick={handleStepForward}>Confirm Details</button>
+                <button className='btn w-5/12' onClick={handleReturnToStep1}>Back</button>
+                <button className='btn w-5/12' onClick={handleConfirmDetails}>Confirm Details</button>
             </div>
            
         </form>
@@ -35,4 +75,4 @@ const Step2 = () => {
   )
 }
 
-export default Step2
+export default Step2;

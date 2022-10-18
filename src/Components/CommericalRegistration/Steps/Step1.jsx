@@ -3,16 +3,24 @@ import { CommercialRegistrationContext } from '../../../Contexts/CommericalRegis
 
 const Step1 = () => {
 
-    const { handleStepForward } = useContext(CommercialRegistrationContext);
+    const { handleStepForward, registrationDetails, setRegistrationDetails } = useContext(CommercialRegistrationContext);
 
-    const handleVenueClick = (event) => {
+    const handleVenueClick = async (event) => {
         event.preventDefault();
+
+        setRegistrationDetails({...registrationDetails, venue: true});
         handleStepForward();
+
+        console.log(registrationDetails);
     }
 
     const handleOrganisationClick = (event) => {
         event.preventDefault();
+
+        setRegistrationDetails({...registrationDetails, organisation: true});
         handleStepForward();
+
+        console.log(registrationDetails);
     }
 
   return (

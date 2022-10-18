@@ -1,7 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { createContext } from "react";
-
+import React, { useEffect, useState, createContext } from 'react';
 
 const handleForwardArrowFunc = (stepTracker, setStepTracker, stepsActive, setStepsActive) => {
     if (stepTracker === 4) {
@@ -35,21 +32,13 @@ const handleBackArrowFunc = (stepTracker, setStepTracker, stepsActive, setStepsA
     setStepTracker(stepTracker - 1);
 }
 
-const getPaymentValue = (packageValue, setPaymentRequired) => {
-    return setPaymentRequired(packageValue);
-}
-
-const getRegDetails = (registrationDetails, setRegistrationDetails) => {
-    return setRegistrationDetails(registrationDetails);
-}
-
 const defaultStepsActive = {
     stepTwo: '',
     stepThree: '',
     stepFour: ''
 }
 
-const defaultCommercialDetails = {
+const defaultRegDetails = {
     name: '',
     email: '',
     password: '',
@@ -61,35 +50,31 @@ const defaultCommercialDetails = {
     organisation: false
 }
 
+const defaultPaymentPackage = {
+    cost: 0,
+    package: ''
+}
+
 export const CommercialRegistrationContext = createContext({
     paymentRequired: 0,
     paymentPackage: '',
-    venue: false,
-    organisation: false,
-    name: '',
-    email: '',
-    password: '',
-    basicBio: '',
-    photoUrls: [],
+    registrationDetails: {},
     stepTracker: 1,
     stepsActive: {},
     handleStepForward: () => {},
-    handleStepBackward: () => {}
+    handleStepBackward: () => {},
+    setRegistrationDetails: () => {},
+    setPaymentRequired: () => {},
+    setStepTracker: () => {},
+    setStepsActive: () => {}
 });
 
 export const CommercialRegistrationProvider = ({children}) => {
-    const [paymentRequired, setPaymentRequired] = useState(0);
-    const [registrationDetails, setRegistrationDetails] = useState({defaultCommercialDetails});
+    const [paymentPackage, setPaymentPackage] = useState({defaultPaymentPackage});
+    const [registrationDetails, setRegistrationDetails] = useState({defaultRegDetails});
     const [stepTracker, setStepTracker] = useState(1);
     const [stepsActive, setStepsActive] = useState(defaultStepsActive);
 
-    useEffect(() => {
-        getPaymentValue(paymentRequired, setPaymentRequired);
-    }, [paymentRequired]);
-
-    useEffect(() => {
-        getRegDetails(registrationDetails, setRegistrationDetails);
-    }, [registrationDetails]);
 
     const handleStepForward = () => {
         return handleForwardArrowFunc(stepTracker, setStepTracker, stepsActive, setStepsActive);
@@ -100,13 +85,16 @@ export const CommercialRegistrationProvider = ({children}) => {
     }
 
     const value = {
-        paymentRequired,
+        paymentPackage,
+        setPaymentPackage,
         registrationDetails,
-        stepTracker,
-        stepsActive,
         setRegistrationDetails,
-        handleStepForward,
-        handleStepBackward
+        stepTracker,
+        setStepTracker,
+        stepsActive,
+        setStepsActive,
+        handleStepBackward,
+        handleStepForward
     }
 
     return <CommercialRegistrationContext.Provider value={value}>{children}</CommercialRegistrationContext.Provider>
