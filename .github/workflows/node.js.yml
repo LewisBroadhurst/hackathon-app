@@ -27,8 +27,6 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: |
-          npm i prettier
-          npm i eslint
           npm ci
       - name: Build the app
         run: |
