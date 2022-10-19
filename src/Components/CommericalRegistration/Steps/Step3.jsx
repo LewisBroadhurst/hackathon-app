@@ -10,11 +10,11 @@ const Step3 = () => {
     const clickedProduct = event.target.value;
 
     if (clickedProduct === 'pro') {
-      setRegistrationDetails({...registrationDetails, cost: 24990});
+      setRegistrationDetails({...registrationDetails, cost: 249999});
     } else if (clickedProduct === 'pro+') {
-      setRegistrationDetails({...registrationDetails, cost: 49990});
+      setRegistrationDetails({...registrationDetails, cost: 499999});
     } else {
-      setRegistrationDetails({...registrationDetails, cost: 9990});
+      setRegistrationDetails({...registrationDetails, cost: 99999});
     }
 
     setRegistrationDetails({...registrationDetails, product: clickedProduct});

@@ -45,7 +45,7 @@ const defaultRegDetails = {
     basicBio: '',
     photoUrls: [],
     product: '',
-    cost: 9.99,
+    cost: 99999,
     venue: false,
     organisation: false
 }
