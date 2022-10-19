@@ -19,6 +19,11 @@ import CommunityPost from '../src/Components/Posts/CommunityPost';
 import PollPost from '../src/Components/Posts/PollPost';
 import EventTablet from '../src/Components/Tablets/EventTablet';
 import GroupDetailsTablet from '../src/Components/Tablets/GroupDetailsTablet';
+import PromoVenueTablet from '../src/Components/Tablets/PromoVenueTablet';
+import AdminVenueCard from '../src/Components/VenueCards/AdminVenueCard';
+import VenueBanner from '../src/Components/VenueSpecific/VenueBanner';
+import VenueCarousel from '../src/Components/VenueSpecific/VenueCarousel';
+import VenueMain from '../src/Components/VenueSpecific/VenueMain';
 
 
 // 1. Renders the specified component
@@ -208,9 +213,47 @@ it("renders GroupDetailsTablet", () => {
     expect(linkElement).toBeInTheDocument();
 });
 
-it("renders PollPost", () => {
-    render(<PollPost />);
-    const linkElement = screen.getByText(/Cheeky Nandos/i)
+it("renders PromoVenuetablet", () => {
+    render(<PromoVenueTablet />);
+    const linkElement = screen.getByText(/Promoted Venues/i)
+    // This will eventually use the prop testing method below
+    
+    expect(linkElement).toBeInTheDocument();
+});
+
+
+// VenueCards Folder
+
+it("renders AdminVenueCard", () => {
+    render(<AdminVenueCard />);
+    const linkElement = screen.getByText(/Hosted 11 events!/i)
+    // This will eventually use the prop testing method below
+    
+    expect(linkElement).toBeInTheDocument();
+});
+
+
+// VenueSpecific Folder
+
+it("renders VenueBanner", () => {
+    render(<VenueBanner />);
+    const linkElement = screen.getByText(/All Star Bowling Alley/i)
+    // This will eventually use the prop testing method below
+    
+    expect(linkElement).toBeInTheDocument();
+});
+
+// it("renders VenueCarousel", () => {
+//     render(<VenueCarousel />);
+//     const linkElement = screen.getByText(//i)
+//     // This will eventually use the prop testing method below
+    
+//     expect(linkElement).toBeInTheDocument();
+// });
+
+it("renders VenueMain", () => {
+    render(<VenueMain />);
+    const linkElement = screen.getByText(/Our four mashed-up crazy golf/i)
     // This will eventually use the prop testing method below
     
     expect(linkElement).toBeInTheDocument();

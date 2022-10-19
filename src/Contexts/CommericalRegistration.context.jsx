@@ -3,32 +3,28 @@ import React, { useState, createContext } from 'react';
 const handleForwardArrowFunc = (stepTracker, setStepTracker, stepsActive, setStepsActive) => {
     if (stepTracker === 4) {
         return;
-    }
-    if (stepTracker === 1) {
+    } else if (stepTracker === 1) {
         setStepsActive( {...stepsActive, stepTwo: 'step-primary'})
-    }
-    if (stepTracker === 2) {
+    } else if (stepTracker === 2) {
         setStepsActive( {...stepsActive, stepThree: 'step-primary'})
-    }
-    if (stepTracker === 3) {
+    } else if (stepTracker === 3) {
         setStepsActive( {...stepsActive, stepFour: 'step-primary'})
     }
+
     setStepTracker(stepTracker + 1);
 }
 
 const handleBackArrowFunc = (stepTracker, setStepTracker, stepsActive, setStepsActive) => {
     if (stepTracker === 1) {
         return;
-    }
-    if (stepTracker === 4) {
+    } else if (stepTracker === 4) {
         setStepsActive( {...stepsActive, stepFour: ''})
-    }
-    if (stepTracker === 3) {
+    } else if (stepTracker === 3) {
         setStepsActive( {...stepsActive, stepThree: ''})
-    }
-    if (stepTracker === 2) {
+    } else if (stepTracker === 2) {
         setStepsActive( {...stepsActive, stepTwo: ''})
     }
+    
     setStepTracker(stepTracker - 1);
 }
 
