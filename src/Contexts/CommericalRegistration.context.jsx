@@ -44,33 +44,26 @@ const defaultRegDetails = {
     password: '',
     basicBio: '',
     photoUrls: [],
-    paymentPackage: '',
-    paymentRequired: 0,
+    product: '',
+    cost: 9.99,
     venue: false,
     organisation: false
 }
 
-const defaultPaymentPackage = {
-    cost: 0,
-    package: ''
-}
 
 export const CommercialRegistrationContext = createContext({
-    paymentRequired: 0,
-    paymentPackage: {},
-    registrationDetails: {},
-    stepTracker: 1,
-    stepsActive: {},
     handleStepForward: () => {},
     handleStepBackward: () => {},
+
+    registrationDetails: {},
     setRegistrationDetails: () => {},
-    setPaymentPackage: () => {},
+    stepTracker: 1,
     setStepTracker: () => {},
+    stepsActive: {},
     setStepsActive: () => {}
 });
 
 export const CommercialRegistrationProvider = ({children}) => {
-    const [paymentPackage, setPaymentPackage] = useState(defaultPaymentPackage);
     const [registrationDetails, setRegistrationDetails] = useState(defaultRegDetails);
     const [stepTracker, setStepTracker] = useState(1);
     const [stepsActive, setStepsActive] = useState(defaultStepsActive);
@@ -85,16 +78,15 @@ export const CommercialRegistrationProvider = ({children}) => {
     }
 
     const value = {
-        paymentPackage,
-        setPaymentPackage,
+        handleStepBackward,
+        handleStepForward,
+        
         registrationDetails,
         setRegistrationDetails,
         stepTracker,
         setStepTracker,
         stepsActive,
         setStepsActive,
-        handleStepBackward,
-        handleStepForward
     }
 
     return <CommercialRegistrationContext.Provider value={value}>{children}</CommercialRegistrationContext.Provider>

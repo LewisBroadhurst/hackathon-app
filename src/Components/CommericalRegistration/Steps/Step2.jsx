@@ -47,12 +47,12 @@ const Step2 = () => {
 
   return (
     <section>
-        <form className='flex flex-col gap-4 w-[400px]'>
-            <input type='text' placeholder='Name' name='name' className='input input-bordered w-full' onChange={handleDetailsUpdates} />
+        <form onSubmit={handleConfirmDetails} className='flex flex-col gap-4 w-[400px]'>
+            <input required type='text' placeholder='Name' name='name' className='input input-bordered w-full' onChange={handleDetailsUpdates} />
 
-            <input type="email" placeholder="Email" name='email' className="input input-bordered w-full" onChange={handleDetailsUpdates} />
+            <input required type="email" placeholder="Email" name='email' className="input input-bordered w-full" onChange={handleDetailsUpdates} />
 
-            <input type="password" placeholder="Password" name='password' className="input input-bordered w-full" onChange={handleDetailsUpdates} />
+            <input required type="password" placeholder="Password" name='password' className="input input-bordered w-full" onChange={handleDetailsUpdates} />
 
 
             <div className='flex flex-row justify-between'>
@@ -67,7 +67,7 @@ const Step2 = () => {
 
             <div className='flex flex-row justify-evenly'>
                 <button className='btn w-5/12' onClick={handleReturnToStep1}>Back</button>
-                <button className='btn w-5/12' onClick={handleConfirmDetails}>Confirm Details</button>
+                <button className='btn w-5/12' type='submit'>Confirm Details</button>
             </div>
            
         </form>

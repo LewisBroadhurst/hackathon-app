@@ -3,30 +3,29 @@ import { CommercialRegistrationContext } from '../../../Contexts/CommericalRegis
 
 const Step3 = () => {
 
-  const {handleStepBackward, handleStepForward, paymentPackage, setPaymentPackage} = useContext(CommercialRegistrationContext);
+  const {handleStepBackward, handleStepForward, registrationDetails, setRegistrationDetails} = useContext(CommercialRegistrationContext);
 
   const handleSelectPackage = (event) => {
 
-    const packageType = event.target.getAttribute('name');
+    const clickedProduct = event.target.value;
 
-    let packageCost = 0;
-
-    if (packageType === 'basic') {
-      packageCost = 9.99;
-    } else if (packageType === 'pro') {
-      packageCost = 24.99;
+    if (clickedProduct === 'pro') {
+      setRegistrationDetails({...registrationDetails, cost: 24.99});
+    } else if (clickedProduct === 'pro+') {
+      setRegistrationDetails({...registrationDetails, cost: 49.99});
     } else {
-      packageCost = 49.99;
+      setRegistrationDetails({...registrationDetails, cost: 9.99});
     }
-    
-    setPaymentPackage({...paymentPackage, cost: packageCost});
-    setPaymentPackage({...paymentPackage, package: packageType});
-    console.log(paymentPackage);
+
+    setRegistrationDetails({...registrationDetails, product: clickedProduct});
+
+    console.log(registrationDetails);
   }
 
 
   return (
     <section>
+
       <form className='flex flex-col gap-4'>
 
         <div className='flex flex-row items-center gap-4 border-2 rounded-lg p-4 border-cMono300'>
@@ -44,7 +43,7 @@ const Step3 = () => {
               <li>Analytics on how our users respond to your promo card and clicks through to your website</li>
             </ul>
           </div>
-          <input type="radio" value={'paymentPackage'} name='basic' className='radio' onClick={handleSelectPackage}/>
+          <input type="radio" value={'basic'} name='packageSelector' className='radio' onClick={handleSelectPackage}/>
         </div>
 
         <div className='flex flex-row items-center gap-4 border-2 rounded-lg p-4 border-cMono300'>
@@ -62,7 +61,7 @@ const Step3 = () => {
               <li>Analytics on how our users respond to your promo card and clicks through to your website</li>
             </ul>
           </div>
-          <input type="radio" value={'paymentPackage'} name='pro' className='radio'/>
+          <input type="radio" value={'pro'} name='packageSelector' className='radio' onClick={handleSelectPackage}/>
         </div>
 
         <div className='flex flex-row items-center gap-4 border-2 rounded-lg p-4 border-cMono300'>
@@ -80,7 +79,7 @@ const Step3 = () => {
               <li>Analytics on how our users respond to your promo card and clicks through to your website</li>
             </ul>
           </div>
-          <input type="radio" value={'paymentPackage'} name='pro+' className='radio'/>
+          <input type="radio" value={'pro+'} name='packageSelector' className='radio' onClick={handleSelectPackage}/>
         </div>
         
         
