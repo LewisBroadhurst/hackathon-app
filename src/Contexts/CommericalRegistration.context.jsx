@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
 const handleForwardArrowFunc = (stepTracker, setStepTracker, stepsActive, setStepsActive) => {
     if (stepTracker === 4) {
@@ -45,7 +45,7 @@ const defaultRegDetails = {
     basicBio: '',
     photoUrls: [],
     product: '',
-    cost: 99999,
+    cost: 999,
     venue: false,
     organisation: false
 }
