@@ -1,4 +1,4 @@
-import PollPost from '../../Posts/PollPost';
+import PollPost from '../../SocialPosts/PollPost';
 
 const DashboardPolls = () => {
   return (

@@ -1,7 +1,11 @@
 import React from 'react'
+import GMapsComponent from '../GMaps/GMapsComponent'
+import Bookings from './Bookings'
 import VenueCarousel from './VenueCarousel'
 
 const VenueMain = () => {
+
+
   return (
     <section className='mt-12'>
         <div className='w-[1200px] mx-auto'>
@@ -61,14 +65,11 @@ const VenueMain = () => {
 
             </div>
 
-            <div className='flex flex-col gap-5 w-[350px]'>
-                <div className='h-48 bg-violet-50'>
-                    Booking System
-                    Contact Details
-                </div>
+            <div className='flex flex-col gap-2 w-[350px]'>
+                <Bookings />
 
-                <div className='h-48 bg-violet-50'>
-                    Google Maps
+                <div className='h-96'>
+                    <GMapsComponent />
                 </div>
             </div>
         </div>

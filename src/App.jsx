@@ -18,14 +18,10 @@ function App() {
 
             <Route path='/' element={<Login />} />
             <Route path='/register' element={<Register />} />
-
             <Route path='/admin' element={<Admin />} />
-
             <Route path='/groupOverview' element={<GroupOverview />} />
             <Route path='/eventOverview' element={<EventPage />} />
-
             <Route path='/commericalRegistration' element={<CommercialRegistration />} />
-
             <Route path='venues/FiveStarBowlingAlley' element={<Venue />} />
     
 

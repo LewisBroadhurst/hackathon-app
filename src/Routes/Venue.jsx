@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Components/Footer/Footer';
 import Header from '../Components/Header/Header';
 import VenueMain from '../Components/VenueSpecific/VenueMain';
 
@@ -11,6 +12,8 @@ const Venue = () => {
             <div className=''>
                 <VenueMain />
             </div>
+
+            <Footer />
         </div>
     </section>
   )
