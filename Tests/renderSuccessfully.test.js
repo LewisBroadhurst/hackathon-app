@@ -24,11 +24,16 @@ import AdminVenueCard from '../src/Components/VenueCards/AdminVenueCard';
 import VenueBanner from '../src/Components/VenueSpecific/VenueBanner';
 import VenueCarousel from '../src/Components/VenueSpecific/VenueCarousel';
 import VenueMain from '../src/Components/VenueSpecific/VenueMain';
+import Step1 from '../src/Components/CommericalRegistration/Steps/Step1';
+import Step2 from '../src/Components/CommericalRegistration/Steps/Step2';
+import Step3 from '../src/Components/CommericalRegistration/Steps/Step3';
+import Step4 from '../src/Components/CommericalRegistration/Steps/Step4';
 
 
 // 1. Renders the specified component
 // 2. Tries to find the text "string" on the screen
 // 3. Uses expect() to see if link element specified is in the document
+
 
 // AdminSpecific Folder
 
@@ -60,6 +65,7 @@ it("renders AdminVenues", () => {
     expect(linkElement).toBeInTheDocument();
 });
 
+
 // CommericalRegistration Folder
 
 it("renders RegisterSteps", () => {
@@ -68,6 +74,38 @@ it("renders RegisterSteps", () => {
     
     expect(linkElement).toBeInTheDocument();
 });
+
+
+// CommericalRegistration -> Steps Folder
+
+it("renders Step1", () => {
+    render(<Step1 />);
+    const linkElement = screen.getByText(/Are you a venue or an organisation?/i)
+    
+    expect(linkElement).toBeInTheDocument();
+});
+
+it("renders Step2", () => {
+    render(<Step2 />);
+    const linkElement = screen.getByText(/Do you accept the T's and C's?/i)
+    
+    expect(linkElement).toBeInTheDocument();
+});
+
+it("renders Step3", () => {
+    render(<Step3 />);
+    const linkElement = screen.getByText(/Basic Plan/i)
+    
+    expect(linkElement).toBeInTheDocument();
+});
+
+// it("renders Step4", () => {
+//     render(<Step4 />);
+//     const linkElement = screen.getByText(/£9.99 per month/i)
+    
+//     expect(linkElement).toBeInTheDocument();
+// });
+
 
 // EventCards Folder
 
@@ -78,6 +116,7 @@ it("renders EventCard", () => {
     
     expect(linkElement).toBeInTheDocument();
 });
+
 
 // EventSpecific Folder
 
