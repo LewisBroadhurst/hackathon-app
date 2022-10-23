@@ -5,7 +5,7 @@ import VenueCarousel from '../VenueSpecific/VenueCarousel';
 
 const EventBanner = () => {
   return (
-    <section className='flex flex-row justify-between items-center pb-2 border-b'>
+    <section className='flex flex-row justify-between items-center py-6 border-b'>
       <section className="flex flex-col gap-2">
         <span className="text-md text-neutral">Bright Network Socials</span>
 

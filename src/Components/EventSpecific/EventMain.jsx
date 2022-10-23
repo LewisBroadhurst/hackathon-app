@@ -1,17 +1,17 @@
 import React from 'react';
-import EventBanner from "./EventBanner";
+import PollPost from '../SocialPosts/PollPost';
 
 
 const EventMain = () => {
   return (
-    <section className='w-[1200px] mx-auto'>
-        <div className="mt-24">
-          <EventBanner />
-        </div>
+    <section className="flex flex-col gap-2 rounded-md">
+        <PollPost />
 
-        <div className="mt-24">
-          
-        </div>
+        <PollPost />
+
+        <PollPost />
+
+        <PollPost />
     </section>
   )
 }

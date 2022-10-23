@@ -1,3 +1,4 @@
+import React from 'react';
 import PollPost from '../../SocialPosts/PollPost';
 
 const DashboardPolls = () => {
