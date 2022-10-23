@@ -276,7 +276,7 @@ it("renders AdminVenueCard", () => {
 
 it("renders VenueBanner", () => {
     render(<VenueBanner />);
-    const linkElement = screen.getByText(/All Star Bowling Alley/i)
+    const linkElement = screen.getByText(/Five Star Bowling Alley/i)
     // This will eventually use the prop testing method below
     
     expect(linkElement).toBeInTheDocument();

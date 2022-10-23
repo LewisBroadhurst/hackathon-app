@@ -1,5 +1,5 @@
 import React from 'react';
-import { faDoorOpen, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import VenueCarousel from './VenueCarousel';
 
