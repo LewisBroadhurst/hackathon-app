@@ -4,13 +4,13 @@ import EventBanner from "./EventBanner";
 
 const EventMain = () => {
   return (
-    <section>
+    <section className='w-[1200px] mx-auto'>
         <div className="mt-24">
-            <EventBanner />
+          <EventBanner />
         </div>
 
         <div className="mt-24">
-          <p>hello world</p>
+          
         </div>
     </section>
   )

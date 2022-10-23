@@ -1,25 +1,34 @@
+import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import VenueCarousel from '../VenueSpecific/VenueCarousel';
 
 const EventBanner = () => {
   return (
-    <section>
-        <section className="pb-6 border-b border-cGrey400 flex flex-col items-center">
-      <span className="text-md md:pl-1">Bright Network Socials / 26th Sep Bowling</span>
+    <section className='flex flex-row justify-between items-center pb-2 border-b'>
+      <section className="flex flex-col gap-2">
+        <span className="text-md text-neutral">Bright Network Socials</span>
 
-      <h1 className="text-4xl mt-2 mb-1 text-center sm:text-left md:text-5xl">Bright Network Socials</h1>
+        <h1 className="text-4xl text-neutral-focus">September Quarterly</h1>
 
-      <span className="md:pl-1">Next event: 12th October '22</span>
+        <div className='flex gap-1'>
+          <span><FontAwesomeIcon icon={faCalendar} /></span>
+          <span className='text-neutral'>12th October '22</span>
+        </div>
 
-      <nav className="mt-4">
-          <ul className="flex flex-row items-center flex-wrap gap-2 content-around text-xs sm:text-md md:text-lg">
-              <li className="px-2 py-1 bg-cMono200 rounded-lg">Overview</li>
-              <li className="px-2 py-1 bg-cMono200 rounded-lg">Events</li>
-              <li className="px-2 py-1 bg-cMono200 rounded-lg">Polls</li>
-              <li className="px-2 py-1 bg-cMono200 rounded-lg">Venues</li>
-              <li className="px-2 py-1 bg-cMono200 rounded-lg">Members</li>
-          </ul>
-      </nav>
-    </section>
+        <nav className="py-2">
+            <ul className="flex flex-row items-center flex-wrap gap-2 content-around text-xs sm:text-md md:text-lg">
+                <li className="px-2 py-1 bg-cMono200 rounded-lg">Overview</li>
+                <li className="px-2 py-1 bg-cMono200 rounded-lg">Events</li>
+                <li className="px-2 py-1 bg-cMono200 rounded-lg">Polls</li>
+                <li className="px-2 py-1 bg-cMono200 rounded-lg">Venues</li>
+                <li className="px-2 py-1 bg-cMono200 rounded-lg">Members</li>
+            </ul>
+        </nav>
+      </section>
+      <div className='w-[500px]'>
+        <VenueCarousel />
+      </div>
     </section>
   )
 }
