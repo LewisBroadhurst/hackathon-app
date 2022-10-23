@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
   return (
-    <section className="fixed w-screen bg-cMono500 z-10 text-white">
+    <section className="fixed w-screen bg-base-content z-50 text-white">
         <div className="flex flex-row justify-between items-center py-1 text-cBlack500 w-[1200px] mx-auto">
 
             <div className="flex flex-row items-center gap-4">
@@ -37,7 +37,7 @@ const Header = () => {
 
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0}>
-                    <div className="w-10 rounded-full cursor-pointer">
+                    <div className="w-10 rounded-full cursor-pointer border-2 border-success">
                         <img src={Portrait} alt="" className="rounded-full"/>
                     </div>
                     </label>
