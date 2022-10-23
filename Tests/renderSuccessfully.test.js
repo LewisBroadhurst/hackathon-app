@@ -28,6 +28,8 @@ import Step1 from '../src/Components/CommericalRegistration/Steps/Step1';
 import Step2 from '../src/Components/CommericalRegistration/Steps/Step2';
 import Step3 from '../src/Components/CommericalRegistration/Steps/Step3';
 import Step4 from '../src/Components/CommericalRegistration/Steps/Step4';
+import Footer from '../src/Components/Footer/Footer';
+import GroupCommunity from '../src/Components/GroupOverviewSpecific/GroupCommunity';
 
 
 // 1. Renders the specified component
@@ -112,7 +114,6 @@ it("renders Step3", () => {
 it("renders EventCard", () => {
     render(<EventCard />);
     const linkElement = screen.getByText(/Five Star Bowling/i)
-    // This will eventually use the prop testing method below
     
     expect(linkElement).toBeInTheDocument();
 });
@@ -123,23 +124,31 @@ it("renders EventCard", () => {
 it("renders EventBanner", () => {
     render(<EventBanner />);
     const linkElement = screen.getByText(/September Quarterly/i);
-    // This will eventually use the prop testing method below
     
     expect(linkElement).toBeInTheDocument();
 });
 
-// it("renders EventMain", () => {
-//     render(<EventMain />);
-//     const linkElement = screen.getByText(/hello world/i)
-//     // This will eventually use the prop testing method below
+it("renders EventMain", () => {
+    render(<EventMain />);
+    const mainContents = screen.getAllByText(/We have decided/i);
     
-//     expect(linkElement).toBeInTheDocument();
-// });
+    expect(mainContents).toBeTruthy();
+});
 
 // Footer Folder
 
+it("renders Footer", () => {
+    render(<Footer />);
+    const linkElement = screen.getByText(/ACME Industries Ltd./i);
+    
+    expect(linkElement).toBeInTheDocument();
+});
+
 // Forms Folder
 // Both contain APIs which is currently a problem
+
+// GMaps Folder
+// API based...
 
 // GroupOverviewSpecific Folder
 
@@ -150,19 +159,19 @@ it("renders GroupBanner", () => {
     expect(linkElement).toBeInTheDocument();
 });
 
-// it("renders GroupMain", () => {
-//     render(<EventMain />);
-//     const linkElement = 
+it("renders GroupMain", () => {
+    render(<EventMain />);
+    const postText = screen.getAllByText(/We have decided/i);
     
-//     expect(linkElement).toBeInTheDocument();
-// });
+    expect(postText.length).toBeGreaterThan(1);
+});
 
-// it("renders GroupCommunity", () => {
-//     render(<GroupCommunity />);
-//     const linkElement = screen.getByText(/Next event:/i);
+it("renders GroupCommunity", () => {
+    render(<GroupCommunity />);
+    const postText = screen.getAllByText(/We have decided/i);
     
-//     expect(linkElement).toBeInTheDocument();
-// });
+    expect(postText.length).toBeGreaterThan(1);
+});
 
 // GroupOverviewSpecific > Tabs Folder
 
