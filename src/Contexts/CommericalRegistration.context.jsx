@@ -38,6 +38,7 @@ const defaultRegDetails = {
     name: '',
     email: '',
     password: '',
+    mobile: 0,
     basicBio: '',
     photoUrls: [],
     product: '',

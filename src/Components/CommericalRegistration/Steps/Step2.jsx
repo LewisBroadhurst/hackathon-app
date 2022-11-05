@@ -52,6 +52,8 @@ const Step2 = () => {
 
             <input required type="email" placeholder="Email" name='email' className="input input-bordered w-full" onChange={handleDetailsUpdates} />
 
+            <input required type='number' placeholder="Mobile" name='mobile' className="input input-bordered w-full" onChange={handleDetailsUpdates} />
+
             <input required type="password" placeholder="Password" name='password' className="input input-bordered w-full" onChange={handleDetailsUpdates} />
 
 

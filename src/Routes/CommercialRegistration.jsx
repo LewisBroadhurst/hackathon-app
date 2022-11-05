@@ -48,9 +48,6 @@ const CommercialRegistration = () => {
             </div>
 
         </div>
-
-        <Footer />
-
     </section>
   )
 }

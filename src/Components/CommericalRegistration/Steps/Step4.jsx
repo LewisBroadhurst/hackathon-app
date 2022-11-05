@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { CommercialRegistrationContext } from '../../../Contexts/CommericalRegistration.context';
 import { useNavigate } from 'react-router-dom';
+import { createOrganisation } from '../../../API/OrganisationAPI';
 
 const Step4 = () => {
 
@@ -55,6 +56,23 @@ const Step4 = () => {
     }
   };
 
+  const handleCreateOrg = async (event) => {
+    event.preventDefault();
+
+    const {name, email, mobile} = registrationDetails;
+    console.log(name, email, mobile);
+
+    const payload = {
+      uniqueId: 0,
+      name: "hello",
+      email: "email",
+      phoneNo: "noice"
+    };
+
+    const response = await createOrganisation(payload);
+    console.log(response);
+  }
+
   return (
     <section className='flex flex-col items-center justify-center gap-5 m-10'>
       <h2 className='text-3xl'>You're nearly there...</h2>
@@ -89,7 +107,9 @@ const Step4 = () => {
           { isProcessingPayment ? 
             <progress className="progress w-40"></progress> :
             <button className='btn w-5/12' >Lets go!</button>
+            
           }
+          <button onClick={handleCreateOrg}>hello</button>
         </div>
         
       </form>
