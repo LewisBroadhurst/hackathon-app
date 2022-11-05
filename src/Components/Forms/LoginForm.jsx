@@ -1,19 +1,23 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { loginUser } from '../../API/UserAPI';
+import { useContext } from 'react';
+import { UserContext } from '../../Contexts/User.context';
 
 
 const LoginForm = () => {
 
+  const { user, login } = useContext(UserContext);
   const [passwordShowing, setPasswordShowing] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordShowing = () => {
     setPasswordShowing(passwordShowing ? false : true);
   };
 
-  const [user, setUser] = useState({
+  const [userLogin, setUserLogin] = useState({
     email: '',
     password: ''
   });
@@ -23,15 +27,21 @@ const LoginForm = () => {
 
     let updatedValue = event.target.name;
     let newValue = event.target.value;
-    setUser({...user, [updatedValue]: newValue});
-    console.log(user);
+    setUserLogin({...userLogin, [updatedValue]: newValue});
   };
 
   const handleLoginUser = async (event) => {
     event.preventDefault();
 
-    const response = await loginUser(user);
-    console.log(response);
+    const response = await loginUser(userLogin);
+
+    if (response) {
+      login(userLogin);
+      console.log("currentUser:", user.email);
+      return navigate('/groupOverview');
+    }
+
+    alert("Could not match username/password");
   };
 
   return (

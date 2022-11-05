@@ -2,8 +2,22 @@ import React from 'react';
 import Portrait from "../../Assets/PortraitSquared.jpg";
 import { faArrowRightFromBracket, faBell, faEnvelope, faImagePortrait } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useContext } from 'react';
+import { UserContext } from '../../Contexts/User.context';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+    const {logout} = useContext(UserContext);
+    const navigate = useNavigate();
+
+    const handleLogout = async (event) => {
+        event.preventDefault();
+
+        logout();
+        navigate('/');
+    };
+
   return (
     <section className="fixed w-screen bg-base-content z-50 text-white">
         <div className="flex flex-row justify-between items-center py-1 text-cBlack500 w-[1200px] mx-auto">
@@ -45,7 +59,7 @@ const Header = () => {
                         <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faImagePortrait} /> <span>Account</span></li>
                         <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faEnvelope} /> <span>Messages</span></li>
                         <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faBell} /> <span>Notifications</span></li>
-                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faArrowRightFromBracket} /> <span>Sign Out</span></li>
+                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faArrowRightFromBracket} /> <span onClick={handleLogout}>Sign Out</span></li>
                     </ul>
                 </div>
             </div>

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
+import { UserContext } from '../../Contexts/User.context';
 
 const defaultActiveTab = {
   'Overview': 'tab-active',
@@ -11,6 +13,7 @@ const defaultActiveTab = {
 const GroupBanner = ({setTabContents}) => {
 
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
+  const {user} = useContext(UserContext);
 
   const handleTabChange = (event) => {
     event.preventDefault();
@@ -34,6 +37,8 @@ const GroupBanner = ({setTabContents}) => {
         <h1 className="text-4xl mb-1 text-center sm:text-left md:text-5xl">Bright Network Socials</h1>
 
         <span className="md:pl-1">Next event: 12th October '22</span>
+
+        <span>{user.email}</span>
 
         <div className="tabs tabs-boxed flex gap-2 mt-4">
           <span className={`tab ${activeTab.Overview}`} onClick={handleTabChange} name='Overview'>Overview</span>
