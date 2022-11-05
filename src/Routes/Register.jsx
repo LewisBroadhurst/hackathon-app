@@ -17,7 +17,7 @@ const Register = () => {
         <img className='hidden rounded-r-2xl xl:flex' src={DesktopImage} alt='Friends at party'/>
       </div>
 
-      <div className='flex flex-col text-center mt-8 w-2/3 xl:w-[500px] xl:mx-auto xl:mt-0'>
+      <div className='flex flex-col text-center mt-8 w-10/12 md:w-2/3 xl:w-[400px] xl:mx-auto xl:mt-0'>
 
         <div className='flex flex-col gap-1 xl:py-8'>
           <h1 className='text-4xl font-bold xl:text-6xl'>Fun @ Five</h1>
