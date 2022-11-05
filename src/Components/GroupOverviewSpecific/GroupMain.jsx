@@ -31,7 +31,7 @@ const GroupMain = () => {
     }
 
   return (
-    <section className="bg-base-300 flex flex-col mt-12">
+    <section className="bg-slate-300 flex flex-col mt-12">
         <div className="xl:w-[1200px] mx-auto">
 
         <GroupBanner setTabContents={setTabContents} />

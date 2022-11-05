@@ -7,7 +7,7 @@ const GroupMembersCard = () => {
   return (
     <>
     <section className=''>
-    <div className="flex flex-col gap-2 w-full border-2 border-cMono400 bg-white rounded-md">
+    <div className="flex flex-col gap-2 w-full customShadow1 bg-white rounded-md">
 
         <div className='flex flex-col gap-1 py-1 px-5 pt-3'>
 
@@ -44,7 +44,7 @@ const GroupMembersCard = () => {
 
         </div>
 
-        <label htmlFor="members-modal" className="modal-button flex gap-3 justify-center items-center border-t rounded-b-md py-2 hover:text-white hover:bg-cMono500 hover:cursor-pointer">
+        <label htmlFor="members-modal" className="modal-button flex gap-3 justify-center items-center border-t rounded-b-md py-2 hover:text-white hover:bg-accent hover:cursor-pointer">
           <span className='text-center text-md'>Show all</span>
           <span><FontAwesomeIcon icon={faArrowRight} /> </span>
         </label>

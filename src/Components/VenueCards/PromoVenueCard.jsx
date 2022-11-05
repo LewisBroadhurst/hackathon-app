@@ -2,7 +2,7 @@ import React from 'react'
 
 const PromoVenueCard = () => {
   return (
-    <div className="card w-72 border-2">
+    <div className="card w-72 customShadow1 transition-all duration-300 hover:cursor-pointer hover:scale-[.98]">
         <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
         <div className="card-body p-3 gap-1">
         <h2 className="card-title">

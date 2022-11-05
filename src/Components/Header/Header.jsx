@@ -1,6 +1,6 @@
 import React from 'react';
 import Portrait from "../../Assets/PortraitSquared.jpg";
-import { faArrowRightFromBracket, faBell, faEnvelope, faImagePortrait } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faBell, faEnvelope, faImagePortrait, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { UserContext } from '../../Contexts/User.context';
@@ -24,8 +24,9 @@ const Header = () => {
 
             <div className="flex flex-row items-center gap-4">
                 <h2 className="text-2xl">FUN@5</h2>
-                <div>
-                    <input type="text" />   
+                <div className='relative'>
+                    <input type={'text'} placeholder={'Search'} className='rounded-md p-0.5 text-black' /> 
+                    <span className='text-black absolute top-1/2 translate-y-[-50%] right-2 hover:cursor-pointer hover:text-secondary'><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
                 </div>
             </div>
             

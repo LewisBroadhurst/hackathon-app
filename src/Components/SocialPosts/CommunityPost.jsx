@@ -3,7 +3,7 @@ import Portrait from "../../Assets/PortraitSquared.jpg";
 
 const CommunityPost = () => {
   return (
-    <section className="p-5 bg-white rounded-md border-2 border-cMono400">
+    <section className="p-5 bg-white rounded-md customShadow1">
         <div>
             <div className="flex flex-row items-center">
                 <img src={Portrait} alt="" className="w-12 rounded-full mr-4"/>
@@ -23,8 +23,8 @@ const CommunityPost = () => {
                 </div>
 
                 <div className="flex flex-row items-center gap-2 xl:-order-2">
-                    <button className="w-28 py-1 bg-cMono500 text-white">Like</button>
-                    <button className="w-28 py-1 bg-cMono500 text-white">Comment</button>
+                    <button className="w-28 py-1 bg-primary rounded-md text-white hover:bg-secondary">Like</button>
+                    <button className="w-28 py-1 bg-primary rounded-md text-white hover:bg-secondary">Comment</button>
                 </div>
             </div>
             
