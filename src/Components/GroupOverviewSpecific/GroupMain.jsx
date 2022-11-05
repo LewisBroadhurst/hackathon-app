@@ -32,17 +32,46 @@ const GroupMain = () => {
 
   return (
     <section className="bg-base-300 flex flex-col mt-12">
-        <div className="w-[1200px] mx-auto">
+        <div className="xl:w-[1200px] mx-auto">
 
         <GroupBanner setTabContents={setTabContents} />
 
-        <div className="flex flex-row gap-4 py-6">
+        {/* Mobile layout */}
+
+        <div className="flex flex-col xl:flex-row gap-2 p-6 md:hidden">
+            <GroupDetailsTablet />
+
+            <GroupMembersCard />
+
+            <div className="xl:w-[700px]">
+                {mainDisplay(tabContents)}
+            </div>
+        </div>
+
+        {/* Tablet layout */}
+
+        <div className="hidden md:flex flex-row gap-2 p-6 lg:hidden">
+            <div className="flex flex-col w-[300px]">
+                <GroupDetailsTablet />
+                <GroupMembersCard />
+                <PromoVenueTablet />
+            </div>
+
+
+            <div className="xl:w-[700px]">
+                {mainDisplay(tabContents)}
+            </div>
+        </div>
+
+        {/* Laptop/Desktop layout */}
+
+        <div className="hidden lg:flex flex-col xl:flex-row gap-4 py-6">
             <div className="w-[350px] flex flex-col gap-3">
                 <GroupDetailsTablet />
                 <PromoVenueTablet />
             </div>
 
-            <div className="w-[700px]">
+            <div className="xl:w-[700px]">
                 {mainDisplay(tabContents)}
             </div>
 

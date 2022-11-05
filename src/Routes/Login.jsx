@@ -50,10 +50,6 @@ const Login = () => {
       </div>
 
       </div>
-
-      <div className='self-stretch'>
-        <Footer />
-      </div>
       
     </section>
   )
