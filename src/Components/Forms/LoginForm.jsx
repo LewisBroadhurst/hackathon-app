@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { loginUser } from '../../API/UserAPI';
 
 
 const LoginForm = () => {
@@ -13,8 +14,6 @@ const LoginForm = () => {
   };
 
   const [user, setUser] = useState({
-    uniqueId: 0,
-    role: 'USER',
     email: '',
     password: ''
   });
@@ -25,24 +24,14 @@ const LoginForm = () => {
     let updatedValue = event.target.name;
     let newValue = event.target.value;
     setUser({...user, [updatedValue]: newValue});
+    console.log(user);
   };
-
-  const credentialsCheck = () => {
-    if (user.password.length > 8) {
-      return true;
-    }
-    return false;
-  }
 
   const handleLoginUser = async (event) => {
     event.preventDefault();
 
-    if (!credentialsCheck()) {
-      return alert("Please enter a password that contains over 8 characters");
-    }
-
-    // const response = await createUser(user);
-    // console.log(response);
+    const response = await loginUser(user);
+    console.log(response);
   };
 
   return (
@@ -66,7 +55,7 @@ const LoginForm = () => {
           <span className='self-center cursor-pointer mt-0.5 border-b-2 border-white text-slate-400 hover:border-accent hover:text-accent'>Forgot password?</span>
         </div>
 
-        <button className='py-2 rounded-lg text-lg bg-primary text-white transition-all duration-500 hover:bg-primary-focus hover:scale-[.97]' type='submit' value={"Sign In"}>Sign In</button>
+        <button className='py-2 rounded-lg text-lg bg-primary text-white transition-all duration-500 hover:bg-primary-focus hover:scale-[.97]' type='submit' value={"Sign In"} onClick={handleLoginUser}>Sign In</button>
 
       </form>
 

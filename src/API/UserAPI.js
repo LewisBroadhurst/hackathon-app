@@ -36,6 +36,20 @@ export const createUser = async (payload) => {
     }
 };
 
+export const loginUser = async (payload) => {
+    try {
+        const {email, password} = payload;
+        console.log(email, password);
+        const response = await axios.post(`http://127.0.0.1:8080/users/login/login`, null, {params: {email: email, password: password}});
+        const user = response.data;
+        console.log(user, email, password);
+
+        return user;
+    } catch (e) {
+        console.log(e);
+    }
+};
+
 export const updateUser = async (ID, payload) => {
     try {
         const response = await axios.post(`http://127.0.0.1:8080/users/updateUser/${ID}`, payload);
