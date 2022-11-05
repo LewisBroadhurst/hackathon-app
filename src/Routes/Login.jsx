@@ -18,11 +18,11 @@ const Login = () => {
         <img className='hidden rounded-r-2xl xl:flex' src={DesktopImage} alt='Friends at party'/>
       </div>
 
-      <div className='flex flex-col text-center mt-8 w-10/12 md:w-2/3 xl:w-[400px] xl:mx-auto xl:mt-0'>
+      <div className='customShadow1 flex flex-col text-center mt-8 w-10/12 p-5 mb-10 rounded-md md:w-2/3 xl:w-[400px] xl:mx-auto xl:mt-0'>
 
-        <div className='flex flex-col gap-1 xl:py-8'>
-          <h1 className='text-4xl font-bold xl:text-6xl'>Fun @ Five</h1>
-          <p className='text-xl mb-2 xl:text-2xl'>Sign in to your account</p>
+        <div className='flex flex-col gap-1 xl:py-4'>
+          <h1 className='text-3xl font-bold xl:text-5xl'>Fun @ Five</h1>
+          <p className='text-md mb-2 text-gray-500 xl:text-lg'>Sign in to your account</p>
         </div>
 
         <LoginForm />
@@ -32,19 +32,19 @@ const Login = () => {
         <div className='flex flex-col mt-6'>
           <div className='flex items-center'>
             <span className='flex-grow border-t border-cMono800'></span>
-            <span className='mx-3'>Or sign in with</span>
+            <span className='mx-3'>Or register with</span>
             <span className='flex-grow border-t border-cMono800'></span>
           </div>
           
 
           <div className='flex flex-row justify-evenly py-4 pb-6 border-b border-cMono800'>
-            <button className='bg-info p-2 rounded-lg w-5/12'>Facebook</button>
-            <button className='bg-error p-2 rounded-lg w-5/12'>Google</button>
+            <button className='bg-blue-500 text-white p-2 rounded-lg w-5/12'>Facebook</button>
+            <button className='bg-red-700 text-white p-2 rounded-lg w-5/12'>Google</button>
           </div>
         </div>
 
-        <h3 className='text-lg text-center text-primary underline my-6 mb-10'>
-          <Link to={'/commericalRegistration'} >Want to register your venue or organisation to our app?</Link>
+        <h3 className='text-lg text-center text-primary underline mt-6 hover:text-secondary'>
+          <Link to={'/commericalRegistration'} >Registering a venue or organisation?</Link>
         </h3>
 
       </div>

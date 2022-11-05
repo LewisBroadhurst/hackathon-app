@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import { createUser } from '../../API/UserAPI';
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const RegisterForm = () => {
@@ -46,39 +48,33 @@ const RegisterForm = () => {
 
 
   return (
-    <>
-      <section className='flex flex-col'>
+    <section className='flex flex-col gap-2'>
+      <form className='flex flex-col gap-2'>
 
         <div className='flex flex-col'>
-
-          <form className='flex flex-col gap-3'>
-
-            <div className='flex flex-col gap-1'>
-              <label className='text-xl self-start'>Email*</label>
-              <input className='border border-black rounded-md p-1' type={'email'} name={'email'} onChange={handleUpdatingFormFields} />
-            </div>
-
-            <div className='flex flex-col gap-1'>
-              <label className='text-xl self-start'>Password*</label>
-              <input className='border border-black rounded-md p-1' type={passwordShowing ? 'text' : 'password'} name={'password'} onChange={handleUpdatingFormFields} />
-            </div>
-
-            <div className='flex flex-row items-center gap-4 self-center'>
-            <span>Show password</span>
-            <input type="checkbox" onClick={togglePasswordShowing}/>
-            </div>
-
-            <button className='py-2 bg-primary text-white rounded-lg text-xl' type='submit' value={"Sign In"} onClick={handleRegisterUser}>Register</button>
-          </form>
-
-          <p className='mt-1 flex gap-2 self-center'>
-            <span>Already have an account?</span>
-            <span className='text-secondary'><Link to={"/"}>Log In</Link></span>
-          </p>
+          <label className='text-md self-start'>Email*</label>
+          <input className='border border-black rounded-md p-1' type={'email'} name={'email'} onChange={handleUpdatingFormFields} />
         </div>
-        
-      </section>
-    </>
+
+        <div className='flex flex-col'>
+          <label className='text-md self-start'>Password*</label>
+
+          <div className='flex flex-col relative'>
+            <input className='border border-black rounded-md p-1' type={passwordShowing ? 'text' : 'password'} name={'password'} onChange={handleUpdatingFormFields} />
+            <span className='absolute top-1/2 translate-y-[-50%] right-2 hover:cursor-pointer hover:text-primary-focus' onClick={togglePasswordShowing}>{passwordShowing ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}</span>
+          </div>
+
+          <span className='self-center cursor-pointer mt-0.5 border-b-2 text-slate-400 border-white hover:border-accent hover:text-accent'>Forgot password?</span>
+        </div>
+
+        <button className='py-2 rounded-lg text-lg bg-primary text-white transition-all duration-500 hover:bg-primary-focus hover:scale-[.97]' type='submit' value={"Sign In"} onClick={handleRegisterUser}>Register</button>
+      </form>
+
+      <p className='flex gap-1 self-center'>
+        <span>Already have an account?</span>
+        <span className='text-secondary border-b-white border-b-2 hover:border-b-secondary'><Link to={"/"}>Log In</Link></span>
+      </p>
+    </section>
   )
 }
 

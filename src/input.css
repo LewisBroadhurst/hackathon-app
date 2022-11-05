@@ -36,3 +36,11 @@ html {
 ::-webkit-scrollbar-button {
   display: none;
 }
+
+/* Custom Shadows */
+
+.customShadow1 {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(201,201,201,1);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(201,201,201,1);
+  box-shadow: 0px 0px 15px 0px rgba(201,201,201,1);
+}
