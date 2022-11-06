@@ -9,7 +9,7 @@ const Venue = () => {
         <div>
             <Header />
 
-            <div className='p-5 xl:w-[1200px] xl:mx-auto'>
+            <div className='p-5 xl:w-[1200px] mx-auto lg:w-[1000px]'>
                 <VenueMain />
             </div>
 
