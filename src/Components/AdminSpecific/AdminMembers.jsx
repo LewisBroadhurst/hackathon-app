@@ -4,7 +4,7 @@ import MemberCardSmall from '../MemberCards/MemberCardSmall';
 
 const AdminMembers = () => {
   return (
-    <section className='w-[350px] mx-auto'>
+    <section className='w-full xl:w-[450px] mx-auto'>
         <div className='bg-white h-[700px] border-cMono400 border-2 rounded-lg flex flex-col items-center gap-4 p-4'>
             <h2 className='text-2xl border-b border-cMono600 self-stretch text-center pb-2'>Active Members</h2>
 

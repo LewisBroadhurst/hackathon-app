@@ -7,23 +7,24 @@ import Header from '../Components/Header/Header';
 
 const Admin = () => {
   return (
-    <section className='bg-cMono300 h-screen'>
-        <div>
-            <Header />
+    <section className='bg-cMono300'>
+      <div>
+        <Header />
 
-            <div className='flex flex-col items-center gap-5 w-[1200px] mx-auto'>
-                <AdminStats />
+        <div className='flex flex-col gap-5 mx-auto xl:w-[1400px]'>
+          <div className='hidden self-center lg:block'>
+            <AdminStats />
+          </div>
+              
+          <div className='flex flex-col gap-5 pt-16 p-5 mx-auto sm:w-3/4 lg:pt-0 xl:flex-row xl:w-full xl:gap-2'>
+              <AdminMembers />
 
-                <div className='flex flex-row gap-5'>
-                    <AdminMembers />
+              <AdminOrganisations />
 
-                    <AdminOrganisations />
-
-                    <AdminVenues />
-
-                </div>
-            </div>
+              <AdminVenues />
+          </div>
         </div>
+      </div>
     </section>
   )
 }
