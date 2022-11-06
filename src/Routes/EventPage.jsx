@@ -10,17 +10,17 @@ const EventPage = () => {
     <section className="flex flex-col bg-base-200">
         <Header />
 
-        <div className="w-[1200px] mx-auto mt-12">
+        <div className="xl:w-[1200px] mx-auto mt-12">
           <EventBanner />
         </div>
 
-        <div className="flex flex-row gap-2 my-6 mx-auto w-[1200px]">
+        <div className="flex flex-col px-5 gap-2 my-6 mx-auto lg:flex-row xl:w-[1200px]">
             
-          <div className="">
+          <div className="xl:w-[900px]">
             <EventMain />
           </div>
 
-          <div className='w-[300px]'>
+          <div className='hidden lg:block xl:w-[300px]'>
             <PromoVenueTablet />
           </div>
         </div>

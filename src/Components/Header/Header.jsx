@@ -24,7 +24,7 @@ const Header = () => {
 
             <div className="flex flex-row items-center gap-4">
                 <h2 className="text-2xl">FUN@5</h2>
-                <div className='relative'>
+                <div className='relative hidden md:block'>
                     <input type={'text'} placeholder={'Search'} className='rounded-md p-0.5 text-black' /> 
                     <span className='text-black absolute top-1/2 translate-y-[-50%] right-2 hover:cursor-pointer hover:text-secondary'><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
                 </div>
