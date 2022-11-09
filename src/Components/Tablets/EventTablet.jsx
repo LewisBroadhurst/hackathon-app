@@ -1,7 +1,8 @@
 import React from 'react';
 import GroupOverviewEventCard from '../EventCards/EventCard'
 
-const EventTablet = () => {
+const EventTablet = ({events}) => {
+
   return (
     <section className="flex flex-col justify-around gap-2 w-full rounded-md h-min md:flex-col">
 
@@ -9,9 +10,13 @@ const EventTablet = () => {
             <h3 className="text-md pb-1 text-center font-bold">Upcoming Events</h3>
 
             <div className="flex flex-col w-full">
-                <GroupOverviewEventCard />
-
-                <GroupOverviewEventCard />
+            {
+                events.slice(0,2).map((event, index) => {
+                    return (
+                        <GroupOverviewEventCard key={index} name={event.name} location={event.location} />
+                    )
+                })
+            }
             </div>
         </div>
 
@@ -19,9 +24,13 @@ const EventTablet = () => {
             <h3 className="text-md font-bold pb-1 text-center">Successful Events</h3>
 
             <div className="flex flex-col w-full">
-                <GroupOverviewEventCard />
-
-                <GroupOverviewEventCard />
+            {
+                events.slice(0,2).map((event, index) => {
+                    return (
+                        <GroupOverviewEventCard key={index} name={event.name} location={event.location} />
+                    )
+                })
+            }
             </div>
         </div>
     </section>

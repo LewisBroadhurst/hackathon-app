@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './input.css';
 import Admin from './Routes/Admin';
@@ -11,6 +12,10 @@ import Venue from './Routes/Venue';
 
 function App() {
 
+  const [organisation, setOrganisation] = useState(null);
+
+  
+
   return (
     <>
         <BrowserRouter>
@@ -19,11 +24,10 @@ function App() {
             <Route path='/' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/admin' element={<Admin />} />
-            <Route path='/groupOverview' element={<GroupOverview />} />
+            <Route path='/organisation/:id' element={<GroupOverview data={organisation} />} />
             <Route path='/eventOverview' element={<EventPage />} />
             <Route path='/commericalRegistration' element={<CommercialRegistration />} />
             <Route path='venues/FiveStarBowlingAlley' element={<Venue />} />
-    
 
           </Routes>
         </BrowserRouter>

@@ -10,20 +10,25 @@ import React, { useState } from 'react';
 import MainEvents from "./Tabs/MainEvents";
 import MainVenues from "./Tabs/MainVenues";
 import MainPolls from "./Tabs/MainPolls";
-import { useContext } from "react";
-import { UserContext } from "../../Contexts/User.context";
 import { useEffect } from "react";
-import { getAllOrganisations } from "../../API/OrganisationAPI";
+import { getOrganisationByID } from "../../API/OrganisationAPI";
+import { useParams } from "react-router-dom";
 
 const GroupMain = () => {
 
     const [tabContents, setTabContents] = useState('Overview');
-    const { user } = useContext(UserContext);
-    const [organisations, setOrganisations] = useState(null);
-
-   
-    const handleGetOrgs = () => getAllOrganisations(setOrganisations, user.token)
- 
+    // const { user, orgId } = useContext(UserContext);
+    const [organisation, setOrganisation] = useState(null);
+    const { id } = useParams();
+    
+    useEffect(() => {
+        const response = async () => {
+            let org = await getOrganisationByID(1);
+            setOrganisation(org);
+        }
+         
+        response()
+    }, [])
 
     const mainDisplay = (tabContents) => {
         switch (tabContents) {
@@ -40,11 +45,17 @@ const GroupMain = () => {
         }
     }
 
-  return (
-    <section className="bg-slate-300 flex flex-col mt-12">
+    const content = () => {
+
+        if (!organisation) {
+            return 'loading...'
+        }
+
+        return (
+        <section className="bg-slate-300 flex flex-col mt-12">
         <div className="xl:w-[1200px] mx-auto">
 
-        <GroupBanner setTabContents={setTabContents} />
+        <GroupBanner name={organisation.name} setTabContents={setTabContents} />
 
         {/* Mobile layout */}
 
@@ -78,17 +89,6 @@ const GroupMain = () => {
         <div className="hidden lg:flex flex-col xl:flex-row gap-4 py-6">
         
             <div className="w-[350px] flex flex-col gap-3">
-                <span>token: {user.token}</span>
-                <button onClick={handleGetOrgs} className='btn'>Get orgs</button>
-                <div>
-                    {
-                        !organisations ? "..." : organisations.map((org, index) => {
-                            return (
-                                <span>{org.name}</span>
-                            )
-                        })
-                    }
-                </div>
                 <GroupDetailsTablet />
                 <PromoVenueTablet />
             </div>
@@ -98,8 +98,8 @@ const GroupMain = () => {
             </div>
 
             <div className="w-[350px] flex flex-col gap-2">
-                <GroupMembersCard />
-                <EventTablet />
+                <GroupMembersCard users={organisation.users} />
+                <EventTablet events={organisation.events} />
             </div>  
         </div>
 
@@ -140,6 +140,14 @@ const GroupMain = () => {
         </ul>
         </div>
     </section>
+    )
+    }
+    
+
+  return (
+    <>
+    {content()}
+    </>
   )
 }
 

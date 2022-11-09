@@ -5,8 +5,9 @@ export const getAllVenues = async (setVenues) => {
         const response = await axios.get('http://127.0.0.1:8080/venues/findAll');
         const venues = response.data;
         console.log(venues);
-        
-        return setVenues(venues);
+        setVenues(venues);
+
+        return venues;
     } catch (e) {
         console.log(e);
     }

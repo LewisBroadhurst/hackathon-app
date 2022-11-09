@@ -60,10 +60,11 @@ const RegisterForm = () => {
     console.log(response);
     user['token'] = response;
     console.log(user);
+    const id = 1;
 
     if (response) {
       login(user);
-      navigate('/groupOverview')
+      navigate(`/groupOverview/${id}`)
     } else {
       alert("There was a problem with registration. Please try again.")
     }

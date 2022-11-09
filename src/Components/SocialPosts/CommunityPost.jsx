@@ -1,7 +1,9 @@
 import React from 'react';
 import Portrait from "../../Assets/PortraitSquared.jpg";
 
-const CommunityPost = () => {
+const CommunityPost = ({content, likecount}) => {
+
+
   return (
     <section className="p-5 bg-white rounded-md customShadow1">
         <div>
@@ -13,11 +15,11 @@ const CommunityPost = () => {
                 </div>
             </div>
             
-            <p className="mt-4 border-b border-cMono700 pb-4">Remember to cast your vote for the upcoming September social! It's a close race between bowling and mini golf 🎳⛳</p>
+            <p className="mt-4 border-b border-cMono700 pb-4">{content}</p>
 
             <div className="flex flex-col items-center justify-between xl:flex-row xl:mt-4">
                 <div className="flex flex-row items-center gap-2 my-2 xl:my-0">
-                    <span>11 likes</span>
+                    <span>{likecount} likes</span>
                     <span className="-translate-y-2 text-2xl">.</span>
                     <span>2 comments</span>
                 </div>

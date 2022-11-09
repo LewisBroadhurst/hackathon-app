@@ -10,12 +10,12 @@ const defaultActiveTab = {
 }
 
 
-const GroupBanner = ({setTabContents}) => {
+const GroupBanner = ({setTabContents, name}) => {
 
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
   const [image, setImage] = useState(null);
   const {user} = useContext(UserContext);
-
+  
   const handleTabChange = (event) => {
     event.preventDefault();
     console.log(event.target.getAttribute('name'));
@@ -30,26 +30,25 @@ const GroupBanner = ({setTabContents}) => {
     return setTabContents(clickedTab);
   }
 
-  const handleFileUpload = (event) => {
-    event.preventDefault()
+  // const handleFileUpload = (event) => {
+  //   event.preventDefault()
 
-    const file = event.target.files[0];
-    const fileUrl = URL.createObjectURL(file);
+  //   const file = event.target.files[0];
+  //   const fileUrl = URL.createObjectURL(file);
 
-    console.log(fileUrl);
-    setImage(fileUrl)
-  }
+  //   console.log(fileUrl);
+  //   setImage(fileUrl)
+  // }
 
-  const handleFileSubmit = () => {
-    // http://localhost:3000/e3e7b3b4-178a-4bac-b5bd-cfbcad90dffb
-  }
+
+  console.log(name, '= name')
         
 
   return (
     <section className="py-6 border-b border-cMono800 flex flex-row gap-5">
 
       <div className="mx-auto flex flex-col items-center xl:w-[700px]">
-        <h1 className="text-4xl mb-1 text-center sm:text-left md:text-5xl">Bright Network Socials</h1>
+        <h1 className="text-4xl mb-1 text-center sm:text-left md:text-5xl">{name}</h1>
 
         <span className="md:pl-1">Next event: 12th October '22</span>
         

@@ -1,29 +1,17 @@
 import axios from 'axios';
 
-export const getAllOrganisations = async (setOrganisations, authToken) => {
+export const getAllOrganisations = async (setOrganisations) => {
     try {
-        const response = await axios({
-            method: 'GET',
-            url: 'http://127.0.0.1:8080/organisations/findAll',
-            headers: {authorization: 'Bearer fcb000d1-0c04-4d31-bd94-0ce23ccdf48a'}
-        })
+        const response = await axios.get('http://127.0.0.1:8080/organisations/findAll');
         const organisations = response.data;
+        setOrganisations(organisations);
 
-        return setOrganisations(organisations);
+        return organisations;
     } catch (e) {
         console.log(e);
     }
 }
 
-// export const getAllOrganisations = async (setOrganisations, authToken) => {
-
-//     const response = await axios.get('http://127.0.0.1:8080/organisations/findAll')
-
-//     const organisations = response.data;
-
-//     return setOrganisations(organisations);
-
-// }
 
 export const getOrganisationByID = async (ID) => {
     try {

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const GroupOverviewEventCard = () => {
+const GroupOverviewEventCard = ({name, location}) => {
+
   return (
     <section className="flex flex-row justify-start items-center gap-4 py-2 px-1 w-full border-t border-cMono400 text-cMono600 hover:cursor-pointer hover:bg-base-200">
       <div className="avatar">
@@ -10,7 +11,9 @@ const GroupOverviewEventCard = () => {
       </div>
 
       <div className="flex flex-col">
-        <h2 className="text-lg">Five Star Bowling</h2>
+        <h2 className="text-lg">{name}</h2>
+
+        <span className="text-xs">{location}</span>
 
         <span className="text-xs">18th September @ 3pm</span>
 
