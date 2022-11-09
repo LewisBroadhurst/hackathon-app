@@ -5,8 +5,7 @@ export const getAllOrganisations = async (setOrganisations, authToken) => {
         const response = await axios({
             method: 'GET',
             url: 'http://127.0.0.1:8080/organisations/findAll',
-            params: {},
-            headers: {Authorization: `Basic ${authToken}`}
+            headers: {authorization: 'Bearer fcb000d1-0c04-4d31-bd94-0ce23ccdf48a'}
         })
         const organisations = response.data;
 
@@ -15,6 +14,16 @@ export const getAllOrganisations = async (setOrganisations, authToken) => {
         console.log(e);
     }
 }
+
+// export const getAllOrganisations = async (setOrganisations, authToken) => {
+
+//     const response = await axios.get('http://127.0.0.1:8080/organisations/findAll')
+
+//     const organisations = response.data;
+
+//     return setOrganisations(organisations);
+
+// }
 
 export const getOrganisationByID = async (ID) => {
     try {
