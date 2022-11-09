@@ -5,13 +5,20 @@ import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { UserContext } from '../../Contexts/User.context';
+import { useEffect } from 'react';
+import { getAllOrganisations } from '../../API/OrganisationAPI';
 
 
 const RegisterForm = () => {
 
   const { login } = useContext(UserContext);
   const [passwordShowing, setPasswordShowing] = useState(false);
+  const [organisations, setOrganisations] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    getAllOrganisations(setOrganisations);
+  }, []);
 
   const togglePasswordShowing = () => {
     setPasswordShowing(passwordShowing ? false : true);
@@ -62,6 +69,8 @@ const RegisterForm = () => {
     }
   };
 
+  console.log(organisations)
+
 
   return (
     <section className='flex flex-col gap-2'>
@@ -81,6 +90,18 @@ const RegisterForm = () => {
           <label className='text-md self-start'>Email*</label>
           <input className='border border-black rounded-md p-1' type={'email'} name={'email'} onChange={handleUpdatingFormFields} />
         </div>
+
+        <select className="select select-bordered w-full max-w-xs">
+          <option disabled selected>Organisation</option>
+          {
+            !organisations ? <option>Loading...</option> : organisations.map((organisation, index) => {
+
+              return (
+                <option key={index}>{organisation.name}</option>
+              )
+            })
+          }
+        </select>
 
         <div className='flex flex-col'>
           <label className='text-md self-start'>Password*</label>
