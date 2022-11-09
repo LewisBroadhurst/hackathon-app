@@ -10,10 +10,20 @@ import React, { useState } from 'react';
 import MainEvents from "./Tabs/MainEvents";
 import MainVenues from "./Tabs/MainVenues";
 import MainPolls from "./Tabs/MainPolls";
+import { useContext } from "react";
+import { UserContext } from "../../Contexts/User.context";
+import { useEffect } from "react";
+import { getAllOrganisations } from "../../API/OrganisationAPI";
 
 const GroupMain = () => {
 
     const [tabContents, setTabContents] = useState('Overview');
+    const { user } = useContext(UserContext);
+    const [organisations, setOrganisations] = useState(null);
+
+   
+    const handleGetOrgs = () => getAllOrganisations(setOrganisations, user.token)
+ 
 
     const mainDisplay = (tabContents) => {
         switch (tabContents) {
@@ -66,7 +76,19 @@ const GroupMain = () => {
         {/* Laptop/Desktop layout */}
 
         <div className="hidden lg:flex flex-col xl:flex-row gap-4 py-6">
+        
             <div className="w-[350px] flex flex-col gap-3">
+                <span>token: {user.token}</span>
+                <button onClick={handleGetOrgs} className='btn'>Get orgs</button>
+                <div>
+                    {
+                        !organisations ? "..." : organisations.map((org, index) => {
+                            return (
+                                <span>{org.name}</span>
+                            )
+                        })
+                    }
+                </div>
                 <GroupDetailsTablet />
                 <PromoVenueTablet />
             </div>

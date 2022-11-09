@@ -91,18 +91,6 @@ const RegisterForm = () => {
           <input className='border border-black rounded-md p-1' type={'email'} name={'email'} onChange={handleUpdatingFormFields} />
         </div>
 
-        <select className="select select-bordered w-full max-w-xs">
-          <option disabled selected>Organisation</option>
-          {
-            !organisations ? <option>Loading...</option> : organisations.map((organisation, index) => {
-
-              return (
-                <option key={index}>{organisation.name}</option>
-              )
-            })
-          }
-        </select>
-
         <div className='flex flex-col'>
           <label className='text-md self-start'>Password*</label>
 

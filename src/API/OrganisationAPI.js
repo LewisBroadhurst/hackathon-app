@@ -1,8 +1,13 @@
 import axios from 'axios';
 
-export const getAllOrganisations = async (setOrganisations) => {
+export const getAllOrganisations = async (setOrganisations, authToken) => {
     try {
-        const response = await axios.get('http://127.0.0.1:8080/organisations/findAll');
+        const response = await axios({
+            method: 'GET',
+            url: 'http://127.0.0.1:8080/organisations/findAll',
+            params: {},
+            headers: {Authorization: `Basic ${authToken}`}
+        })
         const organisations = response.data;
 
         return setOrganisations(organisations);
