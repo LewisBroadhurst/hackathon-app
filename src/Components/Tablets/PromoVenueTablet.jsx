@@ -10,7 +10,6 @@ const PromoVenueTablet = () => {
     const response = async () => {
         let res = await getAllVenues(setVenues);
         setVenues(res);
-        console.log(res)
     }
      
     response();

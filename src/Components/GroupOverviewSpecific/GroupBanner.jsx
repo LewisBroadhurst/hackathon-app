@@ -29,21 +29,7 @@ const GroupBanner = ({setTabContents, name}) => {
 
     return setTabContents(clickedTab);
   }
-
-  // const handleFileUpload = (event) => {
-  //   event.preventDefault()
-
-  //   const file = event.target.files[0];
-  //   const fileUrl = URL.createObjectURL(file);
-
-  //   console.log(fileUrl);
-  //   setImage(fileUrl)
-  // }
-
-
-  console.log(name, '= name')
         
-
   return (
     <section className="py-6 border-b border-cMono800 flex flex-row gap-5">
 

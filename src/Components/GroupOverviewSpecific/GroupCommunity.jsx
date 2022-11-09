@@ -12,7 +12,6 @@ const GroupCommunity = () => {
     const response = async () => {
         let postsApi = await getAllPosts(setAllPosts);
         setAllPosts(postsApi);
-        console.log(postsApi)
     }
      
     response()

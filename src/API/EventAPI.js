@@ -4,9 +4,9 @@ export const getAllEvents = async (setEvents) => {
     try {
         const response = await axios.get('http://127.0.0.1:8080/events/findAll');
         const events = response.data;
-        console.log(events);
+        setEvents(events)
 
-        return setEvents(events);
+        return events;
     } catch (e) {
         console.log(e);
     }
