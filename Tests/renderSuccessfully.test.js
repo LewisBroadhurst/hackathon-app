@@ -1,40 +1,40 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import AdminMembers from '../src/Components/AdminSpecific/AdminMembers';
-import AdminOrganisations from '../src/Components/AdminSpecific/AdminOrganisations';
-import AdminStats from '../src/Components/AdminSpecific/AdminStats';
-import AdminVenues from '../src/Components/AdminSpecific/AdminVenues';
-import RegisterSteps from '../src/Components/CommericalRegistration/RegisterSteps';
-import EventCard from '../src/Components/EventCards/EventCard';
-import EventBanner from '../src/Components/EventSpecific/EventBanner';
-import EventMain from '../src/Components/EventSpecific/EventMain';
-import GroupBanner from '../src/Components/GroupOverviewSpecific/GroupBanner';
-import Header from '../src/Components/Header/Header';
-import GroupMembersCard from '../src/Components/MemberCards/GroupMembersCard';
-import MemberCardAdmin from '../src/Components/MemberCards/MemberCardAdmin';
-import MemberCardSmall from '../src/Components/MemberCards/MemberCardSmall';
-import OrgAdminCard from '../src/Components/OrganisationCards/OrgAdminCard';
-import CommunityPost from '../src/Components/SocialPosts/CommunityPost';
-import PollPost from '../src/Components/SocialPosts/PollPost';
-import EventTablet from '../src/Components/Tablets/EventTablet';
-import GroupDetailsTablet from '../src/Components/Tablets/GroupDetailsTablet';
-import PromoVenueTablet from '../src/Components/Tablets/PromoVenueTablet';
-import AdminVenueCard from '../src/Components/VenueCards/AdminVenueCard';
-import VenueBanner from '../src/Components/VenueSpecific/VenueBanner';
-import VenueCarousel from '../src/Components/VenueSpecific/VenueCarousel';
-import VenueMain from '../src/Components/VenueSpecific/VenueMain';
-import Step1 from '../src/Components/CommericalRegistration/Steps/Step1';
-import Step2 from '../src/Components/CommericalRegistration/Steps/Step2';
-import Step3 from '../src/Components/CommericalRegistration/Steps/Step3';
-import Step4 from '../src/Components/CommericalRegistration/Steps/Step4';
-import Footer from '../src/Components/Footer/Footer';
-import GroupCommunity from '../src/Components/GroupOverviewSpecific/GroupCommunity';
-import { BrowserRouter } from 'react-router-dom';
-import { CommercialRegistrationProvider } from './Contexts/CommericalRegistration.context';
-import {Elements} from '@stripe/react-stripe-js';
-import {stripePromise} from './Utils/Stripe.js';
-import {UserProvider} from './Contexts/User.context';
+// import React from 'react';
+// import { render, screen } from '@testing-library/react';
+// import '@testing-library/jest-dom';
+// import AdminMembers from '../src/Components/AdminSpecific/AdminMembers';
+// import AdminOrganisations from '../src/Components/AdminSpecific/AdminOrganisations';
+// import AdminStats from '../src/Components/AdminSpecific/AdminStats';
+// import AdminVenues from '../src/Components/AdminSpecific/AdminVenues';
+// import RegisterSteps from '../src/Components/CommericalRegistration/RegisterSteps';
+// import EventCard from '../src/Components/EventCards/EventCard';
+// import EventBanner from '../src/Components/EventSpecific/EventBanner';
+// import EventMain from '../src/Components/EventSpecific/EventMain';
+// import GroupBanner from '../src/Components/GroupOverviewSpecific/GroupBanner';
+// import Header from '../src/Components/Header/Header';
+// import GroupMembersCard from '../src/Components/MemberCards/GroupMembersCard';
+// import MemberCardAdmin from '../src/Components/MemberCards/MemberCardAdmin';
+// import MemberCardSmall from '../src/Components/MemberCards/MemberCardSmall';
+// import OrgAdminCard from '../src/Components/OrganisationCards/OrgAdminCard';
+// import CommunityPost from '../src/Components/SocialPosts/CommunityPost';
+// import PollPost from '../src/Components/SocialPosts/PollPost';
+// import EventTablet from '../src/Components/Tablets/EventTablet';
+// import GroupDetailsTablet from '../src/Components/Tablets/GroupDetailsTablet';
+// import PromoVenueTablet from '../src/Components/Tablets/PromoVenueTablet';
+// import AdminVenueCard from '../src/Components/VenueCards/AdminVenueCard';
+// import VenueBanner from '../src/Components/VenueSpecific/VenueBanner';
+// import VenueCarousel from '../src/Components/VenueSpecific/VenueCarousel';
+// import VenueMain from '../src/Components/VenueSpecific/VenueMain';
+// import Step1 from '../src/Components/CommericalRegistration/Steps/Step1';
+// import Step2 from '../src/Components/CommericalRegistration/Steps/Step2';
+// import Step3 from '../src/Components/CommericalRegistration/Steps/Step3';
+// import Step4 from '../src/Components/CommericalRegistration/Steps/Step4';
+// import Footer from '../src/Components/Footer/Footer';
+// import GroupCommunity from '../src/Components/GroupOverviewSpecific/GroupCommunity';
+// import { BrowserRouter } from 'react-router-dom';
+// import { CommercialRegistrationProvider } from './Contexts/CommericalRegistration.context';
+// import {Elements} from '@stripe/react-stripe-js';
+// import {stripePromise} from './Utils/Stripe.js';
+// import {UserProvider} from './Contexts/User.context';
 
 
 // 1. Renders the specified component
@@ -44,23 +44,23 @@ import {UserProvider} from './Contexts/User.context';
 
 // AdminSpecific Folder
 
-it("renders AdminMembers", () => {
-    render(
-        <UserProvider>
-        <CommercialRegistrationProvider>
-        <Elements stripe={stripePromise}>
-        <BrowserRouter>
-        <AdminMembers />
-        </BrowserRouter>
-        </Elements>
-        </CommercialRegistrationProvider>
-        </UserProvider>
-    );
+// it("renders AdminMembers", () => {
+//     render(
+//         <UserProvider>
+//         <CommercialRegistrationProvider>
+//         <Elements stripe={stripePromise}>
+//         <BrowserRouter>
+//         <AdminMembers />
+//         </BrowserRouter>
+//         </Elements>
+//         </CommercialRegistrationProvider>
+//         </UserProvider>
+//     );
 
-    const linkElement = screen.getByText(/Active Members/i)
+//     const linkElement = screen.getByText(/Active Members/i)
     
-    expect(linkElement).toBeInTheDocument();
-});
+//     expect(linkElement).toBeInTheDocument();
+// });
 
 // it("renders AdminOrganisation", () => {
 //     render(
