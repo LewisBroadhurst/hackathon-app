@@ -26,7 +26,7 @@ export const getUserByID = async (ID) => {
 
 export const createUser = async (payload) => {
     try {
-        const response = await axios.post(`http://127.0.0.1:8080/users/addUser`, payload);
+        const response = await axios.post(`http://127.0.0.1:8080/api/v1/registration`, payload);
         const user = response.data;
         console.log(user);
 

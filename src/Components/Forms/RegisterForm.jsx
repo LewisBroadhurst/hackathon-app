@@ -3,10 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { createUser } from '../../API/UserAPI';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useContext } from 'react';
+import { UserContext } from '../../Contexts/User.context';
 
 
 const RegisterForm = () => {
 
+  const { login } = useContext(UserContext);
   const [passwordShowing, setPasswordShowing] = useState(false);
   const navigate = useNavigate();
 
@@ -16,7 +19,8 @@ const RegisterForm = () => {
 
   const [user, setUser] = useState({
     uniqueId: 0,
-    role: 'USER',
+    firstName: '',
+    lastName: '',
     email: '',
     password: ''
   });
@@ -27,6 +31,8 @@ const RegisterForm = () => {
     let updatedValue = event.target.name;
     let newValue = event.target.value;
     setUser({...user, [updatedValue]: newValue});
+
+    console.log(user);
   };
 
   const credentialsCheck = () => {
@@ -45,8 +51,11 @@ const RegisterForm = () => {
 
     const response = await createUser(user);
     console.log(response);
+    user['token'] = response;
+    console.log(user);
 
     if (response) {
+      login(user);
       navigate('/groupOverview')
     } else {
       alert("There was a problem with registration. Please try again.")
@@ -57,6 +66,16 @@ const RegisterForm = () => {
   return (
     <section className='flex flex-col gap-2'>
       <form className='flex flex-col gap-2'>
+
+        <div className='flex flex-col'>
+          <label className='text-md self-start'>First name*</label>
+          <input className='border border-black rounded-md p-1' type={'text'} name={'firstName'} onChange={handleUpdatingFormFields} />
+        </div>
+
+        <div className='flex flex-col'>
+          <label className='text-md self-start'>Last name*</label>
+          <input className='border border-black rounded-md p-1' type={'text'} name={'lastName'} onChange={handleUpdatingFormFields} />
+        </div>
 
         <div className='flex flex-col'>
           <label className='text-md self-start'>Email*</label>
