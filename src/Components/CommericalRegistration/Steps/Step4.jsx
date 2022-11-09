@@ -56,28 +56,32 @@ const Step4 = () => {
     }
   };
 
-  const handleCreateOrg = async (event) => {
+  const handleCreateCommercial = async (event) => {
     event.preventDefault();
 
     const {name, email, mobile} = registrationDetails;
     console.log(name, email, mobile);
 
     const payload = {
-      uniqueId: 0,
-      name: "hello",
-      email: "email",
-      phoneNo: "noice"
+      
+    }
+
+    if (registrationDetails.organisation) {
+      const response = await createOrganisation(payload);
+      console.log(response);
     };
 
-    const response = await createOrganisation(payload);
-    console.log(response);
-  }
+    if (registrationDetails.venue) {
+      const response = await createOrganisation(payload);
+      console.log(response);
+    };
+  };
 
   return (
     <section className='flex flex-col items-center justify-center gap-5 m-10'>
-      <h2 className='text-3xl'>You're nearly there...</h2>
+      <h2 className='text-3xl text-white'>You're nearly there...</h2>
 
-      <div className='flex flex-row items-center gap-4 border-2 rounded-lg p-4 border-cMono300'>
+      <div className='flex flex-row items-center gap-4 bg-white rounded-lg p-4 '>
         <div className=''>
           <h2 className='text-2xl font-bold flex flex-row items-end gap-4'>
             Basic Plan
@@ -94,7 +98,7 @@ const Step4 = () => {
         </div>
       </div>
 
-      <form className='flex flex-col items-center justify-center gap-3' onSubmit={handlePayment}>
+      <form className='flex flex-col items-center justify-center gap-3 bg-white p-5 rounded-md' onSubmit={handlePayment}>
 
         <h2>Please enter your card details below</h2>
 
@@ -109,7 +113,7 @@ const Step4 = () => {
             <button className='btn w-5/12' >Lets go!</button>
             
           }
-          <button onClick={handleCreateOrg}>hello</button>
+          <button onClick={handleCreateCommercial}>hello</button>
         </div>
         
       </form>

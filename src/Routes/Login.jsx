@@ -9,16 +9,16 @@ import { Link } from 'react-router-dom';
 const Login = () => {
 
   return (
-    <section className='flex flex-col items-center xl:h-screen'>
+    <section className='flex flex-col items-center bg-slate-300 xl:h-screen'>
 
       <div className='flex flex-col items-center md:w-2/3 xl:w-full xl:flex-row'>
 
       <div className='xl:w-1/2'>
         <img className='rounded-b-2xl xl:hidden' src={LandscapeImage} alt='Friends at party'/>
-        <img className='hidden rounded-r-2xl xl:flex' src={DesktopImage} alt='Friends at party'/>
+        <img className='hidden rounded-r-2xl xl:flex xl:h-screen' src={DesktopImage} alt='Friends at party'/>
       </div>
 
-      <div className='customShadow1 flex flex-col text-center mt-8 w-10/12 p-5 mb-10 rounded-md md:w-2/3 xl:w-[400px] xl:mx-auto xl:mt-0'>
+      <div className='bg-white customShadow1 flex flex-col text-center mt-8 w-10/12 p-5 mb-10 rounded-md md:w-2/3 xl:w-[400px] xl:mx-auto xl:mt-0'>
 
         <div className='flex flex-col gap-1 xl:py-4'>
           <h1 className='text-3xl font-bold xl:text-5xl'>Fun @ Five</h1>

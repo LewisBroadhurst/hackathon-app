@@ -30,13 +30,13 @@ const CommercialRegistration = () => {
     }
 
   return (
-    <section className='flex flex-col gap-5 h-screen xl:gap-0'>
+    <section className='flex flex-col gap-5 h-screen bg-slate-400 xl:gap-0'>
 
         <div className='flex flex-col h-screen xl:flex-row xl:items-center'>
 
             <div className='xl:w-1/2'>
                 <img className='rounded-b-2xl xl:hidden' src={CommRegLS} alt="" />
-                <img className='hidden rounded-r-2xl xl:flex' src={CommReg1} alt="" />
+                <img className='hidden rounded-r-2xl xl:h-screen xl:flex' src={CommReg1} alt="" />
             </div>
 
             <div className='flex flex-col items-center gap-10 mt-10 xl:w-1/2 xl:self-start xl:mt-28'>

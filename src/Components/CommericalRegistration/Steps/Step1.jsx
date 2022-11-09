@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { CommercialRegistrationContext } from '../../../Contexts/CommericalRegistration.context';
 
 const Step1 = () => {
@@ -31,6 +32,10 @@ const Step1 = () => {
             <button className="btn w-1/2" onClick={handleVenueClick}>Venue</button>
             <button className="btn w-1/2" onClick={handleOrganisationClick}>Organisation</button>
         </div>
+
+        <span className='text-white border-b-2 border-slate-400 self-center hover:border-primary hover:text-primary hover:cursor-pointer'>
+            <Link to={'/'} >Not a venue or organisation?</Link>
+        </span>
     </div>
   )
 }

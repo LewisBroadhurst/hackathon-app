@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createUser } from '../../API/UserAPI';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const RegisterForm = () => {
 
   const [passwordShowing, setPasswordShowing] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordShowing = () => {
     setPasswordShowing(passwordShowing ? false : true);
@@ -44,6 +45,12 @@ const RegisterForm = () => {
 
     const response = await createUser(user);
     console.log(response);
+
+    if (response) {
+      navigate('/groupOverview')
+    } else {
+      alert("There was a problem with registration. Please try again.")
+    }
   };
 
 

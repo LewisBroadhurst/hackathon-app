@@ -29,7 +29,7 @@ const Step3 = () => {
 
       <form className='flex flex-col gap-4'>
 
-        <div className='flex flex-row items-center gap-4 border-2 rounded-lg p-4 border-cMono300'>
+        <div className='flex flex-row items-center gap-4 rounded-lg p-4 bg-white'>
           <div className=''>
             <h2 className='text-2xl font-bold flex flex-row items-end gap-4'>
               Basic Plan
@@ -47,7 +47,7 @@ const Step3 = () => {
           <input type="radio" value={'basic'} name='packageSelector' className='radio' onClick={handleSelectPackage}/>
         </div>
 
-        <div className='flex flex-row items-center gap-4 border-2 rounded-lg p-4 border-cMono300'>
+        <div className='flex flex-row items-center gap-4 bg-white rounded-lg p-4'>
           <div className=''>
             <h2 className='text-2xl font-bold flex flex-row items-end gap-4'>
               Pro Plan
@@ -65,7 +65,7 @@ const Step3 = () => {
           <input type="radio" value={'pro'} name='packageSelector' className='radio' onClick={handleSelectPackage}/>
         </div>
 
-        <div className='flex flex-row items-center gap-4 border-2 rounded-lg p-4 border-cMono300'>
+        <div className='flex flex-row items-center gap-4 bg-white rounded-lg p-4 '>
           <div className=''>
             <h2 className='text-2xl font-bold flex flex-row items-end gap-4'>
               Pro+ Plan
