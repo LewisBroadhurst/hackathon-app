@@ -1,8 +1,14 @@
 import axios from 'axios';
 
+const USER_NAME = 'etodd@gmail.com'
+const PASSWORD = 'password'
+
 export const getAllOrganisations = async (setOrganisations) => {
     try {
-        const response = await axios.get('http://127.0.0.1:8080/organisations/findAll');
+        var url = 'http://192.168.0.98:8080/organisations/findAll'
+        const response = await axios.get(url,
+        { headers: { authorization: 'Basic ' + window.btoa(USER_NAME + ":" + PASSWORD) } }
+        );
         const organisations = response.data;
 
         return setOrganisations(organisations);
