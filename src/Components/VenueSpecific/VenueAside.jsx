@@ -7,7 +7,7 @@ const VenueAside = () => {
     <section className='flex flex-col gap-2 w-[350px]'>
         <Bookings />
 
-        <div className='h-96'>
+        <div className='h-96 rounded-md'>
             <GMapsComponent />
         </div>
     </section>

@@ -34,7 +34,7 @@ const VenueMain = () => {
         <VenueBanner name={name} location={location} type={type}  />
 
         <div className='flex flex-row gap-5'>
-          <div className='xxl:w-[850px] bg-white border-2 border-cMono300 rounded-lg p-5'>
+          <div className='xxl:w-[850px] customShadow1 bg-white rounded-lg p-5'>
             <h3 className='font-bold text-2xl pb-4'>About us</h3>
 
             <div className='flex flex-col gap-2'>

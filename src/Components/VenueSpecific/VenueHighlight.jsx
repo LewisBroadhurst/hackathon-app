@@ -2,7 +2,7 @@ import React from 'react'
 
 const VenueHighlight = () => {
   return (
-    <section className='border border-black rounded-lg'>
+    <section className='border bg-white customShadow1 rounded-lg'>
         <div className='rounded-lg'>
         <img className='rounded-t-lg' src="https://images.unsplash.com/photo-1532635241-17e820acc59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlJTIwaGF2aW5nJTIwZnVufGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="" />
         </div>
