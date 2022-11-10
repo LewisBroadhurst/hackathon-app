@@ -12,9 +12,7 @@ import Venue from './Routes/Venue';
 
 function App() {
 
-  const [organisation, setOrganisation] = useState(null);
 
-  
 
   return (
     <>
@@ -24,10 +22,10 @@ function App() {
             <Route path='/' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/admin' element={<Admin />} />
-            <Route path='/organisation/:id' element={<GroupOverview data={organisation} />} />
-            <Route path='/eventOverview' element={<EventPage />} />
+            <Route path='/organisation/:id' element={<GroupOverview />} />
+            <Route path='/event/:id' element={<EventPage />} />
             <Route path='/commericalRegistration' element={<CommercialRegistration />} />
-            <Route path='venues/FiveStarBowlingAlley' element={<Venue />} />
+            <Route path='venue/:id' element={<Venue />} />
 
           </Routes>
         </BrowserRouter>

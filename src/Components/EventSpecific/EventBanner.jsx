@@ -3,17 +3,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import VenueCarousel from '../VenueSpecific/VenueCarousel';
 
-const EventBanner = () => {
+const EventBanner = ({eventName, org, starts, eventType}) => {
+
+  const timeTag = () => {
+    if (starts.slice(11, 13) & starts.slice(11, 13) > 12) {
+      return 'pm'
+    }
+
+    if (starts.slice(11,13)) {
+      return 'am'
+    }
+  }
+  
+
   return (
     <section className='flex flex-col gap-2 justify-between items-center py-6 border-b xl:flex-row'>
       <section className="flex flex-col items-center text-center gap-2 xl:items-start xl:text-start">
-        <span className="text-md text-neutral">Bright Network Socials</span>
+        <span className="text-md text-neutral">{org.name}</span>
 
-        <h1 className="text-4xl text-neutral-focus">September Quarterly</h1>
+        <h1 className="text-4xl text-neutral-focus">{eventName}</h1>
 
-        <div className='flex gap-1'>
+        <div className='flex gap-2'>
           <span><FontAwesomeIcon icon={faCalendar} /></span>
-          <span className='text-neutral'>12th October '22</span>
+          <span className='text-neutral'>{starts.slice(0, 10)}, {starts.slice(11, 16)} {timeTag()}</span>
         </div>
 
         <nav className="py-2">

@@ -29,8 +29,9 @@ const PromoVenueTablet = () => {
 
         {
           !venues ? 'Loading...' : venues.slice(0, 2).map((venue, index) => {
+            const {name, location, type} = venue;
             return (
-              <PromoVenueCard key={index} />
+              <PromoVenueCard key={index} name={name} location={location} type={type} />
             )
           })
         }

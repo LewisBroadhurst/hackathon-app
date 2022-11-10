@@ -1,15 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import VenueAside from './VenueAside';
 import VenueBanner from './VenueBanner';
 import VenueHighlightsTablet from './VenueHighlightsTablet';
+import { useParams } from "react-router-dom";
+import { getVenueByID } from '../../API/VenueAPI';
 
 const VenueMain = () => {
 
+  const [venue, setVenue] = useState(null);
+    const { id } = useParams();
+    
+    useEffect(() => {
+        const response = async () => {
+            let ven = await getVenueByID(id);
+            setVenue(ven);
+        }
+         
+        response()
+    }, [])
 
-  return (
-    <section className='mt-12'>
+
+  const content = () => {
+    if (!venue) {
+      return ''
+    } 
+
+    const {name, location, type, uniqueId} = venue;
+
+    return (
+      <section className='mt-12'>
       <div className='xxl:w-[1200px] mx-auto'>
-        <VenueBanner />
+        <VenueBanner name={name} location={location} type={type}  />
 
         <div className='flex flex-row gap-5'>
           <div className='xxl:w-[850px] bg-white border-2 border-cMono300 rounded-lg p-5'>
@@ -36,6 +57,13 @@ const VenueMain = () => {
 
       </div>
     </section>
+    )
+  }
+
+  return (
+    <>
+      {content()}
+    </>
   )
 }
 

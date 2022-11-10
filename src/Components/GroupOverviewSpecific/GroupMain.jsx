@@ -6,11 +6,10 @@ import GroupDetailsTablet from "../Tablets/GroupDetailsTablet";
 import GroupMembersCard from '../MemberCards/GroupMembersCard';
 import { faPlus, faPen, faImage, faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MainEvents from "./Tabs/MainEvents";
 import MainVenues from "./Tabs/MainVenues";
 import MainPolls from "./Tabs/MainPolls";
-import { useEffect } from "react";
 import { getOrganisationByID } from "../../API/OrganisationAPI";
 import { useParams } from "react-router-dom";
 
@@ -23,7 +22,7 @@ const GroupMain = () => {
     
     useEffect(() => {
         const response = async () => {
-            let org = await getOrganisationByID(1);
+            let org = await getOrganisationByID(id);
             setOrganisation(org);
         }
          

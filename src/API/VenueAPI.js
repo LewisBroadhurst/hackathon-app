@@ -15,7 +15,7 @@ export const getAllVenues = async (setVenues) => {
 
 export const getVenueByID = async (ID) => {
     try {
-        const response = await axios.get(`http://127.0.0.1:8080/venues/findVenueById/${ID}`);
+        const response = await axios.get(`http://127.0.0.1:8080/venues/findById/${ID}`);
         const venue = response.data;
         console.log(venue);
 

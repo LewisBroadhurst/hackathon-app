@@ -4,7 +4,7 @@ import { faArrowRightFromBracket, faBell, faEnvelope, faImagePortrait, faMagnify
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { UserContext } from '../../Contexts/User.context';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
 
@@ -23,7 +23,7 @@ const Header = () => {
         <div className="px-2 py-1 mx-auto flex flex-row justify-between items-center text-cBlack500 xl:w-[1200px] xl:px-0">
 
             <div className="flex flex-row items-center gap-4">
-                <h2 className="text-2xl">FUN@5</h2>
+                <h2 className="text-2xl hover:cursor-pointer"><Link to={'/organisation/1'}>FUN AFTER 5</Link></h2>
                 <div className='relative hidden md:block'>
                     <input type={'text'} placeholder={'Search'} className='rounded-md p-0.5 text-black' /> 
                     <span className='text-black absolute top-1/2 translate-y-[-50%] right-2 hover:cursor-pointer hover:text-secondary'><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
@@ -49,10 +49,10 @@ const Header = () => {
                     </div>
                     </label>
                     <ul tabIndex={0} className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box text-black flex flex-col">
-                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faImagePortrait} /> <span>Account</span></li>
-                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faEnvelope} /> <span>Messages</span></li>
-                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faBell} /> <span>Notifications</span></li>
-                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300'><FontAwesomeIcon icon={faArrowRightFromBracket} /> <span onClick={handleLogout}>Sign Out</span></li>
+                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faImagePortrait} /> <span>Account</span></li>
+                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faEnvelope} /> <span>Messages</span></li>
+                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faBell} /> <span>Notifications</span></li>
+                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faArrowRightFromBracket} /> <span onClick={handleLogout}>Sign Out</span></li>
                     </ul>
                 </div>
 
