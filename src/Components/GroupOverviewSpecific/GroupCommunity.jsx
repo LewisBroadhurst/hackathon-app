@@ -29,10 +29,6 @@ const GroupCommunity = () => {
               )
             })
           }
-
-            <PollPost />
-
-            <PollPost />
         </div>
     </section>
   )

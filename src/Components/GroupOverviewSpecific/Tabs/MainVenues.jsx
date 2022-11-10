@@ -13,7 +13,6 @@ const DashboardVenues = () => {
     const response = async () => {
         let res = await getAllVenues(setVenues);
         setVenues(res);
-        console.log(res)
     }
      
     response();
@@ -24,7 +23,6 @@ const DashboardVenues = () => {
       {
         !venues ? '' : venues.map((venue, index) => {
           const {location, name, uniqueId, type} = venue;
-          console.log(name);
           return (
             <LandscapeVenueCard key={index} id={uniqueId} name={name} location={location} type={type}/>
           )

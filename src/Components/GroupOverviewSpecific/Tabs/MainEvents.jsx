@@ -12,7 +12,6 @@ const DashboardEvents = () => {
     const response = async () => {
         let res = await getAllEvents(setEvents);
         setEvents(res);
-        console.log(events)
     }
      
     response();
@@ -25,7 +24,6 @@ const DashboardEvents = () => {
         !events ? '' : events.filter(event => event.organisation.uniqueId === 1)
         .map((event, index) => {
           const {location, name, startDateTime, eventType} = event;
-          console.log(name);
           return (
             <LandscapeEventCard key={index} name={name} location={location} starting={startDateTime} event={eventType}/>
           )

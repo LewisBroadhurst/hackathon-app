@@ -3,7 +3,7 @@ import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MemberCardSmall from './MemberCardSmall';
 
-const GroupMembersCard = () => {
+const GroupMembersCard = ({usersArray}) => {
   return (
     <>
     <section className=''>
@@ -64,16 +64,16 @@ const GroupMembersCard = () => {
         </div>
 
         <ul className='flex flex-col gap-2'>
-          <li><MemberCardSmall /></li>
-          <li><MemberCardSmall /></li>
-          <li><MemberCardSmall /></li>
-          <li><MemberCardSmall /></li>
-          <li><MemberCardSmall /></li>
-          <li><MemberCardSmall /></li>
-          <li><MemberCardSmall /></li>
-          <li><MemberCardSmall /></li>
-          <li><MemberCardSmall /></li>
-          <li><MemberCardSmall /></li>
+          {
+            usersArray.map((user, index) => {
+              const {} = user;
+              return (
+                <li>
+                  <MemberCardSmall key={index} />
+                </li>
+              )
+            })
+          }
           <li><MemberCardSmall /></li>
           <li><MemberCardSmall /></li>
         </ul>
