@@ -59,3 +59,17 @@ export const deleteEventByID = async (ID) => {
         console.log(e);
     }
 };
+
+export const addVote = async (eventId, userId, ballot) => {
+    const res = await axios.patch(`http://127.0.0.1:8080/events/addVotes/1/5?ballot=DRINKS`);
+    console.log(res)
+
+    return res;
+}
+
+export const addUserToEvent = async (eventId, userId) => {
+    const res = await axios.put(`http://127.0.0.1:8080/events/addUser/${eventId}/${userId}`).catch(err => console.log(err));
+    console.log(res)
+
+    return res;
+}

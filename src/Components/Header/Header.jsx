@@ -16,11 +16,14 @@ const Header = () => {
         event.preventDefault();
 
         logout();
-        localStorage.removeItem('user')
         navigate('/');
     };
 
     console.log(user)
+
+    if (!user.uniqueId) {
+        navigate('/');
+    }
 
   return (
     <section className="fixed w-screen bg-base-content z-50 text-white">
@@ -28,10 +31,10 @@ const Header = () => {
 
             <div className="flex flex-row items-center gap-4">
                 <h2 className="text-2xl hover:cursor-pointer"><Link to={'/organisation/1'}>FUN AFTER 5</Link></h2>
-                <div className='relative hidden md:block'>
+                {/* <div className='relative hidden md:block'>
                     <input type={'text'} placeholder={'Search'} className='rounded-md p-0.5 text-black' /> 
                     <span className='text-black absolute top-1/2 translate-y-[-50%] right-2 hover:cursor-pointer hover:text-secondary'><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
-                </div>
+                </div> */}
             </div>
             
 
@@ -48,9 +51,8 @@ const Header = () => {
 
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0}>
-                    <div className="flex flex-row w-10 rounded-full cursor-pointer border-2 border-success">
-                        <img src={Portrait} alt="" className="rounded-full"/>
-                        {/* <span>{user}</span> */}
+                    <div className="flex flex-row justify-center items-center w-10 h-10 rounded-full cursor-pointer border-2 border-success bg-base-300">
+                        <span className='text-primary font-bold'>{!user.uniqueId ? '?' : user.firstName.slice(0,1) + user.lastName.slice(0,1)}</span>
                     </div>
                     </label>
                     <ul tabIndex={0} className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box text-black flex flex-col">

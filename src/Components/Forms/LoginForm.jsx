@@ -32,13 +32,14 @@ const LoginForm = () => {
 
   const handleLoginUser = async (event) => {
     event.preventDefault();
+    let id = 1;
 
-    const response = await loginUser(userLogin);
+    const response = await loginUser(userLogin.email, userLogin.password);
 
     if (response) {
-      login(userLogin);
+      login(response);
       console.log("currentUser:", user.email);
-      return navigate('/groupOverview');
+      return navigate(`/organisation/${id}`);
     }
 
     alert("Could not match username/password");

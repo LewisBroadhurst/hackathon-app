@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Link, useNavigate } from "react-router-dom";
-import { createUser } from '../../API/UserAPI';
+import { createUser, loginUser } from '../../API/UserAPI';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
@@ -38,8 +38,6 @@ const RegisterForm = () => {
     let updatedValue = event.target.name;
     let newValue = event.target.value;
     setUser({...user, [updatedValue]: newValue});
-
-    console.log(user);
   };
 
   const credentialsCheck = () => {
@@ -51,27 +49,26 @@ const RegisterForm = () => {
 
   const handleRegisterUser = async (event) => {
     event.preventDefault();
+    const id = 1;
 
     if (!credentialsCheck()) {
       return alert("Please enter a password that contains over 8 characters");
     }
 
-    const response = await createUser(user);
-    console.log(response);
-    user['token'] = response;
-    console.log(user);
-    const id = 1;
-
-    if (response) {
-      login(user);
-      localStorage.setItem('user', user)
+    await createUser(user);
+    console.log(user.email, user.password);
+    
+    const userLoggedIn = await loginUser(user.email, user.password);
+    console.log(userLoggedIn);
+    
+    if (userLoggedIn) {
+      userLoggedIn.realPassword = user.password
+      login(userLoggedIn)
       navigate(`/organisation/${id}`)
     } else {
       alert("There was a problem with registration. Please try again.")
     }
   };
-
-  console.log(organisations)
 
 
   return (

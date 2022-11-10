@@ -21,7 +21,7 @@ const PromoVenueTablet = () => {
     }
 
     return (
-      <section className='flex flex-col gap-2 customShadow1 bg-white rounded-md p-2 px-4 pb-4'>
+      <section className='flex flex-col gap-2 w-full customShadow1 bg-white rounded-md p-2 px-4 pb-4'>
 
         <h3 className="text-md font-bold border-b text-center text-cMono800">Promoted Venues</h3>
 

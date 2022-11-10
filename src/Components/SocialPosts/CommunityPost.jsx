@@ -1,16 +1,22 @@
 import React from 'react';
 import Portrait from "../../Assets/PortraitSquared.jpg";
 
-const CommunityPost = ({content, likecount}) => {
+const CommunityPost = ({content, likecount, user}) => {
 
+    const pageContent = () => {
+        if (!user) {
+            return ''
+        }
 
-  return (
-    <section className="p-5 bg-white rounded-md customShadow1">
+        const { firstName, lastName } = user;
+
+        return (
+        <section className="p-5 bg-white rounded-md customShadow1">
         <div>
             <div className="flex flex-row items-center">
                 <img src={Portrait} alt="" className="w-12 rounded-full mr-4"/>
                 <div className="flex flex-col items-start">
-                    <h3 className="text-xl">Hasmeet Kaur</h3>
+                    <h3 className="text-xl">{firstName} {lastName}</h3>
                     <h5 className="text-sm">Today at 10:54am</h5>
                 </div>
             </div>
@@ -31,7 +37,14 @@ const CommunityPost = ({content, likecount}) => {
             </div>
             
         </div>
-    </section>
+        </section>
+        )
+    }
+
+  return (
+    <>
+        {pageContent()}
+    </>
   )
 }
 

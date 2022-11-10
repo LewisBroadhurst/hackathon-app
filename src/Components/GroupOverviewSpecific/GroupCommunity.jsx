@@ -23,9 +23,10 @@ const GroupCommunity = () => {
         <div className='flex flex-col gap-2'>
           {
             !allPosts ? '' : allPosts.map((post, index) => {
-              const {content, likeCount} = post;
+              const {content, likeCount, user} = post;
+              console.log(post)
               return (
-                <CommunityPost key={index} content={content} likecount={likeCount} />
+                <CommunityPost key={index} content={content} likecount={likeCount} user={user} />
               )
             })
           }

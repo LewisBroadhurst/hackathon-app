@@ -36,13 +36,11 @@ export const createUser = async (payload) => {
     }
 };
 
-export const loginUser = async (payload) => {
+export const loginUser = async (email, password) => {
     try {
-        const {email, password} = payload;
-        console.log(email, password);
-        const response = await axios.post(`http://127.0.0.1:8080/users/login/login`, null, {params: {email: email, password: password}});
+        // const {email, password} = payload;
+        const response = await axios.get(`http://127.0.0.1:8080/users/loginUser`, {params: {email: email, password: password}});
         const user = response.data;
-        console.log(user, email, password);
 
         return user;
     } catch (e) {

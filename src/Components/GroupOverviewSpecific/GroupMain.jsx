@@ -55,47 +55,20 @@ const GroupMain = () => {
                 <div className="xl:w-[1200px] mx-auto">
                     <GroupBanner name={organisation.name} setTabContents={setTabContents} />
 
-                    {/* Mobile layout */}
-
-                    {/* <div className="flex flex-col xl:flex-row gap-2 p-6 md:hidden">
-                        <GroupDetailsTablet />
-
-                        <GroupMembersCard />
-
-                        <div className="xl:w-[700px]">
-                            {mainDisplay(tabContents)}
-                        </div>
-                    </div> */}
-
-                    {/* Tablet layout */}
-
-                    {/* <div className="hidden md:flex flex-row gap-2 p-6 lg:hidden">
-                        <div className="flex flex-col w-[300px]">
-                            <GroupDetailsTablet />
-                            <GroupMembersCard />
-                            <PromoVenueTablet />
-                        </div>
-
-
-                        <div className="xl:w-[700px]">
-                            {mainDisplay(tabContents)}
-                        </div>
-                    </div> */}
-
-                    {/* Laptop/Desktop layout */}
-
-                    <div className="hidden lg:flex flex-col xl:flex-row gap-4 py-6">
+                    <div className="flex-col flex gap-2 p-6 md:py-6 md:px-0 md:flex-row xl:gap-4">
                     
-                        <div className="w-[350px] flex flex-col gap-3">
+                        <div className="flex flex-col gap-3 md:w-[300px] xl:w-[350px]">
                             <GroupDetailsTablet />
-                            <PromoVenueTablet />
+                            <div className="hidden md:flex">
+                                <PromoVenueTablet />
+                            </div>
                         </div>
 
-                        <div className="xl:w-[700px]">
+                        <div className="md:w-[500px] xl:w-[700px]">
                             {mainDisplay(tabContents)}
                         </div>
 
-                        <div className="w-[350px] flex flex-col gap-2">
+                        <div className="hidden w-[350px] flex-col gap-2 xl:flex">
                             <GroupMembersCard usersArray={organisation.users} />
                             <EventTablet events={organisation.events} />
                         </div>  
