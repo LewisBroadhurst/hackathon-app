@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { getAllEvents } from '../../../API/EventAPI';
 import CommunityPost from '../../SocialPosts/CommunityPost';
 import PollPost from '../../SocialPosts/PollPost';
+import LandscapeVenueCard from '../../VenueCards/LandscapeVenueCard';
 
 const DashboardEvents = () => {
 
@@ -21,16 +22,12 @@ const DashboardEvents = () => {
   return (
     <section className="flex flex-col gap-2 rounded-md">
       {
-        !events ? '' : events.map((event, index) => {
-          const {location, name, startDateTime} = event;
+        !events ? '' : events.filter(event => event.organisation.uniqueId === 1)
+        .map((event, index) => {
+          const {location, name, startDateTime, eventType} = event;
           console.log(name);
           return (
-            <div key={index}>
-              <span>{name} -</span>
-              <span>- {location} -</span>
-              <span>- {startDateTime.slice(0, 10)} -</span>
-              <span>- {startDateTime.slice(11, 16)}</span>
-            </div>
+            <LandscapeVenueCard key={index} name={name} location={location} starting={startDateTime} event={eventType}/>
           )
         })
       }

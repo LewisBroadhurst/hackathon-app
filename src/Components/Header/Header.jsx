@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
 
-    const {logout} = useContext(UserContext);
+    const {logout, user} = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleLogout = async (event) => {
@@ -17,6 +17,8 @@ const Header = () => {
         logout();
         navigate('/');
     };
+
+    console.log(user)
 
   return (
     <section className="fixed w-screen bg-base-content z-50 text-white">
@@ -44,8 +46,9 @@ const Header = () => {
 
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0}>
-                    <div className="w-10 rounded-full cursor-pointer border-2 border-success">
+                    <div className="flex flex-row w-10 rounded-full cursor-pointer border-2 border-success">
                         <img src={Portrait} alt="" className="rounded-full"/>
+                        <span>{user ? 'Y' : 'N'}</span>
                     </div>
                     </label>
                     <ul tabIndex={0} className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box text-black flex flex-col">

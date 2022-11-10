@@ -64,7 +64,8 @@ const RegisterForm = () => {
 
     if (response) {
       login(user);
-      navigate(`/groupOverview/${id}`)
+      localStorage.setItem('user', user)
+      navigate(`/organisation/${id}`)
     } else {
       alert("There was a problem with registration. Please try again.")
     }
