@@ -1,9 +1,32 @@
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, {useState} from 'react';
 import VenueCarousel from '../VenueSpecific/VenueCarousel';
 
-const EventBanner = ({eventName, org, starts, eventType}) => {
+const defaultActiveTab = {
+  'Overview': 'tab-active',
+  'Polls': '',
+  'Venues': '',
+  'Members': ''
+}
+
+const EventBanner = ({eventName, org, starts, eventType, setTabContents}) => {
+
+  const [activeTab, setActiveTab] = useState(defaultActiveTab);
+
+  const handleTabChange = (event) => {
+    event.preventDefault();
+    console.log(event.target.getAttribute('name'));
+    const clickedTab = event.target.getAttribute('name');
+
+    Object.keys(activeTab).forEach((key) => {
+      setActiveTab(activeTab[key] = '');
+    });
+
+    setActiveTab( {...activeTab, [clickedTab]: 'tab-active'} );
+
+    return setTabContents(clickedTab);
+  }
 
   const timeTag = () => {
     if (starts.slice(11, 13) & starts.slice(11, 13) > 12) {
@@ -28,15 +51,12 @@ const EventBanner = ({eventName, org, starts, eventType}) => {
           <span className='text-neutral'>{starts.slice(0, 10)}, {starts.slice(11, 16)} {timeTag()}</span>
         </div>
 
-        <nav className="py-2">
-            <ul className="flex flex-row items-center flex-wrap gap-2 content-around text-xs sm:text-md md:text-lg">
-                <li className="px-2 py-1 bg-cMono200 rounded-lg">Overview</li>
-                <li className="px-2 py-1 bg-cMono200 rounded-lg">Events</li>
-                <li className="px-2 py-1 bg-cMono200 rounded-lg">Polls</li>
-                <li className="px-2 py-1 bg-cMono200 rounded-lg">Venues</li>
-                <li className="px-2 py-1 bg-cMono200 rounded-lg">Members</li>
-            </ul>
-        </nav>
+        <div className="tabs tabs-boxed flex gap-2 mt-4">
+          <span className={`tab ${activeTab.Overview}`} onClick={handleTabChange} name='Overview'>Overview</span>
+          <span className={`tab ${activeTab.Polls}`} onClick={handleTabChange} name='Polls'>Polls</span>
+          <span className={`tab ${activeTab.Venues}`} onClick={handleTabChange} name='Venues'>Venues</span>
+          <span className={`tab ${activeTab.Members}` } onClick={handleTabChange} name='Members'>Members</span>
+        </div>
       </section>
 
       <div className='w-5/6 xl:w-[500px]'>
