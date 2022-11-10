@@ -15,7 +15,7 @@ const GroupDetailsTablet = () => {
           </p>
         </div>
 
-        <label htmlFor="groupDetailsModal" className="modal-button flex gap-3 justify-center items-center border-t rounded-b-md py-2 hover:text-white hover:bg-secondary hover:cursor-pointer">
+        <label htmlFor="groupDetailsModal" className="modal-button flex gap-3 justify-center items-center border-t rounded-b-md py-2 hover:text-white hover:bg-primary hover:cursor-pointer">
           <span className='text-center text-md'>More info.</span>
           <span><FontAwesomeIcon icon={faArrowRight} /> </span>
         </label>

@@ -1,10 +1,11 @@
 import React from 'react';
 import Portrait from "../../Assets/PortraitSquared.jpg";
-import { faArrowRightFromBracket, faBell, faEnvelope, faImagePortrait, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faBell, faCross, faEnvelope, faImagePortrait, faMagnifyingGlass, faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { UserContext } from '../../Contexts/User.context';
 import { Link, useNavigate } from "react-router-dom";
+import EditAccountForm from '../Forms/EditAccountForm';
 
 const Header = () => {
 
@@ -52,7 +53,10 @@ const Header = () => {
                     </div>
                     </label>
                     <ul tabIndex={0} className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box text-black flex flex-col">
-                        <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faImagePortrait} /> <span>Account</span></li>
+                        <label htmlFor="account-modal" className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'>
+                            <FontAwesomeIcon icon={faImagePortrait} />
+                            <span htmlFor="editAccount">Account</span>
+                        </label>
                         <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faEnvelope} /> <span>Messages</span></li>
                         <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faBell} /> <span>Notifications</span></li>
                         <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faArrowRightFromBracket} /> <span onClick={handleLogout}>Sign Out</span></li>
@@ -60,6 +64,18 @@ const Header = () => {
                 </div>
 
             </div>
+        </div>
+
+        {/* Modal for Editing Account */}
+        <input type="checkbox" id="account-modal" className="modal-toggle" />
+        <div className="modal">
+        <div className="modal-box flex flex-col gap-2 text-neutral">
+            <div className="modal-action p-0 m-0 flex flex-row justify-between items-center">
+                <h3 className='text-lg font-bold'>Account details</h3>
+                <label htmlFor="account-modal" className='text-3xl cursor-pointer hover:text-primary p-0 m-0'><FontAwesomeIcon icon={faSquareXmark} /></label>
+            </div>
+            <EditAccountForm />
+        </div>
         </div>
     </section>
   )
