@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { getAllEvents } from '../../../API/EventAPI';
 import CommunityPost from '../../SocialPosts/CommunityPost';
 import PollPost from '../../SocialPosts/PollPost';
-import LandscapeVenueCard from '../../VenueCards/LandscapeVenueCard';
+import LandscapeEventCard from '../../EventCards/LandscapeEventCard';
 
 const DashboardEvents = () => {
 
@@ -27,7 +27,7 @@ const DashboardEvents = () => {
           const {location, name, startDateTime, eventType} = event;
           console.log(name);
           return (
-            <LandscapeVenueCard key={index} name={name} location={location} starting={startDateTime} event={eventType}/>
+            <LandscapeEventCard key={index} name={name} location={location} starting={startDateTime} event={eventType}/>
           )
         })
       }

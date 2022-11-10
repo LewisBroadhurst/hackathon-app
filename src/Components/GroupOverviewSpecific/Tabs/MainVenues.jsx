@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { getAllVenues } from '../../../API/VenueAPI';
 import CommunityPost from '../../SocialPosts/CommunityPost';
 import PollPost from '../../SocialPosts/PollPost';
+import LandscapeVenueCard from '../../VenueCards/LandscapeVenueCard';
 
 const DashboardVenues = () => {
 
@@ -22,15 +23,10 @@ const DashboardVenues = () => {
     <section className="flex flex-col gap-2 rounded-md">
       {
         !venues ? '' : venues.map((venue, index) => {
-          const {location, name, type} = venue;
-          console.log(type)
+          const {location, name, uniqueId, type} = venue;
           console.log(name);
           return (
-            <div key={index}>
-              <span>{name} -</span>
-              <span>- {location} -</span>
-              <span>- {type.niceName}</span>
-            </div>
+            <LandscapeVenueCard key={index} id={uniqueId} name={name} location={location} type={type}/>
           )
         })
       }
