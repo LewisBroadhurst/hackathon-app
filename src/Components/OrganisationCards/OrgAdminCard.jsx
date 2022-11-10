@@ -1,6 +1,18 @@
 import React from 'react';
+import { deleteOrganisationByID } from '../../API/OrganisationAPI';
+import { useNavigate } from 'react-router-dom';
 
-const OrgAdminCard = () => {
+const OrgAdminCard = ({id, name, email, users}) => {
+
+    const navigate = useNavigate();
+
+    const handleDeleteOrg = (e) => {
+        e.preventDefault()
+
+        deleteOrganisationByID(id)
+        navigate('/admin')
+    }
+
   return (
     <>
     <label htmlFor='org-modal-1' className='modal-button'>
@@ -11,9 +23,10 @@ const OrgAdminCard = () => {
             </div>
         </div>
         <div className='text-xs'>
-            <h3 className='font-bold text-sm'>BNTA Socials</h3>
-            <h3>105 members</h3>
-            <h3>Active since: February 2020</h3>
+            <h3 className='font-bold text-sm'>{name}</h3>
+            <h3>{users ? users.length : '0'} members</h3>
+            <h3>{email}</h3>
+            {/* <h3>Active since: February 2020</h3> */}
         </div>
     </section>
     </label>
@@ -26,8 +39,8 @@ const OrgAdminCard = () => {
             
             <form className="form-control w-full flex flex-col gap-2">
                 <div className='flex flex-row justify-between items-center'>
-                    <label className="">Remove User</label>
-                    <button className="btn btn-square btn-xs">X</button>
+                    <label className="">Remove Organisation</label>
+                    <button className="btn btn-square btn-xs" onClick={handleDeleteOrg}>X</button>
                 </div>
 
                 <div className='flex flex-row justify-between items-center'>

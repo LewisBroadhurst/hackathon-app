@@ -5,6 +5,7 @@ import VenueHighlightsTablet from './VenueHighlightsTablet';
 import { useParams } from "react-router-dom";
 import { getVenueByID } from '../../API/VenueAPI';
 
+
 const VenueMain = () => {
 
   const [venue, setVenue] = useState(null);
@@ -56,6 +57,8 @@ const VenueMain = () => {
         </div>
 
       </div>
+
+      
     </section>
     )
   }

@@ -16,6 +16,7 @@ const Header = () => {
         event.preventDefault();
 
         logout();
+        localStorage.removeItem('user')
         navigate('/');
     };
 
@@ -49,7 +50,7 @@ const Header = () => {
                     <label tabIndex={0}>
                     <div className="flex flex-row w-10 rounded-full cursor-pointer border-2 border-success">
                         <img src={Portrait} alt="" className="rounded-full"/>
-                        <span>{user ? 'Y' : 'N'}</span>
+                        {/* <span>{user}</span> */}
                     </div>
                     </label>
                     <ul tabIndex={0} className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box text-black flex flex-col">

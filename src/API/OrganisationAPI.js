@@ -27,11 +27,7 @@ export const getOrganisationByID = async (ID) => {
 
 export const deleteOrganisationByID = async (ID) => {
     try {
-        const getResponse = await axios.get(`http://127.0.0.1:8080/organisations/findById/${ID}`);
         await axios.delete(`http://127.0.0.1:8080/organisations/deleteOrganisation/${ID}`);
-        const deletedOrganisation = getResponse.data;
-
-        return console.log(`${deletedOrganisation.name} was succesfully deleted.`);
     } catch (e) {
         console.log(e);
     }

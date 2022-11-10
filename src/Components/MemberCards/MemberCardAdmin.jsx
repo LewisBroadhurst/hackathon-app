@@ -1,6 +1,14 @@
 import React from 'react'
+import { deleteUser } from '../../API/UserAPI'
 
-const MemberCardAdmin = () => {
+const MemberCardAdmin = ({id, firstName, lastName, email, organisation}) => {
+
+    const handleDeleteUser = (e) => {
+        e.preventDefault()
+
+        deleteUser(id);
+    }
+
   return (
     <>
     <label htmlFor="member-modal-1" className="modal-button">
@@ -13,9 +21,9 @@ const MemberCardAdmin = () => {
             </div>
 
             <div className='text-xs'>
-                <h3 className='font-bold text-sm'>Lewis Broadhurst</h3>
-                <h3>lewis1broadhurst@gmail.com</h3>
-                <h3>Organisation: BNTA Socials</h3>
+                <h3 className='font-bold text-sm'>{firstName} {lastName}</h3>
+                <h3>{email}</h3>
+                <h3>Organisation: {organisation ? organisation.name : 'n/a'}</h3>
             </div>
         </div>
     </section>
@@ -30,7 +38,7 @@ const MemberCardAdmin = () => {
             <form className="form-control w-full flex flex-col gap-2">
                 <div className='flex flex-row justify-between items-center'>
                     <label className="">Remove User</label>
-                    <button className="btn btn-square btn-xs">X</button>
+                    <button className="btn btn-square btn-xs" onClick={handleDeleteUser}>X</button>
                 </div>
 
                 <div className='flex flex-row justify-between items-center'>

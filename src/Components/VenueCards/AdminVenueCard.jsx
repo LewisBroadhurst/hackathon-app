@@ -1,6 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { deleteVenue } from '../../API/VenueAPI'
 
-const AdminVenueCard = () => {
+const AdminVenueCard = ({id, name, location}) => {
+
+    const navigate = useNavigate()
+
+    const handleDeleteVenue = () => {
+        deleteVenue(id)
+        navigate('/admin')
+    }
+
+
   return (
     <>
     <label htmlFor="venue-modal-1" className="modal-button">
@@ -13,7 +24,8 @@ const AdminVenueCard = () => {
             </div>
 
             <div className='text-xs'>
-                <h3 className='font-bold text-sm'>5 * Bowling Alley</h3>
+                <h3 className='font-bold text-sm'>{name}</h3>
+                <h3>{location}</h3>
                 <h3>Hosted 11 events!</h3>
                 <h3>Active since: January 2021</h3>
             </div>
@@ -29,8 +41,8 @@ const AdminVenueCard = () => {
             
             <form className="form-control w-full flex flex-col gap-2">
                 <div className='flex flex-row justify-between items-center'>
-                    <label className="">Remove User</label>
-                    <button className="btn btn-square btn-xs">X</button>
+                    <label className="">Remove Venue</label>
+                    <button className="btn btn-square btn-xs" onClick={handleDeleteVenue}>X</button>
                 </div>
 
                 <div className='flex flex-row justify-between items-center'>

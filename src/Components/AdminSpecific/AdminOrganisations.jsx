@@ -1,9 +1,27 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { getAllOrganisations } from '../../API/OrganisationAPI';
 import OrgAdminCard from '../OrganisationCards/OrgAdminCard';
 
 const AdminOrganisations = () => {
-  return (
-    <section className='w-full xl:w-[450px] mx-auto'>
+
+    const [organisations, setOrganisations] = useState(null);
+    
+    useEffect(() => {
+        const response = async () => {
+            let orgs = await getAllOrganisations(setOrganisations);
+            setOrganisations(orgs);
+        }
+         
+        response()
+    }, [])
+
+    const content = () => {
+        if (!organisations) {
+            return ''
+        }
+
+        return (
+        <section className='w-full xl:w-[450px] mx-auto'>
         <div className='bg-white h-[700px] border-cMono400 border-2 rounded-lg flex flex-col items-center gap-4 p-4'>
             <h2 className='text-2xl border-b border-cMono600 self-stretch text-center pb-2'>Active Organisations</h2>
 
@@ -18,21 +36,27 @@ const AdminOrganisations = () => {
 
             <div className='overflow-scroll overflow-x-hidden p-2 border-2 border-black rounded-lg self-stretch'>
                 <ul className='flex flex-col gap-1'>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
-                    <li><OrgAdminCard /></li>
+                    {
+                        organisations.map((org, i) => {
+                            const {uniqueId, name, email, users} = org;
+                            return (
+                                <li key={i}>
+                                    <OrgAdminCard id={uniqueId} name={name} email={email} users={users} />
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div>
         </div>
-    </section>
+        </section>
+        )
+    }
+
+  return (
+    <>
+        {content()}
+    </>
   )
 }
 

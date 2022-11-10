@@ -1,10 +1,28 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import { getAllUsers } from '../../API/UserAPI';
 import MemberCardAdmin from '../MemberCards/MemberCardAdmin';
 import MemberCardSmall from '../MemberCards/MemberCardSmall';
 
 const AdminMembers = () => {
-  return (
-    <section className='w-full xl:w-[450px] mx-auto'>
+
+    const [members, setMembers] = useState(null);
+    
+    useEffect(() => {
+        const response = async () => {
+            let mems = await getAllUsers(setMembers);
+            setMembers(mems);
+        }
+         
+        response()
+    }, [])
+
+    const content = () => {
+        if (!members) {
+            return ''
+        }
+
+        return (
+        <section className='w-full xl:w-[450px] mx-auto'>
         <div className='bg-white h-[700px] border-cMono400 border-2 rounded-lg flex flex-col items-center gap-4 p-4'>
             <h2 className='text-2xl border-b border-cMono600 self-stretch text-center pb-2'>Active Members</h2>
 
@@ -19,23 +37,28 @@ const AdminMembers = () => {
 
             <div className='overflow-scroll overflow-x-hidden p-2 border-2 border-black rounded-lg self-stretch'>
                 <ul className='flex flex-col gap-1'>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
-                    <li><MemberCardAdmin /></li>
+                    {
+                        members.map((user, index) => {
+                            const {uniqueId, firstName, lastName, email, organisation} = user;
+                            return (
+                                <li key={index}>
+                                    <MemberCardAdmin id={uniqueId} firstName={firstName} lastName={lastName} email={email} />
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div>
         </div>
-    </section>
+        </section>
+        )
+    }
+
+
+  return (
+    <>
+        {content()}
+    </>
   )
 }
 

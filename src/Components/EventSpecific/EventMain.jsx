@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import PollPost from '../SocialPosts/PollPost';
 import { useParams } from 'react-router-dom';
 import { getEventByID } from '../../API/EventAPI';
+import CreatePost from "../Popups/CreatePost";
 
 
 const EventMain = () => {
@@ -25,14 +26,20 @@ const EventMain = () => {
     }
 
     return (
-      <section className="flex flex-col gap-2 rounded-md">
-        <PollPost />
+      <section>
+        <section className="flex flex-col gap-2 rounded-md">
+          <PollPost />
 
-        <PollPost />
+          <PollPost />
 
-        <PollPost />
+          <PollPost />
 
-        <PollPost />
+          <PollPost />
+      </section>
+
+      <div className="fixed right-4 bottom-4 dropdown dropdown-top dropdown-end">
+        <CreatePost />
+      </div>
     </section>
     )
   }

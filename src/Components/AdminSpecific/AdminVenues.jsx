@@ -1,9 +1,28 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { getAllVenues } from '../../API/VenueAPI';
 import AdminVenueCard from '../VenueCards/AdminVenueCard';
 
 const AdminVenues = () => {
-  return (
-    <section className='w-full xl:w-[450px] mx-auto'>
+
+    const [venues, setVenues] = useState(null);
+    
+    useEffect(() => {
+        const response = async () => {
+            let vens = await getAllVenues(setVenues);
+            setVenues(vens);
+        }
+         
+        response()
+    }, [])
+
+
+    const content = () => {
+        if (!venues) {
+            return ''
+        }
+
+        return (
+        <section className='w-full xl:w-[450px] mx-auto'>
         <div className='bg-white h-[700px] border-cMono400 border-2 rounded-lg flex flex-col items-center gap-4 p-4'>
             <h2 className='text-2xl border-b border-cMono600 self-stretch text-center pb-2'>Active Venues</h2>
 
@@ -18,20 +37,27 @@ const AdminVenues = () => {
 
             <div className='overflow-scroll overflow-x-hidden p-2 border-2 border-black rounded-lg self-stretch'>
                 <ul className='flex flex-col gap-1'>
-                    <li className=''><AdminVenueCard /></li>
-                    <li className=''><AdminVenueCard /></li>
-                    <li className=''><AdminVenueCard /></li>
-                    <li className=''><AdminVenueCard /></li>
-                    <li className=''><AdminVenueCard /></li>
-                    <li className=''><AdminVenueCard /></li>
-                    <li className=''><AdminVenueCard /></li>
-                    <li className=''><AdminVenueCard /></li>
-                    <li className=''><AdminVenueCard /></li>
-                    <li className=''><AdminVenueCard /></li>
+                    {
+                        venues.map((venue, i) => {
+                            const {uniqueId, name, location} = venue;
+                            return (
+                                <li key={i}>
+                                    <AdminVenueCard id={uniqueId} name={name} location={location} />
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div>
         </div>
-    </section>
+        </section>
+        )
+    }
+
+  return (
+    <>
+        {content()}
+    </>
   )
 }
 

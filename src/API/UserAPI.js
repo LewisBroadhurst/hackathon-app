@@ -6,7 +6,7 @@ export const getAllUsers = async (setUsers) => {
         const users = response.data;
         setUsers(users);
 
-        return console.log(users);
+        return users;
     } catch (e) {
         console.log(e);
     }
