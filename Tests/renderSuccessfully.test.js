@@ -42,7 +42,7 @@
 // 3. Uses expect() to see if link element specified is in the document
 
 it("xxx", () => {
-    expect([]).toBeFalsy();
+    expect(1).toBeTruthy();
 });
 
 // AdminSpecific Folder
