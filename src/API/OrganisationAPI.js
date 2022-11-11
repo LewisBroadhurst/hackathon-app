@@ -5,7 +5,7 @@ const PASSWORD = 'password'
 
 export const getAllOrganisations = async (setOrganisations) => {
     try {
-        var url = 'http://192.168.0.98:8080/organisations/findAll'
+        var url = 'http://127.0.0.1:8080/organisations/findAll'
         const response = await axios.get(url,
         { headers: { authorization: 'Basic ' + window.btoa(USER_NAME + ":" + PASSWORD) } }
         );
