@@ -2,7 +2,7 @@ import { faCalendarAlt, faClock, faPoll } from '@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, {useState, useEffect, useContext} from 'react';
 import { getRsvpOptions } from '../../API/AllEnums';
-import { addVote } from '../../API/EventAPI';
+import { addVote, getEventByID } from '../../API/EventAPI';
 import { getEventTypes } from '../../API/EventEnumAPI';
 import { sendRsvp } from '../../API/PollAPI';
 import {UserContext} from '../../Contexts/User.context';
@@ -14,17 +14,32 @@ const defaultChoicesObject = {
 }
 
 
-const PollPost = ({location, startdate, votes, name, id, pollStatus, rsvp}) => {
+const PollPost = ({id, rsvp}) => {
 
 const [eventEnums, setEventEnums] = useState(null);
 const [rsvpEnums, setRsvpEnums] = useState(null);
+const [currentEvent, setCurrentEvent] = useState(null);
 const [choicesObject, setChoicesObject] = useState(defaultChoicesObject);
 const [usersRsvpStatus, setUsersRsvpStatus] = useState('');
 const { user, login } = useContext(UserContext)
 
+
   useEffect(() => {
     response();
   }, [])
+
+  const response = async () => {
+    let res1 = await getEventTypes(setEventEnums);
+    setEventEnums(res1);
+
+    let res2 = await getRsvpOptions(setRsvpEnums);
+    setRsvpEnums(res2.data);
+
+    let res3 = await getEventByID(id);
+    setCurrentEvent(res3);
+
+    login(user);
+  }
 
   const handleRsvpStatusChange = (event) => {
     event.preventDefault()
@@ -36,16 +51,6 @@ const { user, login } = useContext(UserContext)
 
     console.log(id, user.uniqueId, usersRsvpStatus, 'THIS')
     await sendRsvp(id, user.uniqueId, usersRsvpStatus);
-  }
-
-  const response = async () => {
-    let res1 = await getEventTypes(setEventEnums);
-    setEventEnums(res1);
-
-    let res2 = await getRsvpOptions(setRsvpEnums);
-    setRsvpEnums(res2.data);
-
-    login(user);
   }
 
   const handleVote = async (e) => {
@@ -70,6 +75,9 @@ const { user, login } = useContext(UserContext)
     const response = await addVote(id, user.uniqueId, string)
     login(user)
 
+    let res3 = await getEventByID(id);
+    setCurrentEvent(res3);
+
     if (response.status === 200) {
         return alert("Thanks for voting!")
     }
@@ -86,23 +94,26 @@ const { user, login } = useContext(UserContext)
     console.log(choicesObject)
   }
 
-  const getWinningEvent = () => {
-    let votesArray = Object.entries(votes);
-    let highestValue = votesArray[0][1]
-
-    for (let i = 0; i < votesArray.length; i++) {
-        if (highestValue < votesArray[i][1]) {
-            highestValue = votesArray[i][1];
-        }
-    }
-
-    return Object.keys(votes).find(key => votes[key] === highestValue)
-  }
-
   const content = () => {
-    if (!startdate) {
+    if (!id | !currentEvent) {
         return '...'
     }
+
+    const {pollStatus, votes, name, startDateTime} = currentEvent;
+
+    const getWinningEvent = () => {
+        let votesArray = Object.entries(votes);
+        let highestValue = votesArray[0][1];
+    
+    
+        for (let i = 0; i < votesArray.length; i++) {
+            if (highestValue < votesArray[i][1]) {
+                highestValue = votesArray[i][1];
+            }
+        }
+    
+        return Object.keys(votes).find(key => votes[key] === highestValue)
+      }
 
     return (
     <section className="p-5 rounded-md bg-white customShadow1 mb-3">
@@ -113,9 +124,9 @@ const { user, login } = useContext(UserContext)
                     <h3 className="text-xl font-bold" onClick={handleAddRemoveBallot}>{name}</h3>
                     <div className="text-sm flex flex-row gap-2 items-center">
                         <FontAwesomeIcon icon={faCalendarAlt} /> 
-                        <span>{startdate.slice(0, 10)}</span>
+                        <span>{startDateTime.slice(0, 10)}</span>
                         <span><FontAwesomeIcon icon={faClock} /></span>
-                        <span>{startdate.slice(11, 16)}</span>
+                        <span>{startDateTime.slice(11, 16)}</span>
                     </div>
                 </div>
             </div>

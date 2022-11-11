@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import PollPost from '../../SocialPosts/PollPost';
-import {getAllEvents} from '../../../API/EventAPI';
 import { useContext } from 'react';
 import { UserContext } from '../../../Contexts/User.context';
 
@@ -18,11 +17,10 @@ const DashboardPolls = () => {
             <span>No polls for you to complete!</span>
           </div> 
           : polls.map((poll, i) => {
-            const {rsvp} = poll;
-            const event = poll.event;
-            const {pollStatus, location, startDateTime, votes, name, uniqueId} = event;
+            const {uniqueId, rsvp} = poll;
+            console.log(poll)
             return (
-              <PollPost key={i} id={uniqueId} rsvp={rsvp} pollStatus={pollStatus} location={location} name={name} votes={votes} startdate={startDateTime} />
+              <PollPost key={i} id={uniqueId} rsvp={rsvp} />
             )
           })
         }

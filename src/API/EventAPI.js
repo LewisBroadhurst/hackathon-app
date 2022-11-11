@@ -13,15 +13,10 @@ export const getAllEvents = async (setEvents) => {
 };
 
 export const getEventByID = async (ID) => {
-    try {
-        const response = await axios.get(`http://127.0.0.1:8080/events/findById/${ID}`);
-        const event = response.data;
-        console.log(event);
+    const response = await axios.get(`http://127.0.0.1:8080/events/findById/${ID}`);
+    console.log(response.data);
 
-        return event;
-    } catch (e) {
-        console.log(e);
-    }
+    return response.data;
 };
 
 export const createEvent = async (payload) => {
