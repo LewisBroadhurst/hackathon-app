@@ -14,7 +14,7 @@ export const updateEventByID = async (setEventEnums) => {
 
 export const getEventTypes = async (setEventEnums) => {
     try {
-        const response = await axios.get(`http://127.0.0.1:8080/eventEnums/getAllTypes`);
+        const response = await axios.get(`http://127.0.0.1:8080/enums/getAllEventTypes`);
         const eventEnums = response.data;
         setEventEnums(eventEnums);
 

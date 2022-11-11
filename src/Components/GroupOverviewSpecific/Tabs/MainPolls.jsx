@@ -9,7 +9,6 @@ const DashboardPolls = () => {
   const {user} = useContext(UserContext);
   const {polls} = user;
 
-
   return (
     <section>
       <div className="grid grid-cols-1 rounded-md"></div>
@@ -19,10 +18,11 @@ const DashboardPolls = () => {
             <span>No polls for you to complete!</span>
           </div> 
           : polls.map((poll, i) => {
+            const {rsvp} = poll;
             const event = poll.event;
-            const {location, startDateTime, votes, name, uniqueId} = event;
+            const {pollStatus, location, startDateTime, votes, name, uniqueId} = event;
             return (
-              <PollPost key={i} id={uniqueId} location={location} name={name} votes={votes} startdate={startDateTime} />
+              <PollPost key={i} id={uniqueId} rsvp={rsvp} pollStatus={pollStatus} location={location} name={name} votes={votes} startdate={startDateTime} />
             )
           })
         }

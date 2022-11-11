@@ -1,8 +1,5 @@
-import { getAllByAltText } from '@testing-library/react';
 import React, {useState, useEffect} from 'react';
 import { getAllVenues } from '../../../API/VenueAPI';
-import CommunityPost from '../../SocialPosts/CommunityPost';
-import PollPost from '../../SocialPosts/PollPost';
 import LandscapeVenueCard from '../../VenueCards/LandscapeVenueCard';
 
 const DashboardVenues = () => {

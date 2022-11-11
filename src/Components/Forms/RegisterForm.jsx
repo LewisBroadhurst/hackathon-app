@@ -29,6 +29,7 @@ const RegisterForm = () => {
     firstName: '',
     lastName: '',
     email: '',
+    joinCode: '',
     password: ''
   });
 
@@ -88,6 +89,11 @@ const RegisterForm = () => {
         <div className='flex flex-col'>
           <label className='text-md self-start'>Email*</label>
           <input className='border border-black rounded-md p-1' type={'email'} name={'email'} onChange={handleUpdatingFormFields} />
+        </div>
+
+        <div className='flex flex-col'>
+          <label className='text-md self-start'>Org. code*</label>
+          <input className='border border-black rounded-md p-1' type={'text'} name={'joinCode'} onChange={handleUpdatingFormFields} />
         </div>
 
         <div className='flex flex-col'>
