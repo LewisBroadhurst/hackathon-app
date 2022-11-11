@@ -33,9 +33,9 @@ jobs:
         run: |
           npm install axios --save
           npm run test
-      - name: Run component tests
-        run: |
-          npm run test
+      # - name: Run component tests
+      #   run: |
+      #     npm run test
       - name: Start the app
         run: |
           cd ../hackathon-app
