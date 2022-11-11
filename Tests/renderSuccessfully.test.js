@@ -41,6 +41,9 @@
 // 2. Tries to find the text "string" on the screen
 // 3. Uses expect() to see if link element specified is in the document
 
+it("xxx", () => {
+    expect([]).toBeFalsy();
+});
 
 // AdminSpecific Folder
 
