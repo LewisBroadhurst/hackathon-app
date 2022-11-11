@@ -3,12 +3,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 const LandscapeEventCard = ({location, name, starting, event}) => {
-  return (
-    <section className='customShadow1'>
-        <span className='m-2 absolute badge badge-secondary xl:hidden'>{event.niceName}</span>
+
+    const content = () => {
+        if (!location) {
+            return 'loading...'
+        }
+
+        return (
+        <section className='customShadow1'>
+        {
+            !event ? <span className='m-2 absolute badge badge-secondary xl:hidden'>VOTE!</span> : <span className='m-2 absolute badge badge-secondary xl:hidden'>{event.niceName}</span>
+        }
         <div className='flex flex-row gap-4 items-center bg-white rounded-md p-3'>
             <div className='xl:w-96'>
-                <span className='hidden m-1 absolute badge badge-secondary xl:flex'>{event.niceName}</span>
+                {
+                    !event ? <span className='m-2 absolute badge badge-secondary xl:hidden'>VOTE!</span> : <span className='m-1 absolute badge badge-secondary xl:flex'>{event.niceName}</span>
+                }
                 <img className='rounded-sm' src='https://placeimg.com/400/400/arch' alt="" />
             </div>
 
@@ -21,7 +31,11 @@ const LandscapeEventCard = ({location, name, starting, event}) => {
                 </div>
             </div>
         </div>
-    </section>
+        </section>
+        )
+    }
+  return (
+    <>{content()}</>
   )
 }
 

@@ -23,9 +23,9 @@ const DashboardEvents = () => {
       {
         !events ? '' : events.filter(event => event.organisation.uniqueId === 1)
         .map((event, index) => {
-          const {location, name, startDateTime, eventType} = event;
+          const {location, name, startDateTime, eventType, uniqueId} = event;
           return (
-            <LandscapeEventCard key={index} name={name} location={location} starting={startDateTime} event={eventType}/>
+            <LandscapeEventCard key={index} id={uniqueId} name={name} location={location} starting={startDateTime} event={eventType}/>
           )
         })
       }
