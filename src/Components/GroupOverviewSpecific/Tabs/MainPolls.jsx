@@ -6,25 +6,21 @@ import { UserContext } from '../../../Contexts/User.context';
 
 const DashboardPolls = () => {
 
-  const [events, setEvents] = useState(null);
   const {user} = useContext(UserContext);
-
-  useEffect(() => {
-    const response = async () => {
-        let res = await getAllEvents(setEvents);
-        setEvents(res);
-    }
-     
-    response();
-  }, [])
+  const {polls} = user;
 
 
   return (
     <section>
       <div className="grid grid-cols-1 rounded-md"></div>
         {
-          !events ? 'loading...' : events.map((poll, i) => {
-            const {location, startDateTime, votes, name, uniqueId} = poll;
+          !polls ? 
+          <div className='bg-white rounded-md text-center h-96 flex flex-col justify-center'>
+            <span>No polls for you to complete!</span>
+          </div> 
+          : polls.map((poll, i) => {
+            const event = poll.event;
+            const {location, startDateTime, votes, name, uniqueId} = event;
             return (
               <PollPost key={i} id={uniqueId} location={location} name={name} votes={votes} startdate={startDateTime} />
             )

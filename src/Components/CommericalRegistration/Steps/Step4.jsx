@@ -3,18 +3,21 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { CommercialRegistrationContext } from '../../../Contexts/CommericalRegistration.context';
 import { useNavigate } from 'react-router-dom';
 import { createOrganisation } from '../../../API/OrganisationAPI';
+import { createVenue } from '../../../API/VenueAPI';
+import { UserContext } from '../../../Contexts/User.context';
 
 const Step4 = () => {
 
   const {handleStepBackward, registrationDetails} = useContext(CommercialRegistrationContext);
+  const {} = useContext(UserContext);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const navigate = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
   const {cost, name} = registrationDetails;
 
-  const handlePayment = async (event) => {
-    event.preventDefault();
+  const handlePayment = async (event, id, org) => {
+    // event.preventDefault();
 
     if (!stripe || !elements) {
       return;
@@ -50,31 +53,62 @@ const Step4 = () => {
     if (paymentResult.error) {
       alert(paymentResult.error.message);
     } else {
-      if (paymentResult.paymentIntent.status === 'succeeded') {
-        return navigate('/groupOverview');
-      }
+      if (paymentResult.paymentIntent.status === 'succeeded' & org) {
+        return navigate(`/organisation/${id}`);
+      } 
+
+      if (paymentResult.paymentIntent.status === 'succeeded' & !org) {
+        return navigate(`/venue/${id}`);
+      } 
     }
   };
 
   const handleCreateCommercial = async (event) => {
     event.preventDefault();
+    let id = -1;
+    let org = false;
 
-    const {name, email, mobile} = registrationDetails;
-    console.log(name, email, mobile);
-
-    const payload = {
-      
-    }
+    const {name, email, mobile, location, joinCode} = registrationDetails;
+    console.log(name, email, mobile, location);
 
     if (registrationDetails.organisation) {
+      const payload = {
+        uniqueId: 0,
+        joinCode: joinCode,
+        name: name,
+        email: email,
+        phoneNo: mobile,
+        users: [],
+        events: []
+      }
       const response = await createOrganisation(payload);
       console.log(response);
+      id = response.uniqueId;
+      org = true;
     };
 
     if (registrationDetails.venue) {
-      const response = await createOrganisation(payload);
+      const payload = {
+        uniqueId: 0,
+        name: name,
+        location: location,
+        type: 'BOWLING'
+      }
+
+      const response = await createVenue(payload);
       console.log(response);
+      id = response.uniqueId;
     };
+
+    // await handlePayment(id, org);
+
+    if (org) {
+      navigate(`/organisation/${id}`);
+    } 
+
+    if (!org) {
+      navigate(`/venue/${id}`);
+    } 
   };
 
   return (
@@ -98,7 +132,7 @@ const Step4 = () => {
         </div>
       </div>
 
-      <form className='flex flex-col items-center justify-center gap-3 bg-white p-5 rounded-md' onSubmit={handlePayment}>
+      <form className='flex flex-col items-center justify-center gap-3 bg-white p-5 rounded-md'>
 
         <h2>Please enter your card details below</h2>
 
@@ -110,10 +144,8 @@ const Step4 = () => {
           <button className='btn w-5/12' onClick={handleStepBackward} type='button'>Back</button>
           { isProcessingPayment ? 
             <progress className="progress w-40"></progress> :
-            <button className='btn w-5/12' >Lets go!</button>
-            
+            <button className='btn w-5/12' type='submit' onClick={handleCreateCommercial}>Lets go!</button>
           }
-          <button onClick={handleCreateCommercial}>hello</button>
         </div>
         
       </form>

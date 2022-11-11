@@ -1,9 +1,8 @@
 import { faCalendarAlt, faPoll } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, {useState, useEffect, useContext} from 'react';
-import { addUserToEvent, addVote } from '../../API/EventAPI';
+import { addVote } from '../../API/EventAPI';
 import { getEventTypes } from '../../API/EventEnumAPI';
-import Portrait from "../../Assets/PortraitSquared.jpg";
 import {UserContext} from '../../Contexts/User.context';
 
 const PollPost = ({location, startdate, votes, name, id}) => {
@@ -13,36 +12,30 @@ const [choicesArray, setChoicesArray] = useState([]);
 const { user } = useContext(UserContext)
 
   useEffect(() => {
-    const response = async () => {
-        let res = await getEventTypes(setEventEnums);
-        setEventEnums(res);
-    }
-     
     response();
   }, [])
+
+  const response = async () => {
+    let res = await getEventTypes(setEventEnums);
+    setEventEnums(res);
+  }
+ 
+
 
   const handleVote = async (e) => {
     e.preventDefault()
 
-    const ballot = e.target.name;
-    console.log(ballot)
+    if (!choicesArray) {
+        return alert("Please pick a choice before voting.")
+    }
 
-    console.log(id, user.uniqueId)
+    for (let i = 0; i < choicesArray.length; i++) {
+        let response = await addVote(id, user.uniqueId, choicesArray[i])
+        console.log(response)
+    }
+    console.log(votes)
 
-    const status = await addUserToEvent(id, user.uniqueId).status;
-    console.log('status is...', status)
-
-    //     for (let i = 0; i < choicesArray; i++) {
-    //         await addVote(id, user.uniqueId, choicesArray[i])
-    //         console.log('nice')
-    //     }
-    // } catch {
-    //     for (let i = 0; i < choicesArray; i++) {
-    //         await addVote(id, user.uniqueId, choicesArray[i])
-    //         console.log('nice')
-    //     }
-    // }
-
+    response()
   }
 
   const handleAddRemoveBallot = (e) => {
@@ -59,7 +52,12 @@ const { user } = useContext(UserContext)
     setChoicesArray(removedValFromArray);
   }
 
-  return (
+  const content = () => {
+    if (!startdate) {
+        return '...'
+    }
+
+    return (
     <section className="p-5 rounded-md bg-white customShadow1 mb-3">
         <div className='flex flex-col gap-4'>
             <div className="flex flex-row items-center gap-4">
@@ -95,6 +93,13 @@ const { user } = useContext(UserContext)
             </div>
         </div>
     </section>
+    )
+  }
+
+  return (
+    <>
+        {content()}
+    </>
   )
 }
 

@@ -40,8 +40,11 @@ const defaultRegDetails = {
     password: '',
     mobile: 0,
     basicBio: '',
+    joinCode: '',
+    location: '',
     photoUrls: [],
     product: '',
+    eventType: '',
     cost: 999,
     venue: false,
     organisation: false
@@ -51,7 +54,6 @@ const defaultRegDetails = {
 export const CommercialRegistrationContext = createContext({
     handleStepForward: () => {},
     handleStepBackward: () => {},
-
     registrationDetails: {},
     setRegistrationDetails: () => {},
     stepTracker: 1,
@@ -77,7 +79,6 @@ export const CommercialRegistrationProvider = ({children}) => {
     const value = {
         handleStepBackward,
         handleStepForward,
-        
         registrationDetails,
         setRegistrationDetails,
         stepTracker,

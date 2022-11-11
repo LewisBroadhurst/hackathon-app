@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../Contexts/User.context';
 import { Link, useNavigate } from "react-router-dom";
 import EditAccountForm from '../Forms/EditAccountForm';
+import ChangeCommercialSettings from './ChangeCommercialSettings';
 
 const Header = () => {
 
@@ -20,10 +21,6 @@ const Header = () => {
     };
 
     console.log(user)
-
-    if (!user.uniqueId) {
-        navigate('/');
-    }
 
   return (
     <section className="fixed w-screen bg-base-content z-50 text-white">
@@ -49,11 +46,14 @@ const Header = () => {
                     <FontAwesomeIcon icon={faBell} />
                 </div>
 
-                <div className="dropdown dropdown-end">
+                {
+                    !user.uniqueId ? <ChangeCommercialSettings />
+                    : 
+                    <div className="dropdown dropdown-end">
                     <label tabIndex={0}>
-                    <div className="flex flex-row justify-center items-center w-10 h-10 rounded-full cursor-pointer border-2 border-success bg-base-300">
-                        <span className='text-primary font-bold'>{!user.uniqueId ? '?' : user.firstName.slice(0,1) + user.lastName.slice(0,1)}</span>
-                    </div>
+                        <div className="flex flex-row justify-center items-center w-10 h-10 rounded-full cursor-pointer border-2 border-success bg-base-300">
+                            <span className='text-primary font-bold'>{!user.uniqueId ? '?' : user.firstName.slice(0,1) + user.lastName.slice(0,1)}</span>
+                        </div>
                     </label>
                     <ul tabIndex={0} className="dropdown-content mt-2 p-2 shadow bg-base-100 rounded-box text-black flex flex-col">
                         <label htmlFor="account-modal" className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'>
@@ -64,7 +64,8 @@ const Header = () => {
                         <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faBell} /> <span>Notifications</span></li>
                         <li className='flex flex-row items-center p-1 px-2 rounded-md gap-2 hover:bg-cMono300 hover:cursor-pointer'><FontAwesomeIcon icon={faArrowRightFromBracket} /> <span onClick={handleLogout}>Sign Out</span></li>
                     </ul>
-                </div>
+                    </div>
+                }
 
             </div>
         </div>
