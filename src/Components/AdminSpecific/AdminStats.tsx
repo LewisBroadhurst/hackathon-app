@@ -6,7 +6,7 @@ import { getAllPosts } from '../../API/PostAPI';
 
 const AdminStats = () => {
 
-    const [members, setMembers] = useState(null);
+    const [members, setMembers] = useState([]);
     useEffect(() => {
         const response = async () => {
             let mems = await getAllUsers(setMembers);
@@ -16,7 +16,7 @@ const AdminStats = () => {
         response()
     }, [])
 
-    const [organisations, setOrganisations] = useState(null);
+    const [organisations, setOrganisations] = useState([]);
     useEffect(() => {
         const response = async () => {
             let orgs = await getAllOrganisations(setOrganisations);
@@ -26,7 +26,7 @@ const AdminStats = () => {
         response()
     }, [])
 
-    const [venues, setVenues] = useState(null);
+    const [venues, setVenues] = useState([]);
     useEffect(() => {
         const response = async () => {
             let vens = await getAllVenues(setVenues);
@@ -36,7 +36,7 @@ const AdminStats = () => {
         response()
     }, [])
 
-    const [posts, setPosts] = useState(null);
+    const [posts, setPosts] = useState([]);
     useEffect(() => {
         const response = async () => {
             let posts = await getAllPosts(setPosts);

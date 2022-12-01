@@ -4,7 +4,7 @@ import AdminVenueCard from '../VenueCards/AdminVenueCard';
 
 const AdminVenues = () => {
 
-    const [venues, setVenues] = useState(null);
+    const [venues, setVenues] = useState([]);
     
     useEffect(() => {
         const response = async () => {
@@ -38,7 +38,7 @@ const AdminVenues = () => {
             <div className='overflow-scroll overflow-x-hidden p-2 border-2 border-black rounded-lg self-stretch'>
                 <ul className='flex flex-col gap-1'>
                     {
-                        venues.map((venue, i) => {
+                        venues.map((venue: any, i: number) => {
                             const {uniqueId, name, location} = venue;
                             return (
                                 <li key={i}>

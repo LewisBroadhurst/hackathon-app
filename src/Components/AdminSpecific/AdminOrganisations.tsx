@@ -4,7 +4,7 @@ import OrgAdminCard from '../OrganisationCards/OrgAdminCard';
 
 const AdminOrganisations = () => {
 
-    const [organisations, setOrganisations] = useState(null);
+    const [organisations, setOrganisations] = useState([]);
     
     useEffect(() => {
         const response = async () => {
@@ -37,10 +37,10 @@ const AdminOrganisations = () => {
             <div className='overflow-scroll overflow-x-hidden p-2 border-2 border-black rounded-lg self-stretch'>
                 <ul className='flex flex-col gap-1'>
                     {
-                        organisations.map((org, i) => {
+                        organisations.map((org: any, index: number) => {
                             const {uniqueId, name, email, users} = org;
                             return (
-                                <li key={i}>
+                                <li key={index}>
                                     <OrgAdminCard id={uniqueId} name={name} email={email} users={users} />
                                 </li>
                             )

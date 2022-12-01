@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import { getAllUsers } from '../../API/UserAPI';
 import MemberCardAdmin from '../MemberCards/MemberCardAdmin';
-import MemberCardSmall from '../MemberCards/MemberCardSmall';
+
 
 const AdminMembers = () => {
 
-    const [members, setMembers] = useState(null);
+    const [members, setMembers] = useState([]);
     
     useEffect(() => {
         const response = async () => {
@@ -38,11 +38,11 @@ const AdminMembers = () => {
             <div className='overflow-scroll overflow-x-hidden p-2 border-2 border-black rounded-lg self-stretch'>
                 <ul className='flex flex-col gap-1'>
                     {
-                        members.map((user, index) => {
+                        members.map((user: any, index: number) => {
                             const {uniqueId, firstName, lastName, email, organisation} = user;
                             return (
                                 <li key={index}>
-                                    <MemberCardAdmin id={uniqueId} firstName={firstName} lastName={lastName} email={email} />
+                                    <MemberCardAdmin id={uniqueId} firstName={firstName} lastName={lastName} email={email} organisation={organisation} />
                                 </li>
                             )
                         })
