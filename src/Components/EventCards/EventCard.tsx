@@ -3,7 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const EventCard = ({id, name, location, startdate}) => {
+interface IEventCardProps {
+  id: number
+  name: string
+  location: string
+  startdate: string
+}
+
+const EventCard = ({id, name, location, startdate} : IEventCardProps) => {
 
   const checkLength = () => {
     if (name.slice(19, 100)) {
@@ -12,7 +19,7 @@ const EventCard = ({id, name, location, startdate}) => {
   }
 
   const content = () => {
-    if (!name & !location & !startdate) {
+    if (!name && !location && !startdate) {
       return 'loading...'
     }
 

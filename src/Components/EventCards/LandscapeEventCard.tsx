@@ -2,7 +2,14 @@ import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
-const LandscapeEventCard = ({location, name, starting, event}) => {
+interface ILandscapeEventCardProps {
+    location: string,
+    name: string,
+    starting: string,
+    event: any
+}
+
+const LandscapeEventCard = ({location, name, starting, event}: ILandscapeEventCardProps) => {
 
     const content = () => {
         if (!location) {

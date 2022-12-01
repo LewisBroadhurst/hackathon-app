@@ -3,7 +3,7 @@ import {CommercialRegistrationContext} from '../../Contexts/CommericalRegistrati
 
 const RegisterSteps = () => {
 
-    const {stepsActive} = useContext(CommercialRegistrationContext);
+  const {stepsActive} = useContext(CommercialRegistrationContext);
 
   return (
     <>
