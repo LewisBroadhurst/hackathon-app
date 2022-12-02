@@ -1,6 +1,7 @@
 import React, { useState, createContext } from 'react';
+import { IStepsActive } from '../@types/CommReg.types'
 
-const handleForwardArrowFunc = (stepTracker, setStepTracker, stepsActive, setStepsActive) => {
+const handleForwardArrowFunc = (stepTracker: any, setStepTracker: any, stepsActive: any, setStepsActive: any) => {
     if (stepTracker === 4) {
         return;
     } else if (stepTracker === 1) {
@@ -14,7 +15,7 @@ const handleForwardArrowFunc = (stepTracker, setStepTracker, stepsActive, setSte
     setStepTracker(stepTracker + 1);
 }
 
-const handleBackArrowFunc = (stepTracker, setStepTracker, stepsActive, setStepsActive) => {
+const handleBackArrowFunc = (stepTracker: any, setStepTracker: any, stepsActive: any, setStepsActive: any) => {
     if (stepTracker === 1) {
         return;
     } else if (stepTracker === 4) {
@@ -28,11 +29,6 @@ const handleBackArrowFunc = (stepTracker, setStepTracker, stepsActive, setStepsA
     setStepTracker(stepTracker - 1);
 }
 
-const defaultStepsActive = {
-    stepTwo: '',
-    stepThree: '',
-    stepFour: ''
-}
 
 const defaultRegDetails = {
     name: '',
@@ -51,6 +47,8 @@ const defaultRegDetails = {
 }
 
 
+
+
 export const CommercialRegistrationContext = createContext({
     handleStepForward: () => {},
     handleStepBackward: () => {},
@@ -62,10 +60,17 @@ export const CommercialRegistrationContext = createContext({
     setStepsActive: () => {}
 });
 
-export const CommercialRegistrationProvider = ({children}) => {
+
+const defaultStepsActive  = {
+    stepTwo: '',
+    stepThree: '',
+    stepFour: ''
+}
+
+export const CommercialRegistrationProvider: React.FC<React.ReactNode> = ({children}) => {
     const [registrationDetails, setRegistrationDetails] = useState(defaultRegDetails);
     const [stepTracker, setStepTracker] = useState(1);
-    const [stepsActive, setStepsActive] = useState(defaultStepsActive);
+    const [stepsActive, setStepsActive] = useState<IStepsActive>(defaultStepsActive);
 
 
     const handleStepForward = () => {
