@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, ChangeEventHandler } from 'react';
 import { Link } from 'react-router-dom';
 import { CommercialRegistrationContext } from '../../../Contexts/CommericalRegistration.context';
+
 
 const Step1 = () => {
 

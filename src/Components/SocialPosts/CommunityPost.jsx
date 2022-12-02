@@ -1,7 +1,7 @@
 import React from 'react';
 import Portrait from "../../Assets/PortraitSquared.jpg";
 
-const CommunityPost = () => {
+const CommunityPost = ({content, likecount, user}) => {
 
     const pageContent = () => {
         // if (!uniqueId) {

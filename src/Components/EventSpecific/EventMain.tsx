@@ -3,13 +3,12 @@ import CommunityPost from '../SocialPosts/CommunityPost';
 import { useParams } from 'react-router-dom';
 import { getEventByID } from '../../API/EventAPI';
 import { getAllPosts } from '../../API/PostAPI';
-import CreatePost from "../Popups/CreatePost";
 
 
 const EventMain = () => {
 
-  const [event, setEvent] = useState(null);
-  const [allPosts, setAllPosts] = useState(null);
+  const [event, setEvent] = useState({});
+  const [allPosts, setAllPosts] = useState([]);
   
   const { id } = useParams();
   

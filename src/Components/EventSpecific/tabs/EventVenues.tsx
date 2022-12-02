@@ -4,7 +4,7 @@ import LandscapeVenueCard from '../../VenueCards/LandscapeVenueCard';
 
 const EventVenues = () => {
 
-    const [venues, setVenues] = useState(null);
+    const [venues, setVenues] = useState([]);
 
     useEffect(() => {
         const response = async () => {

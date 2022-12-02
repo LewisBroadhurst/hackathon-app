@@ -10,14 +10,22 @@ const defaultActiveTab = {
   'Members': ''
 }
 
+// type EventBannerProps = {
+//   eventName: string
+//   org: any
+//   starts: string
+//   eventType: string
+//   setTabContents: string
+// }
+
 const EventBanner = ({eventName, org, starts, eventType, setTabContents}) => {
 
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
 
   const handleTabChange = (event) => {
     event.preventDefault();
-    console.log(event.target.getAttribute('name'));
-    const clickedTab = event.target.getAttribute('name');
+    console.log(event.target.getAttribute('id'));
+    const clickedTab = event.target.getAttribute('id');
 
     Object.keys(activeTab).forEach((key) => {
       setActiveTab(activeTab[key] = '');
@@ -29,7 +37,7 @@ const EventBanner = ({eventName, org, starts, eventType, setTabContents}) => {
   }
 
   const timeTag = () => {
-    if (starts.slice(11, 13) & starts.slice(11, 13) > 12) {
+    if (starts.slice(11, 13) && starts.slice(11, 13).length > 12) {
       return 'pm'
     }
 
@@ -52,10 +60,10 @@ const EventBanner = ({eventName, org, starts, eventType, setTabContents}) => {
         </div>
 
         <div className="tabs tabs-boxed flex gap-2 mt-4">
-          <span className={`tab ${activeTab.Overview}`} onClick={handleTabChange} name='Overview'>Overview</span>
-          <span className={`tab ${activeTab.Polls}`} onClick={handleTabChange} name='Polls'>Polls</span>
-          <span className={`tab ${activeTab.Venues}`} onClick={handleTabChange} name='Venues'>Venues</span>
-          <span className={`tab ${activeTab.Members}` } onClick={handleTabChange} name='Members'>Members</span>
+          <span className={`tab ${activeTab.Overview}`} onClick={handleTabChange} id='Overview'>Overview</span>
+          <span className={`tab ${activeTab.Polls}`} onClick={handleTabChange} id='Polls'>Polls</span>
+          <span className={`tab ${activeTab.Venues}`} onClick={handleTabChange} id='Venues'>Venues</span>
+          <span className={`tab ${activeTab.Members}` } onClick={handleTabChange} id='Members'>Members</span>
         </div>
       </section>
 
